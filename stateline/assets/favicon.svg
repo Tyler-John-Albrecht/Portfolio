@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="13" fill="#05070d"/>
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="square">
+    <!-- stem outer + base sweep -->
+    <path d="M17.5 9 V38 Q17.5 51.5 31 51.5 H41.5"/>
+    <!-- stem inner + base sweep -->
+    <path d="M23.8 12 V37 Q23.8 45.4 32.4 45.4 H45.5"/>
+    <!-- bowl outer: flat top, 45° corner, right edge down -->
+    <path d="M30 20.8 H40.5 L48.3 28.6 V39.6 H45.5"/>
+    <!-- bowl inner -->
+    <path d="M30 26.6 H38 L42.4 31 V45.4"/>
+  </g>
+  <!-- bottom-right step block -->
+  <rect x="45.5" y="49.5" width="6.8" height="4" fill="#ffffff"/>
+</svg>

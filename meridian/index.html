@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Auto Atelier | Ceramic Coating & Paint Correction, River City</title>
+<meta name="description" content="A private detailing atelier for people who notice. Ceramic coating, paint correction, and collection care for River City's finest vehicles. By appointment only.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meridian Auto Atelier | Ceramic Coating & Paint Correction, River City">
+<meta property="og:description" content="A private detailing atelier for people who notice. One car at a time, behind closed doors. By appointment only.">
+<meta property="og:image" content="photos/meridian-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23101114'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-weight='700' font-size='52' fill='%23F1EFE9' text-anchor='middle'%3EM%3Ctspan fill='%23E8FF3C'%3E.%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "Meridian Auto Atelier",
+  "description": "Private detailing atelier: ceramic coating, paint correction, interior care, and standing collection care. By appointment only.",
+  "telephone": "+15550137741",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "18 Commerce Row, Studio B",
+    "addressLocality": "River City",
+    "addressRegion": "FL",
+    "postalCode": "33500"
+  },
+  "openingHours": "Tu-Sa 09:00-17:00",
+  "priceRange": "$$$"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   MERIDIAN AUTO ATELIER — quiet-luxury "panel OS" template
+   DNA: panel grid hero · arrow-swap hovers · acid accent
+   Palette: ink #101114 · ivory #F1EFE9 · acid #E8FF3C
+   ═══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Space Grotesk',sans-serif;background:#F1EFE9;color:#101114;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:#E8FF3C;color:#101114}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:#101114}
+::-webkit-scrollbar-thumb{background:#E8FF3C;border-radius:99px;border:2px solid #101114}
+:focus-visible{outline:2px solid #E8FF3C;outline-offset:3px;border-radius:4px}
+
+.wrap{width:min(1240px,92%);margin:0 auto}
+.caps{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase}
+.mono{font-family:'IBM Plex Mono',monospace}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.025em}
+
+/* film grain — breaks digital flatness */
+body::after{
+  content:'';position:fixed;inset:-50%;width:200%;height:200%;z-index:80;pointer-events:none;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* reveal choreography — staggered via inline delay */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── ARROW-SWAP BUTTON (signature interaction) ── */
+.pill{
+  display:inline-flex;align-items:center;gap:14px;background:#E8FF3C;color:#101114;
+  font-weight:600;font-size:14.5px;padding:16px 26px 16px 30px;border-radius:10px;border:0;cursor:pointer;
+  transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s;
+}
+.pill:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(232,255,60,.32)}
+.pill:active{transform:translateY(0) scale(.98)}
+.pill{position:relative;overflow:hidden}
+.pill::after{content:'';position:absolute;top:-12%;bottom:-12%;left:-85%;width:55%;background:linear-gradient(105deg,transparent 12%,rgba(255,255,255,.5) 50%,transparent 88%);transform:skewX(-20deg);transition:left .7s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.pill:hover::after{left:135%}
+.pill.dark{background:#101114;color:#F1EFE9}
+.pill.dark:hover{box-shadow:0 14px 34px rgba(16,17,20,.28)}
+.arr{position:relative;width:1em;height:1em;overflow:hidden;flex-shrink:0}
+.arr svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.arr svg:nth-child(2){transform:translate(-110%,110%)}
+.pill:hover .arr svg:first-child,a:hover>.arr svg:first-child{transform:translate(110%,-110%)}
+.pill:hover .arr svg:nth-child(2),a:hover>.arr svg:nth-child(2){transform:translate(0,0)}
+
+.underlink{position:relative;font-size:13.5px;font-weight:500;padding-bottom:3px}
+.underlink::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transition:background .3s}
+.underlink:hover{color:#E8FF3C}
+
+/* ═══ HERO — PANEL OS ═══ */
+#hero{position:relative;height:100dvh;min-height:660px;color:#F1EFE9;overflow:hidden}
+#hero video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:ken 26s ease-in-out infinite alternate}
+@keyframes ken{from{transform:scale(1)}to{transform:scale(1.05)}}
+#hero .dim{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(16,17,20,.18) 0%,rgba(16,17,20,.82) 100%)}
+.os{position:relative;z-index:60;height:100%;display:flex;flex-direction:column;padding:14px;gap:3px;pointer-events:none}
+.os-top>*,.os-bot>*,.os-mid{pointer-events:auto}
+.os-top{display:flex;gap:3px;height:84px}
+.panel{
+  background:rgba(16,17,20,.66);backdrop-filter:blur(10px);
+  border:1px solid rgba(241,239,233,.1);border-radius:11px;
+  box-shadow:inset 0 1px 0 rgba(241,239,233,.06);
+}
+.tile{width:84px;height:84px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .3s,background .3s}
+a.tile:hover{border-color:#E8FF3C;background:rgba(16,17,20,.85)}
+.tile-logo{font-weight:700;font-size:26px;letter-spacing:-.04em}
+.tile-logo span{color:#E8FF3C}
+.tile-soc{font-size:12px;font-weight:600;letter-spacing:.12em;color:#B9BBB4}
+a.tile-soc:hover{color:#E8FF3C}
+.os-top .gap{flex:1}
+.tile-info{width:auto;min-width:212px;flex-direction:column;align-items:flex-end;gap:3px;padding:0 22px}
+.tile-info .loc{font-size:11px;color:#8A8C86;letter-spacing:.08em}
+.tile-info .val{font-size:16.5px;font-weight:500}
+.tile-info .val b{color:#E8FF3C;font-weight:600}
+
+/* ── MD-style header lockup ── */
+#heroBurger{cursor:pointer;flex-shrink:0}
+#heroBurger .hb{position:relative;width:26px;height:18px;display:block}
+#heroBurger .hb i{position:absolute;left:0;height:2px;background:#E8FF3C;transition:width .4s,transform .4s,opacity .3s;display:block}
+#heroBurger .hb i:nth-child(1){top:0;width:80%}
+#heroBurger .hb i:nth-child(2){top:8px;width:100%}
+#heroBurger .hb i:nth-child(3){top:16px;width:55%}
+#heroBurger:hover .hb i{width:100%}
+#heroBurger.open .hb i:nth-child(1){transform:translateY(8px) rotate(45deg);width:100%}
+#heroBurger.open .hb i:nth-child(2){opacity:0}
+#heroBurger.open .hb i:nth-child(3){transform:translateY(-8px) rotate(-45deg);width:100%}
+.tile-brand{height:84px;display:flex;align-items:center;gap:16px;padding:0 24px;transition:border-color .3s}
+.tile-brand:hover{border-color:#E8FF3C}
+.tile-brand b{font-weight:700;font-size:28px;letter-spacing:-.04em;color:#F1EFE9}
+.tile-brand b span{color:#E8FF3C}
+.tile-brand em{font-style:normal;display:flex;flex-direction:column;line-height:1.4}
+.tile-brand em small{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#F1EFE9;font-weight:500}
+.tile-brand em small+small{color:#8A8C86;letter-spacing:.24em;font-size:10.5px}
+.tile-lang{height:84px;width:auto;display:flex;align-items:center;gap:12px;padding:0 24px;font-size:13px;font-weight:500}
+.tile-lang a{color:#8A8C86;transition:color .25s;letter-spacing:.08em}
+.tile-lang a.on,.tile-lang a:hover{color:#E8FF3C}
+.tile-lang i{width:1px;height:16px;background:rgba(241,239,233,.25)}
+
+/* ── Explore state machine ── */
+.xbtn{position:relative;background:transparent;color:#F1EFE9;border:1px solid rgba(241,239,233,.4);border-radius:10px;padding:16px 26px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;cursor:pointer;transition:transform .25s,border-color .25s,box-shadow .25s}
+.xbtn:hover{transform:translateY(-2px);border-color:#E8FF3C;box-shadow:0 10px 30px rgba(232,255,60,.15)}
+.xbtn:active{transform:scale(.98)}
+.x-track{position:relative;display:block;height:1.3em;min-width:112px;overflow:hidden}
+.x-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .3s}
+.x-face i{font-style:normal;font-size:15px}
+.x-face.x-close{transform:translateY(130%);opacity:0}
+.xbtn[data-state="close"] .x-explore{transform:translateY(-130%);opacity:0}
+.xbtn[data-state="close"] .x-close{transform:translateY(0);opacity:1;color:#E8FF3C}
+.os-mid{transition:opacity .4s}
+body.menu-open .os-mid{opacity:0;pointer-events:none}
+@media(max-width:640px){.tile-brand em{display:none}.tile-lang{padding:0 16px}}
+.os-mid{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 6%}
+.os-mid .caps{color:#C9CBC4;margin-bottom:22px;display:block}
+.os-mid h1{font-size:clamp(40px,6.6vw,82px);font-weight:500;line-height:1.03;max-width:880px;margin:0 auto}
+.os-mid p{max-width:52ch;margin:24px auto 0;color:#C9CBC4;font-size:16.5px;font-weight:300}
+.os-bot{display:flex;align-items:center;justify-content:center;position:relative;padding:10px 8px 6px}
+.os-bot .login{position:absolute;right:14px;bottom:14px;color:#F1EFE9}
+.scrollcue{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:10px;color:#8A8C86;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
+.scrollcue i{display:block;width:26px;height:1px;background:#E8FF3C;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleX(.4);opacity:.5}50%{transform:scaleX(1);opacity:1}}
+
+/* ═══ STATEMENT ═══ */
+#statement{padding:170px 0 110px}
+#statement .caps{color:#8A8C86;margin-bottom:34px;display:block}
+#statement h2{font-size:clamp(30px,4.5vw,60px);font-weight:500;line-height:1.1;max-width:1000px}
+#statement h2 em{font-style:normal;background:#E8FF3C;padding:.02em .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:100px;background:rgba(16,17,20,.12);border-radius:16px;overflow:hidden}
+.stat-cell{background:#F1EFE9;padding:42px 36px;transition:background .3s}
+.stat-cell:hover{background:#ECEAE2}
+.stat-cell .num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;font-size:clamp(36px,3.8vw,54px);font-weight:500;letter-spacing:-.04em}
+.stat-cell .num span{color:#8A8C86;font-size:.55em}
+.stat-cell p{color:#6E7069;font-size:14px;margin-top:10px;max-width:34ch}
+
+/* ═══ SERVICES ═══ */
+#services{padding:60px 0 140px}
+#services .caps{color:#8A8C86;margin-bottom:14px;display:block}
+#services h2{font-size:clamp(28px,3.6vw,48px);font-weight:500;margin-bottom:64px}
+.srow{
+  display:grid;grid-template-columns:90px 1.15fr 1.5fr 120px 52px;gap:28px;align-items:center;
+  padding:34px 22px;border-top:1px solid rgba(16,17,20,.14);position:relative;
+  transition:background .35s,color .35s,padding .35s;cursor:pointer;
+}
+.srow:last-of-type{border-bottom:1px solid rgba(16,17,20,.14)}
+.srow:hover{background:#101114;color:#F1EFE9;padding-left:36px}
+.srow .snum{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;color:#8A8C86}
+.srow h3{font-size:clamp(20px,2.3vw,29px);font-weight:500;letter-spacing:-.02em}
+.srow .sdesc{font-size:14px;color:#6E7069;transition:color .35s;max-width:52ch}
+.srow:hover .sdesc{color:#B9BBB4}
+.srow .speek{width:120px;height:76px;border-radius:9px;overflow:hidden;opacity:0;transform:scale(.92) rotate(-2deg);transition:opacity .35s,transform .35s}
+.srow:hover .speek{opacity:1;transform:none}
+.srow .speek img{width:100%;height:100%;object-fit:cover}
+.srow .sarrow{width:46px;height:46px;border:1px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;justify-self:end;transition:background .3s,color .3s,border-color .3s}
+.srow:hover .sarrow{background:#E8FF3C;color:#101114;border-color:#E8FF3C}
+
+/* ═══ QUOTE BAND ═══ */
+#band{position:relative;padding:190px 0;color:#F1EFE9;text-align:center;overflow:hidden}
+#band .bg{position:absolute;inset:0;background:url('photos/meridian-quote-bg.jpg') center 40%/cover no-repeat}
+#band .dim{position:absolute;inset:0;background:rgba(16,17,20,.78)}
+#band .inner{position:relative;z-index:2}
+#band blockquote{font-size:clamp(24px,3.3vw,42px);font-weight:400;line-height:1.24;max-width:22ch;margin:0 auto 30px}
+#band blockquote b{color:#E8FF3C;font-weight:500}
+#band cite{font-style:normal;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B9BBB4}
+#band .stars{color:#E8FF3C;letter-spacing:6px;font-size:15px;margin-bottom:26px;display:block}
+
+/* ═══ MEMBERSHIP ═══ */
+#membership{padding:150px 0}
+.memgrid{display:grid;grid-template-columns:1fr .94fr;gap:80px;align-items:center}
+#membership .caps{color:#8A8C86;margin-bottom:16px;display:block}
+#membership h2{font-size:clamp(28px,3.8vw,50px);font-weight:500;margin-bottom:24px}
+#membership p{color:#4A4C46;font-size:15.5px;margin-bottom:16px;max-width:56ch}
+#membership .cap-note{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#101114;background:rgba(232,255,60,.55);display:inline-block;padding:7px 13px;border-radius:7px;margin-top:6px}
+.memcard{background:#101114;color:#F1EFE9;border-radius:18px;padding:48px 44px;position:relative;overflow:hidden;box-shadow:0 34px 80px rgba(16,17,20,.24)}
+.memcard::before{content:'';position:absolute;top:-90px;right:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(232,255,60,.2),transparent 70%)}
+.memcard .caps{color:#E8FF3C;margin-bottom:24px;display:block}
+.memcard .price{font-family:'IBM Plex Mono',monospace;font-size:46px;font-weight:500;letter-spacing:-.04em}
+.memcard .price small{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:400;color:#8A8C86;letter-spacing:0}
+.memcard ul{margin:30px 0 36px;display:flex;flex-direction:column;gap:15px}
+.memcard li{display:flex;gap:13px;font-size:14.5px;color:#C9CBC4;font-weight:300}
+.memcard li::before{content:'—';color:#E8FF3C;flex-shrink:0}
+
+/* ═══ GALLERY ═══ */
+#gallery{padding:0 0 150px}
+.gal{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:14px}
+.gal figure{position:relative;overflow:hidden;border-radius:14px;height:440px;background:#101114}
+.gal img{height:100%;width:100%;object-fit:cover;filter:grayscale(1) contrast(1.04);transform:scale(1.01);transition:filter .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.gal figure:hover img{filter:grayscale(0);transform:scale(1.055)}
+.gal figcaption{
+  position:absolute;left:14px;bottom:12px;background:rgba(16,17,20,.86);backdrop-filter:blur(8px);color:#F1EFE9;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 16px;border-radius:8px;transform:translateY(6px);opacity:.85;transition:transform .4s,opacity .4s;
+}
+.gal figure:hover figcaption{transform:none;opacity:1}
+
+/* ═══ FOOTER ═══ */
+footer{background:#101114;color:#F1EFE9;padding:130px 0 0;position:relative;overflow:hidden}
+footer .fmark{
+  font-size:clamp(58px,10vw,150px);font-weight:600;letter-spacing:-.05em;line-height:.95;margin-bottom:80px;
+}
+footer .fmark span{color:#E8FF3C}
+.fcols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:48px;padding-bottom:80px}
+.fcols .caps{color:#8A8C86;margin-bottom:20px;display:block}
+.fcols p,.fcols li{color:#B9BBB4;font-size:14.5px;font-weight:300;margin-bottom:11px;max-width:34ch}
+.fcols li a{transition:color .25s}
+.fcols li a:hover{color:#E8FF3C}
+.fbar{border-top:1px solid rgba(241,239,233,.1);padding:24px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#6E7069}
+.fbar .legal{display:flex;gap:22px}
+.fbar a{transition:color .25s}
+.fbar a:hover{color:#E8FF3C}
+
+@media(max-width:960px){
+  .memgrid{grid-template-columns:1fr;gap:50px}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal figure:first-child{grid-column:1/-1;height:340px}
+  .fcols{grid-template-columns:1fr 1fr}
+  .srow{grid-template-columns:56px 1fr 52px}
+  .srow .sdesc,.srow .speek{display:none}
+  .stats{grid-template-columns:1fr}
+  .tile-info{display:none}
+  .os-top .tile-soc{display:none}
+}
+@media(max-width:560px){
+  .gal{grid-template-columns:1fr}
+  .fcols{grid-template-columns:1fr}
+  .os{padding:10px}
+  .scrollcue{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  #hero video.bg{animation:none}
+  .scrollcue i{animation:none}
+}
+
+/* ═══ CONVERSION KIT — panel-OS voice ═══ */
+/* scroll-appearing glass topbar */
+#topnav{position:fixed;top:0;left:0;right:0;z-index:60;padding:12px 14px;transform:translateY(-110%);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+#topnav.show{transform:none}
+#topnav .bar{display:flex;align-items:center;gap:18px;background:rgba(16,17,20,.82);backdrop-filter:blur(12px);border:1px solid rgba(241,239,233,.12);border-radius:12px;padding:10px 10px 10px 20px;box-shadow:0 14px 40px rgba(0,0,0,.35);color:#F1EFE9}
+#topnav .tn-logo{font-weight:700;font-size:18px}
+#topnav .tn-logo span{color:#E8FF3C}
+#topnav .tn-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+#topnav .tn-links a{font-size:13px;color:#C9CBC4;transition:color .25s}
+#topnav .tn-links a:hover{color:#E8FF3C}
+#topnav .tn-phone{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#E8FF3C}
+#topnav .pill{padding:11px 18px;font-size:13px}
+#tnBurger{display:none;background:none;border:0;cursor:pointer;width:28px;height:20px;position:relative;margin-left:auto}
+#tnBurger i{position:absolute;left:0;height:2px;background:#E8FF3C;transition:width .4s,transform .4s,opacity .3s;display:block}
+#tnBurger i:nth-child(1){top:0;width:80%}
+#tnBurger i:nth-child(2){top:9px;width:100%}
+#tnBurger i:nth-child(3){top:18px;width:55%}
+#tnBurger.open i:nth-child(1){transform:translateY(9px) rotate(45deg);width:100%}
+#tnBurger.open i:nth-child(2){opacity:0}
+#tnBurger.open i:nth-child(3){transform:translateY(-9px) rotate(-45deg);width:100%}
+/* ── EXPLORE DASHBOARD (panel grid) ── */
+#mobileMenu{position:fixed;inset:0;z-index:59;background:rgba(13,14,17,.97);backdrop-filter:blur(18px);overflow-y:auto;padding:122px 14px 96px;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;display:flex;align-items:flex-start;justify-content:center}
+#mobileMenu.open{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+.xgrid{display:grid;width:min(1240px,100%);grid-template-columns:repeat(12,1fr);grid-template-rows:300px 210px 118px 60px;gap:10px}
+.xp{position:relative;border-radius:12px;overflow:hidden;background:#1A1B20;border:1px solid rgba(241,239,233,.09);opacity:0;transform:translateY(20px) scale(.985);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1),border-color .3s}
+#mobileMenu.open .xp{opacity:1;transform:none}
+#mobileMenu.leaving .xp{opacity:0;transform:translateY(-16px) scale(.99);transition-delay:0s !important;transition-duration:.3s}
+.xp:nth-child(1){transition-delay:.05s}.xp:nth-child(2){transition-delay:.1s}.xp:nth-child(3){transition-delay:.15s}.xp:nth-child(4){transition-delay:.2s}.xp:nth-child(5){transition-delay:.25s}.xp:nth-child(6){transition-delay:.29s}.xp:nth-child(7){transition-delay:.33s}.xp:nth-child(8){transition-delay:.36s}.xp:nth-child(9){transition-delay:.39s}.xp:nth-child(10){transition-delay:.42s}.xp:nth-child(11){transition-delay:.45s}
+a.xp:hover{border-color:rgba(232,255,60,.5)}
+.xp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+a.xp:hover img{transform:scale(1.05)}
+.xp-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,14,17,.05) 30%,rgba(13,14,17,.85))}
+.xp-body{position:absolute;left:20px;right:20px;bottom:16px;z-index:2;color:#F1EFE9}
+.xp-body h3{font-size:clamp(18px,1.8vw,24px);font-weight:600;letter-spacing:-.02em}
+.xp-body p{font-size:13px;color:#C9CBC4;margin-top:4px;max-width:46ch;font-weight:300}
+.xp-arr{position:absolute;top:16px;right:18px;z-index:2;color:#E8FF3C;font-size:19px;transition:transform .25s}
+a.xp:hover .xp-arr{transform:translate(3px,-3px)}
+.xp-tag{position:absolute;top:14px;left:18px;z-index:2;color:#E8FF3C;font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
+.xp-main{grid-column:1/9;grid-row:1}
+.xp-cotw{grid-column:9/13;grid-row:1/3}
+.xp-sv{grid-column:1/5;grid-row:2}
+.xp-pk{grid-column:5/9;grid-row:2}
+.xp-act{grid-column:span 4;grid-row:3;background:#E8FF3C;color:#101114;display:flex;align-items:center;gap:14px;padding:0 22px;font-weight:600;font-size:15px}
+.xp-act .xp-ico{width:34px;height:34px;border:1.5px solid #101114;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.xp-act .xp-arr{position:static;margin-left:auto;color:#101114}
+.xp-act:hover{border-color:#101114}
+.xp-mini{grid-row:4;display:flex;align-items:center;justify-content:center;font-size:13px;color:#C9CBC4;font-weight:500}
+a.xp-mini:hover{color:#E8FF3C}
+.xp-m1{grid-column:1/3}.xp-m2{grid-column:3/5}.xp-m3{grid-column:5/9}.xp-m4{grid-column:9/13}
+@media(max-width:900px){
+  #mobileMenu{padding:110px 12px 84px}
+  .xgrid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto}
+  .xp{grid-column:1/-1 !important;grid-row:auto !important}
+  .xp-photo{height:190px}
+  .xp-cotw{height:250px}
+  .xp-act{height:76px}
+  .xp-mini{height:52px;grid-column:span 1 !important;background:#1A1B20}
+  .xp-m3,.xp-m4{grid-column:1/-1 !important}
+}
+@media(max-width:860px){#topnav .tn-links{display:none}#tnBurger{display:block}}
+
+/* packages */
+#packages{padding:20px 0 150px}
+#packages .caps{color:#8A8C86;margin-bottom:16px;display:block}
+#packages h2{font-size:clamp(28px,3.6vw,48px);font-weight:500;letter-spacing:-.025em;margin-bottom:60px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.tier{background:#fff;border:1px solid rgba(16,17,20,.1);border-radius:16px;padding:40px 34px;display:flex;flex-direction:column;position:relative;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.tier:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(16,17,20,.12)}
+.tier.pop{background:#101114;color:#F1EFE9;box-shadow:0 30px 70px rgba(16,17,20,.24)}
+.tier .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#E8FF3C;color:#101114;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:7px 16px;border-radius:99px;white-space:nowrap}
+.tier h3{font-size:21px;font-weight:600;letter-spacing:-.02em;margin-bottom:4px}
+.tier .tsub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8C86;margin-bottom:22px;text-transform:uppercase;letter-spacing:.1em}
+.tier.pop .tsub{color:#E8FF3C}
+.tier ul{display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex:1;border-top:1px solid rgba(138,140,134,.25);padding-top:22px}
+.tier li{display:flex;gap:12px;font-size:13.5px;color:#4A4C46;font-weight:400}
+.tier.pop li{color:#C9CBC4;font-weight:300}
+.tier li::before{content:'—';color:#B9BBB4;flex-shrink:0}
+.tier.pop li::before{color:#E8FF3C}
+.tier .pill{width:100%;justify-content:center;margin-top:auto}
+
+/* 3-step process, ghost numbers */
+#process{padding:0 0 150px}
+#process .caps{color:#8A8C86;margin-bottom:16px;display:block}
+#process h2{font-size:clamp(28px,3.6vw,48px);font-weight:500;letter-spacing:-.025em;margin-bottom:64px}
+.psteps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(16,17,20,.12);border-radius:16px;overflow:hidden}
+.pstep{position:relative;background:#F1EFE9;padding:64px 34px 44px;overflow:hidden;transition:background .3s}
+.pstep:hover{background:#ECEAE2}
+.pstep .ghost{position:absolute;top:-30px;right:2px;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:150px;line-height:1;color:rgba(16,17,20,.05);pointer-events:none;user-select:none}
+.pstep h3{font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px;position:relative}
+.pstep p{color:#6E7069;font-size:14px;position:relative;max-width:36ch}
+.pstep{cursor:pointer;padding-bottom:70px}
+.pstep h3,.pstep p{transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.pstep:hover h3,.pstep:hover p{transform:translateY(-7px)}
+.pcta{position:absolute;left:34px;bottom:26px;z-index:2;display:inline-flex;align-items:center;gap:9px;font-weight:500;font-size:13.5px;color:#101114;border-bottom:1px solid #101114;padding-bottom:2px;opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s cubic-bezier(.22,1,.36,1)}
+.pstep:hover .pcta{opacity:1;transform:none}
+.pcta i{font-style:normal;transition:transform .25s}
+.pcta:hover{color:#000;border-color:#E8FF3C}
+.pcta:hover i{transform:translateX(4px)}
+
+/* guarantee */
+#guaranteeBlock{padding:0 0 150px}
+.gwrap{display:flex;gap:34px;align-items:center;background:#101114;color:#F1EFE9;border-radius:18px;padding:52px 54px;position:relative;overflow:hidden}
+.gwrap::before{content:'';position:absolute;top:-90px;right:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(232,255,60,.18),transparent 70%)}
+.gseal{width:84px;height:84px;flex-shrink:0;border:2px solid #E8FF3C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;color:#E8FF3C}
+.gwrap h2{font-size:clamp(20px,2.6vw,30px);font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
+.gwrap h2 em{font-style:normal;color:#E8FF3C}
+.gwrap p{color:#C9CBC4;font-size:15px;font-weight:300;max-width:70ch}
+
+/* FAQ */
+#faq{padding:0 0 150px}
+#faq .caps{color:#8A8C86;margin-bottom:16px;display:block}
+#faq h2{font-size:clamp(28px,3.6vw,48px);font-weight:500;letter-spacing:-.025em;margin-bottom:56px}
+.qa{display:flex;flex-direction:column}
+.qa details{border-top:1px solid rgba(16,17,20,.14)}
+.qa details:last-child{border-bottom:1px solid rgba(16,17,20,.14)}
+.qa summary{list-style:none;cursor:pointer;padding:26px 8px;font-weight:500;font-size:17px;display:flex;justify-content:space-between;gap:18px;align-items:center;letter-spacing:-.01em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-weight:400;color:#101114;font-size:22px;transition:transform .25s;flex-shrink:0}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa .a{padding:0 8px 28px;color:#6E7069;font-size:14.5px;max-width:64ch}
+.gbtn{display:inline-flex;align-items:center;gap:10px;background:#101114;color:#F1EFE9;font-weight:500;font-size:13.5px;padding:13px 24px;border-radius:10px;transition:transform .2s,box-shadow .2s}
+.gbtn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(16,17,20,.25)}
+
+/* sticky mobile CTA */
+#stickyBar{display:none}
+@media(max-width:760px){
+  body{padding-bottom:60px}
+  #stickyBar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:stretch;height:60px;background:rgba(16,17,20,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(232,255,60,.5);color:#F1EFE9}
+  #stickyBar .sb-name{flex:1;display:flex;align-items:center;padding:0 16px;font-weight:600;font-size:13.5px}
+  #stickyBar .sb-name span{color:#E8FF3C}
+  #stickyBar a.sb-call{display:flex;align-items:center;padding:0 18px;color:#C9CBC4;font-family:'IBM Plex Mono',monospace;font-size:13px;border-left:1px solid rgba(241,239,233,.12)}
+  #stickyBar a.sb-book{display:flex;align-items:center;padding:0 22px;background:#E8FF3C;color:#101114;font-weight:600;font-size:13.5px}
+}
+
+/* booking modal */
+#bkOverlay{position:fixed;inset:0;z-index:100;background:rgba(16,17,20,.7);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:18px}
+#bkOverlay.open{display:flex}
+.bk-card{width:min(560px,100%);max-height:94vh;overflow-y:auto;background:#F1EFE9;color:#101114;border-radius:18px;box-shadow:0 40px 100px rgba(0,0,0,.5);padding:40px 38px;position:relative}
+.bk-close{position:absolute;top:14px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(16,17,20,.06);border:0;color:#101114;font-size:22px;line-height:1;cursor:pointer;transition:background .25s}
+.bk-close:hover{background:#E8FF3C}
+.bk-card h3{font-size:23px;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}
+.bk-card .bk-sub{font-size:13.5px;color:#6E7069;margin-bottom:26px}
+#bkForm{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+#bkForm input,#bkForm select,#bkForm textarea{width:100%;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#101114;background:#fff;border:1px solid rgba(16,17,20,.16);border-radius:10px;padding:13px 15px;outline:none;transition:border-color .25s,box-shadow .25s;appearance:none}
+#bkForm input:focus,#bkForm select:focus,#bkForm textarea:focus{border-color:#101114;box-shadow:0 0 0 3px rgba(232,255,60,.4)}
+#bkForm .full{grid-column:1/-1}
+#bkForm textarea{min-height:90px;resize:vertical}
+#bkForm select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23101114' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+#bkForm .pill{width:100%;justify-content:center}
+#bkSuccess{display:none;text-align:center;padding:30px 0 10px}
+#bkSuccess .ok{width:70px;height:70px;margin:0 auto 20px;background:#E8FF3C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:#101114}
+#bkSuccess h4{font-size:19px;font-weight:600;margin-bottom:8px}
+#bkSuccess p{color:#6E7069;font-size:14px}
+#bkErr{display:none;grid-column:1/-1;color:#c0392b;font-size:13px}
+@media(max-width:560px){#bkForm{grid-template-columns:1fr}}
+@media(max-width:960px){.tiers,.psteps{grid-template-columns:1fr}.gwrap{flex-direction:column;text-align:center;padding:40px 28px}}
+</style>
+</head>
+<body>
+
+<!-- ═══ SCROLL TOPBAR ═══ -->
+<div id="topnav" data-label="Scroll Topbar">
+  <div class="bar">
+    <a href="#hero" class="tn-logo">M<span>.</span></a>
+    <div class="tn-links">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#membership">Membership</a>
+      <a href="#gallery">Work</a>
+      <a href="tel:5550137741" class="tn-phone">(555) 013-7741</a>
+    </div>
+    <button id="tnBurger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <a href="#" class="pill" data-book style="margin-left:8px">Reserve</a>
+  </div>
+</div>
+<div id="mobileMenu" data-label="Explore Menu" aria-hidden="true">
+  <div class="xgrid">
+    <a href="#statement" class="xp xp-photo xp-main">
+      <img src="photos/meridian-gallery-1.jpg" alt="Bugatti Chiron in the Meridian showroom">
+      <div class="xp-body">
+        <h3>What is Meridian?</h3>
+        <p>A private detailing atelier for people who notice — one car at a time, behind closed doors. More than a detail, it's a standard.</p>
+      </div>
+      <span class="xp-arr" aria-hidden="true">↗</span>
+    </a>
+    <a href="#gallery" class="xp xp-photo xp-cotw">
+      <img src="photos/meridian-gallery-2.jpg" alt="McLaren 720S under studio light">
+      <span class="xp-tag">Car of the week</span>
+      <div class="xp-body">
+        <h3>720S · Annual Care</h3>
+        <p>Fresh out of the studio.</p>
+      </div>
+      <span class="xp-arr" aria-hidden="true">↗</span>
+    </a>
+    <a href="#services" class="xp xp-photo xp-sv">
+      <img src="photos/meridian-peek-correction.jpg" alt="Machine polishing a dark blue hood">
+      <div class="xp-body"><h3>Services</h3></div>
+      <span class="xp-arr" aria-hidden="true">↗</span>
+    </a>
+    <a href="#packages" class="xp xp-photo xp-pk">
+      <img src="photos/meridian-peek-ceramic.jpg" alt="Ceramic coating beading on black paint">
+      <div class="xp-body"><h3>Packages</h3></div>
+      <span class="xp-arr" aria-hidden="true">↗</span>
+    </a>
+    <a href="#" class="xp xp-act" data-book><span class="xp-ico" aria-hidden="true">✦</span><b>Reserve a Consultation</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#membership" class="xp xp-act"><span class="xp-ico" aria-hidden="true">◈</span><b>Membership</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#contact" class="xp xp-act"><span class="xp-ico" aria-hidden="true">→</span><b>Client Login</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#" class="xp xp-mini xp-m1" aria-label="Instagram">Instagram</a>
+    <a href="#" class="xp xp-mini xp-m2" aria-label="Facebook">Facebook</a>
+    <a href="tel:5550137741" class="xp xp-mini xp-m3">(555) 013-7741</a>
+    <div class="xp xp-mini xp-m4">Tue–Sat · by appointment</div>
+  </div>
+</div>
+
+<!-- ═══ HERO — PANEL OS ═══ -->
+<section id="hero" data-label="Hero">
+  <video class="bg" autoplay muted loop playsinline poster="photos/meridian-hero.jpg" aria-label="Dark Porsche 911 on a rain-soaked street at night">
+    <source src="photos/meridian-hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="dim"></div>
+  <div class="os">
+    <div class="os-top">
+      <button class="panel tile" id="heroBurger" aria-label="Menu" aria-expanded="false"><span class="hb"><i></i><i></i><i></i></span></button>
+      <a href="#hero" class="panel tile-brand" aria-label="Meridian Auto Atelier home">
+        <b>M<span>.</span></b>
+        <em><small>Meridian</small><small>Auto Atelier</small></em>
+      </a>
+      <div class="gap"></div>
+      <div class="panel tile-lang" aria-label="Language">
+        <a href="#" class="on" aria-current="true">EN</a><i></i><a href="#" title="Spanish version — enabled per client">ES</a>
+      </div>
+    </div>
+    <div class="os-mid">
+      <div>
+        <span class="caps rv">Meridian Auto Atelier</span>
+        <h1 class="rv" style="transition-delay:.08s">Where obsession meets the paint.</h1>
+        <p class="rv" style="transition-delay:.16s">Ceramic protection, single-panel paint correction, and standing care for the vehicles you actually care about. One car at a time, behind closed doors.</p>
+      </div>
+    </div>
+    <div class="os-bot" style="gap:14px">
+      <a href="#" class="pill rv" data-book style="transition-delay:.24s">Reserve a Consultation
+        <span class="arr" aria-hidden="true">
+          <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+      </a>
+      <button class="xbtn rv" id="exploreBtn" data-state="explore" style="transition-delay:.3s" aria-expanded="false" aria-label="Explore menu">
+        <span class="x-track">
+          <span class="x-face x-explore">Explore <i>☰</i></span>
+          <span class="x-face x-close">Close <i>✕</i></span>
+        </span>
+      </button>
+      <a href="#contact" class="underlink login">Client Login</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATEMENT ═══ -->
+<section id="statement" data-label="Statement & Numbers">
+  <div class="wrap">
+    <span class="caps rv">The difference is in the hours</span>
+    <h2 class="rv">Swirl marks are what happen when <em>"good enough"</em> touches your paint. Nothing in this studio is good enough.</h2>
+    <div class="stats rv">
+      <div class="stat-cell">
+        <div class="num"><span data-count="14">0</span><span>yrs</span></div>
+        <p>Correcting and coating paint — from daily drivers to concours entries.</p>
+      </div>
+      <div class="stat-cell">
+        <div class="num"><span data-count="612">0</span><span>+</span></div>
+        <p>Vehicles delivered under our ceramic programs, each logged panel by panel.</p>
+      </div>
+      <div class="stat-cell">
+        <div class="num"><span data-count="1">0</span><span>/day</span></div>
+        <p>One vehicle per bay per day. Your car is never rushed to make room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" data-label="Services">
+  <div class="wrap">
+    <span class="caps rv">What we do</span>
+    <h2 class="rv">Four disciplines. Practiced daily.</h2>
+    <a href="#membership" class="srow rv">
+      <span class="snum">/ 01</span>
+      <h3>Ceramic Coating</h3>
+      <span class="sdesc">Multi-year certified ceramic systems, applied after full decontamination and machine polish — never over defects.</span>
+      <span class="speek"><img src="photos/meridian-peek-ceramic.jpg" loading="lazy" alt=""></span>
+      <span class="sarrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="#membership" class="srow rv">
+      <span class="snum">/ 02</span>
+      <h3>Paint Correction</h3>
+      <span class="sdesc">Measured, staged machine polishing that removes swirl, haze, and etching while preserving clear coat for the decades ahead.</span>
+      <span class="speek"><img src="photos/meridian-peek-correction.jpg" loading="lazy" alt=""></span>
+      <span class="sarrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="#membership" class="srow rv">
+      <span class="snum">/ 03</span>
+      <h3>Interior Atelier</h3>
+      <span class="sdesc">Leather conditioning, alcantara care, and deep textile extraction — the cabin brought back to delivery-day condition.</span>
+      <span class="speek"><img src="photos/meridian-peek-interior.jpg" loading="lazy" alt=""></span>
+      <span class="sarrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="#membership" class="srow rv">
+      <span class="snum">/ 04</span>
+      <h3>Collection Care</h3>
+      <span class="sdesc">A standing maintenance program for multi-car garages. We keep the fleet ready; you just drive.</span>
+      <span class="speek"><img src="photos/meridian-peek-collection.jpg" loading="lazy" alt=""></span>
+      <span class="sarrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ PACKAGES ═══ -->
+<section id="packages" data-label="Service Packages">
+  <div class="wrap">
+    <span class="caps rv">Three ways in</span>
+    <h2 class="rv">Every car leaves the same way. Perfect.</h2>
+    <div class="tiers">
+      <div class="tier rv">
+        <h3>The Essential</h3>
+        <div class="tsub">Maintenance detail</div>
+        <ul>
+          <li>Two-bucket hand wash &amp; dry</li>
+          <li>Wheel, arch &amp; glass detail</li>
+          <li>Interior reset — vacuum, wipe-down, glass</li>
+          <li>Spray sealant, 3 months of protection</li>
+        </ul>
+        <a href="#" class="pill dark" data-book>Request This Service</a>
+      </div>
+      <div class="tier pop rv" style="transition-delay:.08s">
+        <span class="badge">Most Reserved</span>
+        <h3>The Correction</h3>
+        <div class="tsub">Paint correction + ceramic</div>
+        <ul>
+          <li>Full decontamination &amp; clay treatment</li>
+          <li>Staged machine polish — swirl &amp; haze removal</li>
+          <li>Certified multi-year ceramic system</li>
+          <li>Panel-by-panel photo log, delivered to you</li>
+          <li>Aftercare kit &amp; wash guidance</li>
+        </ul>
+        <a href="#" class="pill" data-book>Request This Service</a>
+      </div>
+      <div class="tier rv" style="transition-delay:.16s">
+        <h3>The Atelier Day</h3>
+        <div class="tsub">Inside &amp; out, one bay, one day</div>
+        <ul>
+          <li>Everything in The Correction</li>
+          <li>Leather &amp; alcantara conditioning</li>
+          <li>Deep textile extraction</li>
+          <li>Engine bay detail</li>
+        </ul>
+        <a href="#" class="pill dark" data-book>Request This Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process" data-label="3-Step Process">
+  <div class="wrap">
+    <span class="caps rv">How it works</span>
+    <h2 class="rv">Three steps. No surprises.</h2>
+    <div class="psteps rv">
+      <div class="pstep">
+        <span class="ghost" aria-hidden="true">01</span>
+        <h3>Consultation</h3>
+        <p>Bring the car by, or send photos. We inspect the paint under proper light and tell you exactly what it needs — and what it doesn't.</p>
+      </div>
+      <div class="pstep">
+        <span class="ghost" aria-hidden="true">02</span>
+        <h3>The work</h3>
+        <p>Your car gets its own bay and its own day. Every stage is photographed and logged, so you see precisely what happened to your paint.</p>
+      </div>
+      <div class="pstep">
+        <span class="ghost" aria-hidden="true">03</span>
+        <h3>The walkaround</h3>
+        <p>We inspect the result together, panel by panel, before you pay. You leave with the photo log, the aftercare kit, and the guarantee in writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GUARANTEE ═══ -->
+<section id="guaranteeBlock" data-label="Guarantee">
+  <div class="wrap">
+    <div class="gwrap rv">
+      <div class="gseal" aria-hidden="true">✓</div>
+      <div>
+        <h2>If you can find a flaw, <em>we haven't finished.</em></h2>
+        <p>Every service ends with a joint walkaround under inspection lighting. Point at anything — a hologram, a missed seam, a smear on glass — and it gets corrected before payment. That's the whole guarantee, and it's in writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE BAND ═══ -->
+<section id="band" data-label="Testimonial Band">
+  <div class="bg" role="img" aria-label="Dark green Porsche 911 GT3 on a rain-soaked Paris street"></div>
+  <div class="dim"></div>
+  <div class="wrap inner">
+    <span class="stars rv" aria-label="Five stars">★★★★★</span>
+    <blockquote class="rv" style="transition-delay:.08s">"I've had this car detailed in three cities. Meridian is the first shop where I <b>couldn't find a single thing</b> to point at."</blockquote>
+    <cite class="rv" style="transition-delay:.16s">— GT owner, member since 2023</cite>
+  </div>
+</section>
+
+<!-- ═══ MEMBERSHIP ═══ -->
+<section id="membership" data-label="Membership">
+  <div class="wrap memgrid">
+    <div>
+      <span class="caps rv">Collection care</span>
+      <h2 class="rv">Your garage, permanently guest-ready.</h2>
+      <p class="rv">The hardest part of owning nice cars is keeping them nice. Membership puts your vehicles on a standing schedule — wash cadence, coating top-ups, interior care, and seasonal inspections handled without you booking a thing.</p>
+      <p class="rv"><span class="cap-note">Capped at 30 garages · 4 seats open</span></p>
+    </div>
+    <div class="memcard rv">
+      <span class="caps">Meridian Membership</span>
+      <div class="price" style="font-size:30px">By application<small> · terms on consultation</small></div>
+      <ul>
+        <li>Twice-monthly maintenance detail at your home or our studio</li>
+        <li>Annual ceramic inspection &amp; top-up included</li>
+        <li>Priority booking — 48-hour turnaround, guaranteed</li>
+        <li>Pre-event &amp; concours prep at member rates</li>
+      </ul>
+      <a href="tel:5550137741" class="pill">Request Membership
+        <span class="arr" aria-hidden="true">
+          <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" data-label="FAQs">
+  <div class="wrap">
+    <span class="caps rv">Asked before reserving</span>
+    <h2 class="rv">Quiet answers to fair questions.</h2>
+    <div class="qa rv">
+      <details open>
+        <summary>Why one car per bay per day?</summary>
+        <div class="a">Because rushing is how swirl marks happen. A booked day means your car is never moved aside for a walk-in, never polished against a clock, and never handed to whoever's free. One craftsman starts it and finishes it.</div>
+      </details>
+      <details>
+        <summary>Is ceramic coating actually worth it?</summary>
+        <div class="a">On corrected paint, yes — washing gets dramatically easier and UV, contaminants, and water spots stop bonding to the surface. On uncorrected paint, no — which is why we never apply ceramic over defects, even when asked.</div>
+      </details>
+      <details>
+        <summary>How far in advance should I book?</summary>
+        <div class="a">Maintenance details usually book within the week. Corrections and Atelier Days run two to three weeks out. Members skip the queue entirely — that's most of what the membership is.</div>
+      </details>
+      <details>
+        <summary>Do you work on daily drivers, or just exotics?</summary>
+        <div class="a">Both. The standard doesn't change with the badge — a well-kept daily gets the same light, the same process, and the same walkaround as a Chiron.</div>
+      </details>
+    </div>
+    <div class="rv" style="margin-top:44px">
+      <a href="https://g.page/" target="_blank" rel="noopener" class="gbtn">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A11 11 0 0 0 12 1 11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>
+        Read our reviews on Google ↗
+      </a>
+<a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener" class="gbtn" style="margin-left:10px">
+<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#FBBC05" d="M12 2l2.9 5.88 6.5.94-4.7 4.58 1.11 6.47L12 16.9l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.94L12 2z"/></svg>
+Leave us a Google review
+</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" data-label="Gallery">
+  <div class="wrap">
+    <div class="gal">
+      <figure class="rv">
+        <img src="photos/meridian-gallery-1.jpg" loading="lazy" alt="Bugatti Chiron in the private showroom after full correction">
+        <figcaption>Chiron · Correction + Ceramic</figcaption>
+      </figure>
+      <figure class="rv" style="transition-delay:.08s">
+        <img src="photos/meridian-gallery-2.jpg" loading="lazy" alt="McLaren 720S under single studio light">
+        <figcaption>720S · Annual Care</figcaption>
+      </figure>
+      <figure class="rv" style="transition-delay:.16s">
+        <img src="photos/meridian-gallery-3.jpg" loading="lazy" alt="LaFerrari in a collector's private gallery">
+        <figcaption>LaFerrari · Collection Care</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="contact" data-label="Footer & Contact">
+  <div class="wrap">
+    <div class="fmark rv">MERIDIAN<span>.</span></div>
+    <div class="fcols">
+      <div>
+        <span class="caps">The Atelier</span>
+        <p>A private detailing studio for people who notice. Every service is by appointment, every vehicle photographed and logged, every result guaranteed in writing.</p>
+      </div>
+      <div>
+        <span class="caps">Explore</span>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#gallery">Recent work</a></li>
+          <li><a href="#hero">Client login</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="caps">Visit</span>
+        <p>18 Commerce Row, Studio B<br>River City, FL 33500</p>
+        <p>Tue–Sat, by appointment</p>
+      </div>
+      <div>
+        <span class="caps">Begin</span>
+        <p>Phone: <a href="tel:5550137741" style="color:#E8FF3C">(555) 013-7741</a></p>
+        <p style="margin-top:20px"><a href="tel:5550137741" class="pill" style="padding:14px 22px;font-size:13.5px">Reserve a Consultation
+          <span class="arr" aria-hidden="true">
+            <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+        </a></p>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>© 2026 Meridian Auto Atelier. All rights reserved.</span>
+      <span class="legal">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="https://brechtland.com">Website by Brechtland</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ STICKY MOBILE CTA ═══ -->
+<div id="stickyBar" data-label="Sticky Mobile Bar">
+  <span class="sb-name">MERIDIAN<span>.</span></span>
+  <a href="tel:5550137741" class="sb-call">Call</a>
+  <a href="#" class="sb-book" data-book>Reserve</a>
+</div>
+
+<!-- ═══ BOOKING MODAL ═══ -->
+<div id="bkOverlay" role="dialog" aria-modal="true" aria-label="Reservation request" data-label="Booking Modal">
+  <div class="bk-card">
+    <button class="bk-close" id="bkClose" type="button" aria-label="Close">×</button>
+    <h3>Reserve a consultation</h3>
+    <p class="bk-sub">Tell us about the car. We'll reply within one business day with the earliest available bay.</p>
+    <form id="bkForm">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="tel" name="phone" placeholder="Phone number" required>
+      <input type="email" name="email" class="full" placeholder="Email address" required>
+      <select name="service" class="full" required>
+        <option value="" disabled selected hidden>What does the car need?</option>
+        <option>The Essential — maintenance detail</option>
+        <option>The Correction — paint correction + ceramic</option>
+        <option>The Atelier Day — inside &amp; out</option>
+        <option>Collection Care membership</option>
+        <option>Not sure — needs an assessment</option>
+      </select>
+      <textarea name="details" class="full" placeholder="Year, make & model — and anything we should know about the paint"></textarea>
+      <div id="bkErr">Something went wrong — please try again or call us directly.</div>
+      <button type="submit" class="pill full" id="bkSubmit">Send Reservation Request</button>
+    </form>
+    <div id="bkSuccess">
+      <div class="ok">✓</div>
+      <h4>Request received</h4>
+      <p>We'll be in touch within one business day to confirm your consultation. Thank you.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// reveal on scroll — staggered, with graceful fallback
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+setTimeout(() => {
+  if(!document.querySelector('.rv.in')) document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+}, 1500);
+
+// stat counters — mono, tabular, eased
+function runCounter(el){
+  const target = +el.dataset.count, dur = 1300, t0 = performance.now();
+  const step = now => {
+    const p = Math.min((now - t0) / dur, 1);
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if(p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ runCounter(e.target); cio.unobserve(e.target); } });
+}, {threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+// fallback: if observers never fire, set final values
+setTimeout(() => {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    if(el.textContent === '0' && el.dataset.count !== '0') el.textContent = el.dataset.count;
+  });
+}, 2500);
+
+// scroll topbar — appears after the hero
+const topnav = document.getElementById('topnav');
+addEventListener('scroll', () => {
+  topnav.classList.toggle('show', scrollY > innerHeight * .85);
+}, {passive:true});
+
+// explore menu — one overlay, three triggers (hero burger, Explore button, scroll-topnav burger)
+const tnBurger = document.getElementById('tnBurger');
+const mm = document.getElementById('mobileMenu');
+const heroBurger = document.getElementById('heroBurger');
+const exploreBtn = document.getElementById('exploreBtn');
+function setMenu(open){
+  mm.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  heroBurger.classList.toggle('open', open);
+  tnBurger.classList.toggle('open', open);
+  exploreBtn.dataset.state = open ? 'close' : 'explore';
+  heroBurger.setAttribute('aria-expanded', open);
+  exploreBtn.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+const menuOpen = () => mm.classList.contains('open');
+heroBurger.addEventListener('click', () => setMenu(!menuOpen()));
+exploreBtn.addEventListener('click', () => setMenu(!menuOpen()));
+tnBurger.addEventListener('click', () => setMenu(!menuOpen()));
+// seamless "page change": panels animate out, the jump happens behind the
+// opaque overlay, then the overlay fades to reveal the destination
+mm.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
+  if(a.hasAttribute('data-book')) return;           // booking modal flow closes the menu itself
+  const id = a.getAttribute('href') || '';
+  if(id.startsWith('#') && id.length > 1){
+    e.preventDefault();
+    mm.classList.add('leaving');
+    setTimeout(() => {
+      setMenu(false);
+      const el = document.querySelector(id);
+      if(el) el.scrollIntoView({behavior:'instant', block:'start'});
+      mm.classList.remove('leaving');
+    }, 330);
+  } else {
+    setMenu(false);
+  }
+}));
+document.querySelector('.login').addEventListener('click', () => setMenu(false));
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && menuOpen()) setMenu(false); });
+
+// booking modal + sticky bar
+const bkOv = document.getElementById('bkOverlay');
+const stickyBar = document.getElementById('stickyBar');
+function openBk(){
+  setMenu(false);
+  bkOv.classList.add('open'); document.body.style.overflow = 'hidden'; stickyBar.style.display = 'none';
+}
+function closeBk(){ bkOv.classList.remove('open'); document.body.style.overflow = ''; stickyBar.style.display = ''; }
+document.querySelectorAll('[data-book]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openBk(); }));
+document.getElementById('bkClose').addEventListener('click', closeBk);
+bkOv.addEventListener('click', e => { if(e.target === bkOv) closeBk(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && bkOv.classList.contains('open')) closeBk(); });
+
+const bkForm = document.getElementById('bkForm');
+bkForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = document.getElementById('bkSubmit');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  fetch('#demo', {
+    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify({
+      name: bkForm.name.value, phone: bkForm.phone.value, email: bkForm.email.value,
+      service: bkForm.service.value, details: bkForm.details.value,
+      _subject: 'Reservation request — Meridian Auto Atelier template'
+    })
+  }).then(r => {
+    if(!r.ok) throw new Error('send failed');
+    bkForm.style.display = 'none';
+    document.getElementById('bkSuccess').style.display = 'block';
+  }).catch(() => {
+    btn.disabled = false; btn.textContent = 'Send Reservation Request';
+    document.getElementById('bkErr').style.display = 'block';
+  });
+});
+
+// process steps: hover-reveal reserve CTA (bento pattern)
+document.querySelectorAll('.pstep').forEach(s => {
+  if(s.querySelector('.pcta')) return;
+  const a = document.createElement('a');
+  a.href = '#'; a.className = 'pcta';
+  a.innerHTML = 'Reserve a consultation <i>→</i>';
+  a.addEventListener('click', e => { e.preventDefault(); openBk(); });
+  s.appendChild(a);
+});
+</script>
+<!-- ═══════════════════════════════════════════════════════════════
+     PORTFOLIO DEMO MODE — injected by the portfolio build.
+     These are public showcase copies, not live sites: every form is
+     blocked and answered with a demo notice instead of being sent.
+     ═══════════════════════════════════════════════════════════════ -->
+<style>
+#bl-demo-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(4,6,10,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+#bl-demo-ov.show{display:flex}
+#bl-demo-box{background:#0C0E14;border:1px solid rgba(255,255,255,.14);border-top:3px solid #00E5FF;border-radius:10px;max-width:420px;width:100%;padding:32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6);position:relative}
+#bl-demo-box h3{font-size:21px;font-weight:800;color:#fff;margin:0 0 10px;letter-spacing:-.01em}
+#bl-demo-box p{font-size:14px;line-height:1.65;color:#A8B0BE;margin:0 0 22px;font-weight:400}
+#bl-demo-box .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#bl-demo-box a,#bl-demo-box button{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;padding:12px 22px;border-radius:7px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+#bl-demo-box .primary{background:#00E5FF;color:#04212A}
+#bl-demo-box .ghost{background:transparent;color:#C9D1DD;border:1px solid rgba(255,255,255,.22)}
+#bl-demo-box .tag{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#00E5FF;margin-bottom:12px;display:block;font-weight:700}
+#bl-back{position:fixed;left:16px;bottom:16px;z-index:2147482000;display:inline-flex;align-items:center;gap:7px;background:rgba(8,10,14,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);color:#E6EAF2;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:99px;text-decoration:none;transition:border-color .15s,color .15s}
+#bl-back:hover{border-color:#00E5FF;color:#00E5FF}
+@media (max-width:767px){#bl-back{display:none}}
+</style>
+<a id="bl-back" href="/">← All templates</a>
+<div id="bl-demo-ov" role="dialog" aria-modal="true" aria-label="Demo site notice">
+  <div id="bl-demo-box">
+    <span class="tag">Demo site</span>
+    <h3>Nothing was sent</h3>
+    <p>This is a live design demo, so the booking form is switched off. Like this look? We'll rebuild it around your business, your photos and your services.</p>
+    <div class="row">
+      <a class="primary" href="https://brechtland.com" target="_blank" rel="noopener">Get this site</a>
+      <button class="ghost" type="button" onclick="document.getElementById('bl-demo-ov').classList.remove('show')">Keep looking</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  // Capture phase + stopImmediatePropagation: this runs BEFORE the template's own
+  // submit handler and stops the event reaching it, so no template's JS can post
+  // to Formspree and no native submit ever fires.
+  document.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    ev.stopImmediatePropagation();
+    var ov = document.getElementById('bl-demo-ov');
+    if(ov) ov.classList.add('show');
+    return false;
+  }, true);
+  document.addEventListener('keydown', function(ev){
+    if(ev.key === 'Escape'){
+      var ov = document.getElementById('bl-demo-ov');
+      if(ov) ov.classList.remove('show');
+    }
+  });
+  var ov = document.getElementById('bl-demo-ov');
+  if(ov) ov.addEventListener('click', function(ev){ if(ev.target === ov) ov.classList.remove('show'); });
+})();
+</script>
+
+</body>
+</html>

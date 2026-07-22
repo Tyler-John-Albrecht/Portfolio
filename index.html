@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brechtland — Website Portfolio for Detailers</title>
+<meta name="description" content="Live website demos built for auto detailing, ceramic coating, tint and wrap shops. Click any one and use it like a real customer would.">
+<meta property="og:title" content="Brechtland — Website Portfolio for Detailers">
+<meta property="og:description" content="Live website demos built for detailing shops. Click any one and use it like a real customer would.">
+<meta property="og:image" content="signature/photos/sig-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070A0F'/%3E%3Cpath d='M32 22h20c11 0 18 6 18 15 0 6-3 11-9 13 8 2 12 8 12 15 0 10-8 17-20 17H32z' fill='%2300E5FF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#070A0F;--panel:#0D1118;--line:#1C2230;--line2:#2A3346;--text:#EEF2F8;--dim:#9AA4B4;--dim2:#5D6878;--cy:#00E5FF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--ink);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--cy);color:#04212A}
+::-webkit-scrollbar{width:9px}::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:99px}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:5px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 26px}
+.disp{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.025em;line-height:1.05}
+.mono{font-family:'IBM Plex Mono',monospace}
+.cy{color:var(--cy)}
+
+/* ── Nav ── */
+header{position:sticky;top:0;z-index:50;background:rgba(7,10,15,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em}
+.logo b{color:var(--cy);font-weight:700}
+.logo small{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.34em;color:var(--dim2);margin-top:3px;font-weight:400}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:13px 26px;border-radius:7px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-cy{background:var(--cy);color:#04212A;box-shadow:0 10px 30px rgba(0,229,255,.24)}
+.btn-cy:hover{box-shadow:0 16px 40px rgba(0,229,255,.36)}
+.btn-ghost{border:1px solid var(--line2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--cy);color:var(--cy)}
+header .btn{padding:10px 20px;font-size:13px}
+
+/* ── Hero ── */
+.hero{padding:96px 0 64px;position:relative}
+.hero::after{content:'';position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:420px;background:radial-gradient(ellipse,rgba(0,229,255,.10),transparent 68%);pointer-events:none;z-index:-1}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:18px}
+.hero h1{font-size:clamp(36px,6vw,68px);max-width:16ch}
+.hero p.lead{margin-top:22px;font-size:17px;color:var(--dim);font-weight:300;max-width:62ch}
+.hero .cta{margin-top:34px;display:flex;gap:13px;flex-wrap:wrap}
+.hero .note{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim2)}
+.hero .note b{color:var(--cy);font-weight:500}
+
+/* ── Grid ── */
+.sec{padding:26px 0 90px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px}
+/* No overflow:hidden on the card: as a grid item it forces the automatic minimum
+   size to 0, which collapses the row and clips the body. The thumb clips itself. */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s}
+.card:hover{border-color:var(--cy);transform:translateY(-4px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.thumb{height:212px;flex:0 0 212px;position:relative;overflow:hidden;border-radius:14px 14px 0 0;background:#000}
+.thumb img,.thumb video{width:100%;height:100%;object-fit:cover}
+.thumb video{position:absolute;inset:0;opacity:0;transition:opacity .45s}
+.thumb video.on{opacity:1}
+.thumb .play{position:absolute;right:12px;bottom:12px;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(7,10,15,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);padding:5px 10px;border-radius:99px;transition:opacity .3s}
+.card:hover .thumb .play{opacity:0}
+.cbody{padding:20px 22px 22px;display:flex;flex-direction:column;gap:11px;flex:1}
+.cbody h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;padding:3px 9px;border-radius:99px;border:1px solid var(--line2);color:var(--dim)}
+.tag.hi{color:var(--cy);border-color:rgba(0,229,255,.4);background:rgba(0,229,255,.07)}
+.cbody p{font-size:13.5px;color:var(--dim);font-weight:300;flex:1}
+.view{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;color:var(--cy);display:inline-flex;align-items:center;gap:7px}
+.card:hover .view span{transform:translateX(4px)}
+.view span{transition:transform .2s;display:inline-block}
+
+/* ── CTA ── */
+.cta-band{border-top:1px solid var(--line);background:var(--panel);padding:88px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:280px;background:radial-gradient(ellipse,rgba(0,229,255,.12),transparent 70%);pointer-events:none}
+.cta-band .inner{position:relative;z-index:2}
+.cta-band h2{font-size:clamp(28px,4.4vw,46px);max-width:20ch;margin:14px auto 16px}
+.cta-band p{color:var(--dim);font-weight:300;max-width:54ch;margin:0 auto 30px}
+.cta-band .row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:26px 0}
+footer .row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer span{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--dim2)}
+footer a{font-size:12.5px;color:var(--dim);transition:color .15s}
+footer a:hover{color:var(--cy)}
+@media (max-width:640px){
+  .hero{padding:64px 0 44px}
+  .sec{padding:14px 0 64px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <a href="#top" class="logo">BRECHT<b>LAND</b><small>WEBSITE PORTFOLIO</small></a>
+    <a href="https://brechtland.com" target="_blank" rel="noopener" class="btn btn-cy">Book a call</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="kick">Live demos · Detailing, ceramic, tint &amp; wrap</div>
+    <h1 class="disp">Your work is flawless. <span class="cy">Your website isn't.</span></h1>
+    <p class="lead">You spend twelve hours correcting paint nobody else would touch — then send that customer to a site that looks like it was built in 2013. Here's what we'd send them to instead. Every site below is real and clickable: open one and use it exactly like your customer would.</p>
+    <div class="cta">
+      <a href="#work" class="btn btn-cy">See the sites</a>
+      <a href="https://brechtland.com" target="_blank" rel="noopener" class="btn btn-ghost">Book a call</a>
+    </div>
+    <p class="note">Demo content only — <b>your site gets your photos, your services, your pricing.</b> Best viewed on desktop.</p>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="grid">
+
+      <a class="card" href="signature/">
+        <div class="thumb">
+          <img src="signature/photos/sig-hero.jpg" alt="Red and blue Lamborghini Urus facing each other in a neon studio">
+          <video muted loop playsinline preload="none" data-src="signature/photos/sig-hero.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Signature Detailing</h3>
+          <div class="tags"><span class="tag hi">Flagship</span><span class="tag">Video-rich</span><span class="tag">Red / Blue</span></div>
+          <p>The full arsenal: video hero, drag-to-compare before &amp; after, scrolling reviews, live map, and a sticky mobile call bar.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="velocity/">
+        <div class="thumb">
+          <img src="velocity/photos/velocity-hero.jpg" loading="lazy" alt="Blue Lamborghini Aventador under neon lights">
+          <video muted loop playsinline preload="none" data-src="velocity/photos/velocity-hero-desktop.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Velocity Wraps</h3>
+          <div class="tags"><span class="tag hi">Wraps / PPF</span><span class="tag">Gradient</span><span class="tag">High-energy</span></div>
+          <p>Loud, colorful and built for color-change work — collection galleries, a four-step process walkthrough and honest good-fit / bad-fit columns.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="apex/">
+        <div class="thumb">
+          <img src="apex/photos/apex-hero.jpg" loading="lazy" alt="Black Porsche 911 with tinted windows in a neon garage">
+          <video muted loop playsinline preload="none" data-src="apex/photos/apex-hero-video.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Apex Tint Studio</h3>
+          <div class="tags"><span class="tag hi">Window tint</span><span class="tag">Neon</span><span class="tag">Dark</span></div>
+          <p>Built for tint shops: an interactive shade picker so customers see 5% vs 35% before they book, plus a free-estimate flow.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="fast-exotic/">
+        <div class="thumb">
+          <img src="fast-exotic/new-hero.jpg" loading="lazy" alt="Orange Koenigsegg in a dark studio">
+          <video muted loop playsinline preload="none" data-src="fast-exotic/New-Hero-Orange-Video.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Fast Exotic Detailing</h3>
+          <div class="tags"><span class="tag hi">Exotic</span><span class="tag">Editorial</span><span class="tag">Orange heat</span></div>
+          <p>Dark editorial styling for high-end work — drag before &amp; after, package tiers, and a guarantee section that closes.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="lakeshore/">
+        <div class="thumb">
+          <img src="lakeshore/photos/lakeshore-hero.jpg" loading="lazy" alt="Porsche 911 GT3 in a blue-lit detailing studio">
+          <video muted loop playsinline preload="none" data-src="lakeshore/photos/lakeshore-hero-video.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Lakeshore Auto Pros</h3>
+          <div class="tags"><span class="tag hi">PPF / Tint</span><span class="tag">Technical</span><span class="tag">Multi-location</span></div>
+          <p>For multi-service, multi-location shops — zig-zag service rows, a work gallery and a two-location footer.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="meridian/">
+        <div class="thumb">
+          <img src="meridian/photos/meridian-hero.jpg" loading="lazy" alt="Dark green Porsche 911 on a rain-soaked Paris street">
+          <video muted loop playsinline preload="none" data-src="meridian/photos/meridian-hero-loop.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Meridian Detail Atelier</h3>
+          <div class="tags"><span class="tag hi">Luxury</span><span class="tag">Minimal</span><span class="tag">Editorial</span></div>
+          <p>Quiet-luxury positioning for concours and collector work — huge editorial type, restrained color, membership offer.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="evergreen/">
+        <div class="thumb">
+          <img src="evergreen/photos/evergreen-hero.jpg" loading="lazy" alt="Green BMW M3 on a sun-dappled forest road">
+          <video muted loop playsinline preload="none" data-src="evergreen/photos/evergreen-hero-video.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Evergreen Eco Detailing</h3>
+          <div class="tags"><span class="tag hi">Eco / Steam</span><span class="tag">Green</span><span class="tag">Waterless</span></div>
+          <p>For steam and waterless operations — leads with the environmental angle, drag before &amp; after, map and appointment split.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="stateline/">
+        <div class="thumb">
+          <img src="stateline/assets/og-image.jpg" loading="lazy" alt="Classic muscle car restoration">
+          <video muted loop playsinline preload="none" data-src="stateline/assets/gloss-loop.mp4" aria-hidden="true"></video>
+          <span class="play">▶ Hover to play</span>
+        </div>
+        <div class="cbody">
+          <h3>Stateline Restorations</h3>
+          <div class="tags"><span class="tag hi">Restoration</span><span class="tag">Scroll-cinematic</span><span class="tag">Heavy</span></div>
+          <p>A scroll-scrubbed film: a barn-find Charger rebuilds itself as the visitor scrolls. Our most cinematic build — give it a moment to load.</p>
+          <span class="view">View live demo <span>→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap inner">
+    <div class="kick">Ready when you are</div>
+    <h2 class="disp">Pick the one you liked. <span class="cy">We'll make it yours.</span></h2>
+    <p>Your photos, your services, your pricing, your city — rebuilt on whichever of these fits your shop. Unlimited revisions until you say publish.</p>
+    <div class="row">
+      <a href="https://brechtland.com" target="_blank" rel="noopener" class="btn btn-cy">Book a call</a>
+      <a href="mailto:tyler@brechtland.com" class="btn btn-ghost">tyler@brechtland.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span>© <span id="yr">2026</span> Brechtland LLC · Website design &amp; management</span>
+    <a href="https://brechtland.com" target="_blank" rel="noopener">brechtland.com ↗</a>
+  </div>
+</footer>
+
+<script>
+// Hover-to-play: the page ships poster stills so it loads fast for a prospect,
+// and only fetches a clip when they actually hover a card. Touch devices never
+// trigger it, so mobile stays on the (much lighter) stills.
+document.querySelectorAll('.card').forEach(card => {
+  const v = card.querySelector('video');
+  if(!v) return;
+  card.addEventListener('mouseenter', () => {
+    if(!v.src) v.src = v.dataset.src;
+    v.play().then(() => v.classList.add('on')).catch(() => {});
+  });
+  card.addEventListener('mouseleave', () => {
+    v.classList.remove('on');
+    setTimeout(() => { try{ v.pause(); }catch(e){} }, 450);
+  });
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Exotic Detailing | River City, FL Auto Detailing & Ceramic Coatings</title>
+  <meta name="description" content="Paint correction, ceramic coatings, and full interior restoration for exotics, luxury cars, and daily drivers. Done by hand in River City, FL — 100% satisfaction guaranteed.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fast Exotic Detailing | River City, FL">
+  <meta property="og:description" content="Your paint has 1,000 swirl marks. Marcus removes them — paint correction, ceramic coatings, interior restoration. By hand, every time.">
+  <meta property="og:image" content="new-hero.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23060608'/%3E%3Cpath d='M20 62l14-24h46l-8 10H38l-4 7h28l-7 10H30z' fill='%23FF7A1C'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "Fast Exotic Detailing",
+    "description": "Paint correction, ceramic coatings, and interior restoration for exotic, luxury, and daily-driven vehicles.",
+    "telephone": "+15550149260",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "418 Prestige Row",
+      "addressLocality": "River City",
+      "addressRegion": "FL",
+      "postalCode": "33500"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Fonts: Barlow Condensed (display) + Barlow (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            body: ['"Barlow"', 'sans-serif'],
+          },
+          colors: {
+            ink: '#060608',
+            carbon: '#0f0f12',
+            panel: '#161619',
+            rail: '#1e1e22',
+            gold: '#FF7A1C',
+            'gold-lt': '#FFA34D',
+            muted: '#666672',
+            'off-white': '#F2F0EC',
+          },
+          letterSpacing: {
+            'widest2': '0.2em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: "Barlow", sans-serif;
+      background-color: #060608;
+      color: #F2F0EC;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Noise grain overlay ──────────────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── Typography helpers ───────────────────────── */
+    .label {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    /* Section eyebrow labels use blue — creates pink/blue contrast across the page */
+    .label.text-gold { color: #FFA34D !important; }
+    .display {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Brand gradient text ──────────────────────────── */
+    .gold-text {
+      background: linear-gradient(-45deg, #FF7A1C, #FFA34D, #FF7A1C, #FFA34D);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Thin dividers ────────────────────────────────── */
+    .gold-rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #FF7A1C 50%, transparent 100%);
+    }
+    .gold-rule-left {
+      height: 1px;
+      background: linear-gradient(90deg, #FF7A1C, transparent);
+    }
+
+    /* ── Nav ──────────────────────────────────────── */
+    .nav-glass {
+      background: rgba(6,6,8,0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,122,28,0.07);
+      transition: padding 0.3s ease;
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    /* Nav wordmark — plain text so the app rebrands it per client automatically */
+    .logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;
+      font-size:30px;line-height:.9;letter-spacing:.02em;color:#fff;text-decoration:none;
+      display:inline-block}
+    .logo b{color:#FF7A1C;font-weight:900}
+    .logo small{display:block;font-family:'Barlow',sans-serif;font-weight:600;font-size:10px;
+      letter-spacing:.34em;color:#9aa0ab;margin-top:5px}
+    .hero-img {
+      background-image: url('new-hero.jpg');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    /* Hero video sits beneath the vignette + left-column gradients so the
+       headline keeps its contrast. The still above stays as the fallback: if the
+       video is blocked or still loading, the hero looks exactly as it did. */
+    .hero-vid {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      border: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Phones fall back to the still — no video over cell data. */
+    @media (max-width: 767px) {
+      .hero-vid { display: none; }
+    }
+    @media (max-width: 767px) {
+      .hero-img {
+        background-position: 80% 35%;
+      }
+    }
+    .hero-vignette {
+      background: linear-gradient(
+        to bottom,
+        rgba(6,6,8,0.15) 0%,
+        rgba(6,6,8,0.35) 30%,
+        rgba(6,6,8,0.88) 72%,
+        rgba(6,6,8,1) 100%
+      );
+    }
+
+    /* ── Stat strip ───────────────────────────────── */
+    .stat-strip {
+      background: #0f0f12;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* ── Before/After Drag Slider ─────────────────── */
+    .slider-wrap {
+      position: relative;
+      overflow: hidden;
+      cursor: col-resize;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-y;
+    }
+    .slider-base {
+      display: block;
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .slider-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .slider-overlay img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slider-handle {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: #FF7A1C;
+      transform: translateX(-50%);
+      pointer-events: none;
+      box-shadow: 0 0 12px rgba(255,122,28,0.4);
+    }
+    .slider-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 48px; height: 48px;
+      background: #FF7A1C;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.55);
+    }
+    .slider-label {
+      position: absolute;
+      top: 16px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      pointer-events: none;
+    }
+    .slider-label-before {
+      left: 16px;
+      background: rgba(0,0,0,0.7);
+      color: #ff7070;
+    }
+    .slider-label-after {
+      right: 16px;
+      background: rgba(255,122,28,0.18);
+      color: #FF7A1C;
+      border: 1px solid rgba(255,122,28,0.5);
+    }
+    .slider-hint {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    /* ── Watermark gradient cover — bottom-right corner ── */
+    .slider-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 120px;
+      height: 80px;
+      background: linear-gradient(
+        315deg,
+        rgba(6,6,8,1)   0%,
+        rgba(6,6,8,0.9) 30%,
+        rgba(6,6,8,0)   70%
+      );
+      pointer-events: none;
+      z-index: 8;
+    }
+
+    /* ── Package cards ────────────────────────────── */
+    .pkg {
+      background: linear-gradient(160deg, rgba(22,22,25,0.9) 0%, rgba(10,10,12,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.055);
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1),
+                  border-color 0.35s ease,
+                  box-shadow 0.45s ease;
+    }
+    .pkg:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255,122,28,0.3);
+      box-shadow: 0 32px 64px -16px rgba(0,0,0,0.7),
+                  0 0 32px rgba(255,122,28,0.05);
+    }
+    .pkg-hero {
+      background: linear-gradient(160deg, rgba(255,122,28,0.055) 0%, rgba(10,10,12,0.98) 100%);
+      border: 1px solid rgba(255,122,28,0.22);
+    }
+    .pkg-hero:hover {
+      transform: translateY(-13px);
+      border-color: rgba(255,122,28,0.55);
+      box-shadow: 0 40px 72px -16px rgba(0,0,0,0.8),
+                  0 0 50px rgba(255,122,28,0.1);
+    }
+    .pkg-featured-badge {
+      background: #FF7A1C;
+      color: #060608;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 6px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ── Check marks ──────────────────────────────── */
+    .check::before {
+      content: '✓';
+      color: #FF7A1C;
+      margin-right: 10px;
+      font-weight: 700;
+    }
+
+    /* ── Add-on cards ─────────────────────────────── */
+    .addon {
+      background: rgba(15,15,18,0.95);
+      border: 1px solid rgba(255,255,255,0.05);
+      overflow: hidden;
+      transition: border-color 0.35s ease, background 0.35s ease;
+    }
+    .addon:hover {
+      border-color: rgba(255,122,28,0.25);
+      background: rgba(18,15,10,0.97);
+    }
+    .addon img {
+      transition: transform 0.6s ease;
+    }
+    .addon:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ── Process steps ────────────────────────────── */
+    .step-num {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 900;
+      font-size: 6rem;
+      line-height: 1;
+      color: rgba(255,122,28,0.1);
+      position: absolute;
+      top: 0; left: -4px;
+      pointer-events: none;
+    }
+
+    /* ── Guarantee ────────────────────────────────── */
+    .guarantee-wrap {
+      background: linear-gradient(135deg, rgba(255,122,28,0.04) 0%, rgba(6,6,8,0) 60%);
+      border: 1px solid rgba(255,122,28,0.13);
+    }
+
+    /* ── Gallery ──────────────────────────────────── */
+    .gallery-item {
+      overflow: hidden;
+    }
+    .gallery-item img {
+      transition: transform 0.6s ease, filter 0.4s ease;
+      filter: brightness(0.88);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: brightness(1);
+    }
+
+    /* ── CTA section ──────────────────────────────── */
+    .cta-bg {
+      background-image: url('CTA-Background.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .cta-scrim {
+      background: linear-gradient(
+        100deg,
+        rgba(6,6,8,0.97) 0%,
+        rgba(6,6,8,0.88) 45%,
+        rgba(6,6,8,0.62) 100%
+      );
+    }
+
+    /* ── Buttons ──────────────────────────────────── */
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(-45deg, #FF7A1C, #FFA34D, #FF7A1C, #FFA34D);
+      background-size: 400% 400%;
+      color: #060608;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      transition: transform 0.25s ease, box-shadow 0.28s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255,122,28,0.6), 0 12px 36px rgba(255,122,28,0.35);
+    }
+    .btn-ghost {
+      display: inline-block;
+      border: 1px solid rgba(255,122,28,0.45);
+      color: #FF7A1C;
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      transition: border-color 0.28s ease, background 0.28s ease;
+    }
+    .btn-ghost:hover {
+      border-color: #FF7A1C;
+      background: rgba(255,122,28,0.07);
+    }
+
+    /* ── Scroll reveal ────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Scrollbar ────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #060608; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2e; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FF7A1C; }
+
+    /* ── Marquee (stats + reviews) ───────────────────── */
+    .marquee-track {
+      display: flex;
+      flex-wrap: nowrap;
+      will-change: transform;
+    }
+    .marquee-viewport {
+      overflow: hidden;
+      width: 100%;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    /* ── Stat pill ────────────────────────────────────── */
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 52px;
+      white-space: nowrap;
+    }
+    .stat-pill-divider {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,122,28,0.35);
+      flex-shrink: 0;
+    }
+
+    /* ── Logo color animation ─────────────────────────── */
+    .logo-animated {
+      mix-blend-mode: screen;       /* screen makes black pixels disappear into nav */
+      animation: logo-hue 4s ease-in-out infinite;
+    }
+    @keyframes logo-hue {
+      0%, 100% { filter: hue-rotate(0deg);   }  /* original blue */
+      50%      { filter: hue-rotate(130deg); }  /* pink/magenta */
+    }
+    #sticky-bar { display: flex; will-change: transform; }
+    @media (min-width: 768px) { #sticky-bar { display: none; } }
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      #sticky-bar {
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      }
+    }
+
+    /* ── Animated gradient keyframe ───────────────────── */
+    @keyframes brand-flow {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ── Hover glow effects ────────────────────────────── */
+    .btn-ghost:hover {
+      border-color: #FF7A1C;
+      background: rgba(255,122,28,0.07);
+      box-shadow: 0 0 22px rgba(255,122,28,0.3);
+    }
+    .pkg:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255,122,28,0.4);
+      box-shadow: 0 32px 64px -16px rgba(0,0,0,0.7), 0 0 45px rgba(255,122,28,0.2);
+    }
+    .pkg-hero:hover {
+      transform: translateY(-13px);
+      border-color: rgba(255,122,28,0.65);
+      box-shadow: 0 40px 72px -16px rgba(0,0,0,0.8), 0 0 70px rgba(255,122,28,0.35);
+    }
+    .addon:hover {
+      border-color: rgba(255,122,28,0.45);
+      background: rgba(18,15,10,0.97);
+      box-shadow: 0 0 28px rgba(255,122,28,0.15);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: brightness(1) drop-shadow(0 0 12px rgba(255,122,28,0.35));
+    }
+    .review-card {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .review-card:hover {
+      border-color: rgba(255,122,28,0.4);
+      box-shadow: 0 0 28px rgba(255,122,28,0.18);
+    }
+    /* Stat ticker number glow */
+    .stat-pill .display { text-shadow: 0 0 18px rgba(255,122,28,0.5); }
+    /* Social icon hover glow */
+    footer a svg { transition: filter 0.25s ease; }
+    footer a:hover svg { filter: drop-shadow(0 0 7px rgba(255,122,28,0.8)); }
+    /* Nav link hover glow */
+    nav a:not([class*="btn"]):hover { text-shadow: 0 0 14px rgba(255,122,28,0.45); }
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .gold-text, .btn-gold { animation: none !important; }
+    }
+
+    .review-card {
+      width: 300px;
+      flex-shrink: 0;
+      margin: 0 14px;
+      background: linear-gradient(160deg, rgba(22,22,25,0.9) 0%, rgba(10,10,12,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.055);
+      padding: 24px;
+    }
+    .review-stars {
+      color: #FF7A1C;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .review-text {
+      font-family: "Barlow", sans-serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      color: rgba(242,240,236,0.75);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .review-author {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #FF7A1C;
+    }
+    .review-source {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 2px;
+    }
+
+    /* Mobile hero gradient — more opaque base for text legibility */
+    @media (max-width: 768px) {
+      #home > div[style*="linear-gradient"] {
+        background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 55%, transparent 85%) !important;
+      }
+    }
+
+    /* ── Hero Rotating Stamp ─────────────────────────── */
+    @keyframes stampFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes stampRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes coinSpin {
+      0%   { transform: rotateY(0deg); }
+      12%  { transform: rotateY(360deg); }
+      24%  { transform: rotateY(720deg); }
+      100% { transform: rotateY(720deg); }
+    }
+    @keyframes drawRing {
+      from { stroke-dashoffset: 898.5; }
+      to   { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav class="fixed top-0 w-full z-50 nav-glass" id="nav">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between" id="nav-inner">
+
+    <a href="#home" class="logo">FAST<b>EXOTIC</b><small>DETAILING</small></a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#packages" class="font-body font-500 text-muted hover:text-white transition-colors tracking-wide">Packages</a>
+      <a href="#process"  class="font-body font-500 text-muted hover:text-white transition-colors tracking-wide">Process</a>
+      <a href="#guarantee" class="font-body font-500 text-muted hover:text-white transition-colors tracking-wide">Guarantee</a>
+      <button type="button" onclick="openBooking()" class="btn-gold text-sm px-6 py-2.5">Book Now</button>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button id="mob-btn" class="md:hidden text-white p-2 z-50 relative" aria-label="Menu">
+      <svg id="ic-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="ic-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Mobile menu ── -->
+<div id="mob-menu" class="fixed inset-0 bg-ink/96 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8
+     opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+  <a href="#packages" class="mob-link display text-5xl text-white">PACKAGES</a>
+  <a href="#process"  class="mob-link display text-5xl text-white">PROCESS</a>
+  <a href="#guarantee" class="mob-link display text-5xl text-white">GUARANTEE</a>
+  <button type="button" onclick="openBooking()" class="mob-link btn-gold mt-4 text-base px-14 py-4">Book Now</button>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section id="home" class="relative w-full min-h-screen flex flex-col overflow-hidden hero-img">
+  <video class="hero-vid" autoplay muted loop playsinline preload="auto" poster="new-hero.jpg" aria-hidden="true">
+    <source src="New-Hero-Orange-Video.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 hero-vignette"></div>
+  <div class="absolute inset-0 pointer-events-none"
+       style="background:linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.38) 50%, transparent 75%);
+              z-index:1;"></div>
+  <!-- Left-column gradient — darkens background behind text for legibility -->
+  <div class="absolute inset-0 pointer-events-none"
+       style="background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 45%, transparent 75%);
+              z-index:1;"></div>
+
+  <!-- Ambient glow — brand colors -->
+  <div class="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full
+       blur-[120px] pointer-events-none"
+       style="background:rgba(255,122,28,0.07);"></div>
+  <div class="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full
+       blur-[100px] pointer-events-none"
+       style="background:rgba(255,163,77,0.06);"></div>
+
+  <!-- ── Hero Rotating Stamp — desktop only, upper-right ─────────────── -->
+  <div id="heroStamp" class="hidden lg:block absolute"
+       style="right:10%; top:32%; transform:translateY(-50%); z-index:10;
+              width:310px; height:310px; opacity:0;
+              animation:stampFadeIn 0.5s ease 0.5s forwards;">
+
+    <!-- Layer 1: Circle draws itself on load -->
+    <svg style="position:absolute; top:0; left:0; width:310px; height:310px;"
+         viewBox="0 0 310 310" xmlns="http://www.w3.org/2000/svg">
+      <!-- Animated draw ring -->
+      <circle cx="155" cy="155" r="143"
+              fill="none"
+              stroke="rgba(255,122,28,0.55)"
+              stroke-width="1.5"
+              stroke-dasharray="898.5"
+              stroke-dashoffset="898.5"
+              style="animation:drawRing 2s cubic-bezier(0.4,0,0.2,1) 0.8s forwards;"/>
+      <!-- Static inner accent ring -->
+      <circle cx="155" cy="155" r="133"
+              fill="none"
+              stroke="rgba(255,122,28,0.12)"
+              stroke-width="1"/>
+    </svg>
+
+    <!-- Layer 2: Text ring — fades in after circle draws, then rotates forever -->
+    <div style="position:absolute; top:0; left:0; width:310px; height:310px;
+                opacity:0; animation:stampFadeIn 0.8s ease 2.9s forwards;">
+      <svg style="width:310px; height:310px;
+                  animation:stampRotate 26s linear 2.9s infinite;"
+           viewBox="0 0 310 310" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="textRingPath"
+                d="M155,155 m-138,0 a138,138 0 1,1 276,0 a138,138 0 1,1 -276,0"/>
+        </defs>
+        <text fill="#FF7A1C" font-size="12.5" letter-spacing="4"
+              font-family="'Barlow Condensed', sans-serif" font-weight="700">
+          <textPath href="#textRingPath" startOffset="0%">
+            FAST EXOTIC DETAILING &bull; PAINT CORRECTION &bull; CERAMIC COATINGS &bull; 5 STAR RATED &bull;
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- Layer 3: Static center logo — fades in with container -->
+    <div style="position:absolute; top:50%; left:50%;
+                transform:translate(-50%,-50%);
+                width:200px; height:200px;
+                display:flex; align-items:center; justify-content:center;
+                perspective:600px;
+                opacity:0; animation:stampFadeIn 0.8s ease 0.6s forwards;">
+      <img src="detailing-badge.png" alt="Detailing logo badge"
+           style="width:200px; height:auto; display:block;
+                  animation:coinSpin 6s ease-in-out 4s infinite;
+                  transform-origin:center center;">
+    </div>
+  </div>
+
+  <!-- Spacer — absorbs space above content, headline can never clip under nav -->
+  <div class="flex-1" style="min-height:6rem;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full pb-4 md:pb-6">
+    <!-- Eyebrow -->
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-px" style="background:#FF7A1C;"></div>
+      <span class="label text-gold">River City, FL &middot; Est. 2017</span>
+    </div>
+
+    <!-- Main headline -->
+    <h1 class="display text-white mb-8"
+        style="font-size: clamp(2.6rem, 7vw, 6.8rem);">
+      YOUR PAINT<br>
+      HAS 1,000<br>
+      <span class="gold-text">SWIRL MARKS.</span>
+    </h1>
+
+    <p class="font-body font-300 text-off-white/80 text-xl md:text-2xl max-w-xl mb-8 leading-loose">
+      Every car wash adds more. Marcus removes them — paint correction, ceramic coatings, and full interior restoration. River City, FL since 2017.
+    </p>
+
+    <!-- Social proof strip -->
+    <div class="flex items-center gap-3 mb-9"
+         style="flex-wrap:wrap;">
+      <div style="color:#F59E0B; font-size:1rem; letter-spacing:0.05em;">★★★★★</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700;
+                  font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase;
+                  color:rgba(255,255,255,0.75);">
+        5.0 &nbsp;&middot;&nbsp; 35+ Five-Star Reviews
+      </div>
+      <div style="font-family:'Barlow',sans-serif; font-weight:300;
+                  font-size:0.72rem; color:rgba(255,255,255,0.35); letter-spacing:0.06em;">
+        Google &amp; Facebook &middot; River City, FL
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+      <a href="#packages" class="btn-gold w-full sm:w-auto text-center">Get a Free Quote</a>
+      <a href="#proof"    class="btn-ghost w-full sm:w-auto text-center">See Before &amp; Afters</a>
+    </div>
+  </div>
+
+  <!-- STATS STRIP — inside hero, scrolls on page load -->
+  <div class="stat-strip w-full py-7" style="flex-shrink:0; position:relative; z-index:10;">
+  <div class="marquee-viewport">
+    <div class="marquee-track marquee-track--stats" id="marquee-stats">
+
+      <!-- SET 1 -->
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">5.0 ★</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Google Rating &middot; 13 Reviews</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">EST. 2017</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Serving River City Since</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">PAINT CORRECTION</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Swirls &amp; Scratches Removed</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">5/5</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Facebook &middot; 22 Reviews</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">EXOTIC &middot; LUXURY &middot; DAILY</div>
+        <div class="label text-muted" style="font-size:0.62rem;">We Detail It All</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+
+      <!-- SET 2 — exact duplicate for seamless loop -->
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">5.0 ★</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Google Rating &middot; 13 Reviews</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">EST. 2017</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Serving River City Since</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">PAINT CORRECTION</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Swirls &amp; Scratches Removed</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">5/5</div>
+        <div class="label text-muted" style="font-size:0.62rem;">Facebook &middot; 22 Reviews</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+      <div class="stat-pill">
+        <div class="display text-3xl text-gold">EXOTIC &middot; LUXURY &middot; DAILY</div>
+        <div class="label text-muted" style="font-size:0.62rem;">We Detail It All</div>
+        <div class="stat-pill-divider"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PROOF — BEFORE / AFTER
+══════════════════════════════════════ -->
+<section id="proof" class="w-full py-24 md:py-32 px-4 bg-ink scroll-mt-20">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-14 reveal">
+      <div class="label text-gold mb-3">Results Don't Lie</div>
+      <h2 class="display text-white" style="font-size: clamp(2.8rem, 7vw, 6rem);">
+        ONE VEHICLE.<br><span class="gold-text">COMPLETELY TRANSFORMED.</span>
+      </h2>
+      <p class="font-body font-300 text-muted mt-5 max-w-lg mx-auto text-lg leading-relaxed">
+        That left side? Years of swirl marks, scratches, and oxidation. The right side is what Marcus leaves behind — every single time.
+      </p>
+    </div>
+
+    <!-- Before / After interactive drag slider -->
+    <div class="max-w-4xl mx-auto reveal">
+      <div class="slider-wrap" id="ba-wrap">
+        <!-- BASE: after image (clean paint) — full width, sits behind everything -->
+        <img src="after.jpg" alt="Paint after correction — mirror finish"
+             class="slider-base" id="ba-before-img"
+             style="object-position: 55% top;">
+        <!-- OVERLAY: before image (swirls) — clipped to left, reveals swirled paint on left side -->
+        <div class="slider-overlay" id="ba-overlay">
+          <img src="before.jpg" alt="Paint before correction — swirl marks visible"
+               id="ba-after-img" style="object-position: 55% top;">
+        </div>
+        <!-- Handle line + circle -->
+        <div class="slider-handle" id="ba-handle">
+          <div class="slider-circle">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+              <path d="M5 1L1 7L5 13" stroke="#060608" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 1L17 7L13 13" stroke="#060608" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Labels -->
+        <div class="slider-label slider-label-before">BEFORE</div>
+        <div class="slider-label slider-label-after">AFTER</div>
+        <!-- Drag hint -->
+        <div class="slider-hint" id="ba-hint">← DRAG TO COMPARE →</div>
+      </div>
+      <p class="font-body text-xs text-muted text-center mt-3">
+        Real client vehicle · Stage 1 Paint Correction · River City, FL
+      </p>
+    </div>
+
+    <!-- Three proof pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px mt-14 reveal" style="background:rgba(255,255,255,0.04);">
+      <div class="bg-ink p-8 text-center">
+        <div class="label text-gold mb-3">Stage 1 Correction</div>
+        <div class="display text-white text-2xl mb-3">PAINT CORRECTION</div>
+        <p class="font-body font-300 text-muted text-sm leading-relaxed">
+          Machine polish removes swirl marks, scratches, and oxidation — restoring real depth and gloss to the paint.
+        </p>
+      </div>
+      <div class="bg-ink p-8 text-center" style="border-left:1px solid rgba(255,255,255,0.04); border-right:1px solid rgba(255,255,255,0.04);">
+        <div class="label text-gold mb-3">Interior</div>
+        <div class="display text-white text-2xl mb-3">FULL INTERIOR RESET</div>
+        <p class="font-body font-300 text-muted text-sm leading-relaxed">
+          Deep clean of every surface — vacuum, wipe-down, leather care, and odor elimination. Smells like new.
+        </p>
+      </div>
+      <div class="bg-ink p-8 text-center">
+        <div class="label text-gold mb-3">Ceramic Coating</div>
+        <div class="display text-white text-2xl mb-3">CERAMIC PROTECTION</div>
+        <p class="font-body font-300 text-muted text-sm leading-relaxed">
+          Certified ceramic application — bonds to the paint, repels water, UV, and road grime for years, not weeks.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PACKAGES
+══════════════════════════════════════ -->
+<section id="packages" class="w-full py-24 md:py-32 px-4 bg-carbon scroll-mt-20">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <div class="label text-gold mb-3">Choose Your Level</div>
+      <h2 class="display text-white" style="font-size: clamp(2.8rem, 7vw, 6rem);">
+        WHAT DOES YOUR<br><span class="gold-text">CAR NEED?</span>
+      </h2>
+      <p class="font-body font-300 text-muted mt-5 max-w-md mx-auto text-lg">
+        Every service is done by hand, with professional-grade products, on Marcus's schedule.
+        No rushing. No shortcuts. He takes pride in every vehicle he touches.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- ── Tier 1: The Commuter ── -->
+      <div class="pkg reveal flex flex-col">
+        <div class="overflow-hidden" style="height:220px;">
+          <img src="The%20Commuter.png" alt="The Commuter Package"
+               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+        </div>
+        <div class="p-8 flex flex-col flex-1">
+          <div class="label text-muted mb-2">Entry Level</div>
+          <h3 class="display text-white text-3xl mb-2">THE FULL DETAIL</h3>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-6">
+            Inside and out. Your vehicle gets a thorough hand wash, deep interior clean, and that showroom finish you forgot it could have.
+          </p>
+          <div class="gold-rule-left mb-6" style="width: 48px;"></div>
+          <ul class="space-y-3 mb-6 font-body text-sm text-off-white/80">
+            <li class="check">Full exterior hand wash &amp; dry</li>
+            <li class="check">Wheel, tire &amp; brake dust treatment</li>
+            <li class="check">Interior deep vacuum &amp; surface wipe-down</li>
+            <li class="check">Glass cleaning — interior &amp; exterior</li>
+            <li class="check">Tire dressing &amp; door jamb wipe</li>
+          </ul>
+          <div class="mt-auto">
+            <button type="button" onclick="openBooking('Full Detail')" class="btn-ghost block text-center w-full">GET MY QUOTE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Tier 2: The New Car Reset ── -->
+      <div class="pkg pkg-hero reveal flex flex-col" style="transition-delay:0.1s;">
+        <div class="pkg-featured-badge">Most Popular</div>
+        <div class="overflow-hidden" style="height:220px;">
+          <img src="Action%20Shot.png" alt="The New Car Reset"
+               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+        </div>
+        <div class="p-8 flex flex-col flex-1">
+          <div class="label text-gold mb-2">Most Popular</div>
+          <h3 class="display text-white text-3xl mb-2">STAGE 1 CORRECTION</h3>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-6">
+            Marcus's most-booked service. Machine polish removes swirl marks, scratches, and oxidation — your paint looks new again.
+          </p>
+          <div class="gold-rule-left mb-6" style="width: 48px;"></div>
+          <ul class="space-y-3 mb-6 font-body text-sm text-off-white/80">
+            <li class="check">Everything in the Full Detail</li>
+            <li class="check">Clay bar decontamination wash</li>
+            <li class="check">Single-stage machine polish — removes swirls &amp; scratches</li>
+            <li class="check">Interior deep clean + leather conditioning</li>
+            <li class="check">Paint sealant for added protection</li>
+            <li class="check">Looks better than the day you drove it off the lot</li>
+          </ul>
+          <div class="mt-auto">
+            <button type="button" onclick="openBooking('Stage 1 Paint Correction')" class="btn-gold block text-center w-full">BOOK STAGE 1</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Tier 3: The Asset Protector ── -->
+      <div class="pkg reveal flex flex-col" style="transition-delay:0.2s;">
+        <div class="overflow-hidden" style="height:220px;">
+          <img src="Asset%20Protector.png" alt="The Asset Protector"
+               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+        </div>
+        <div class="p-8 flex flex-col flex-1">
+          <div class="label text-muted mb-2">Maximum Protection</div>
+          <h3 class="display text-white text-3xl mb-2">CERAMIC COATING</h3>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-6">
+            Marcus is a certified ceramic coating specialist. One application protects your paint for years — repels water, UV, and road grime.
+          </p>
+          <div class="gold-rule-left mb-6" style="width: 48px;"></div>
+          <ul class="space-y-3 mb-6 font-body text-sm text-off-white/80">
+            <li class="check">Full decontamination wash &amp; clay bar</li>
+            <li class="check">Paint correction prep (defects removed before coating)</li>
+            <li class="check">Certified ceramic coating application</li>
+            <li class="check">Hydrophobic finish — water &amp; dirt bead right off</li>
+            <li class="check">UV protection — real years of coverage</li>
+            <li class="check">Quoted by vehicle — no surprises</li>
+          </ul>
+          <div class="mt-auto">
+            <button type="button" onclick="openBooking('Ceramic Coating')" class="btn-ghost block text-center w-full">GET MY QUOTE</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Value reassurance strip -->
+    <div class="mt-10 p-6 reveal" style="background:rgba(255,122,28,0.04); border:1px solid rgba(255,122,28,0.1);">
+      <div class="display text-center text-white text-xl md:text-2xl">
+        ALL SERVICES INCLUDE: DONE BY HAND &middot; 100% SATISFACTION GUARANTEED &middot; NO HIDDEN FEES
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ADD-ON SERVICES
+══════════════════════════════════════ -->
+<section class="w-full py-20 px-4 bg-ink" style="border-top:1px solid rgba(255,255,255,0.04);">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-12 reveal">
+      <div class="label text-gold mb-3">Enhance Your Package</div>
+      <h2 class="display text-white" style="font-size: clamp(2rem, 5vw, 4rem);">
+        ADD-ON SERVICES
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+
+      <!-- Engine Bay -->
+      <div class="addon flex flex-col">
+        <div style="height:180px; overflow:hidden;">
+          <img src="Engine%20Bay%20Detail.png" alt="Engine Bay Detail"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="display text-white text-lg mb-2">ENGINE BAY</div>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-4 flex-1">
+            Degreased, detailed, dressed. Factory-clean under the hood.
+          </p>
+          <button type="button" onclick="openBooking('Engine Bay Detail')" class="btn-ghost block text-center w-full mt-auto">GET A QUOTE</button>
+        </div>
+      </div>
+
+      <!-- Interior Extraction -->
+      <div class="addon flex flex-col">
+        <div style="height:180px; overflow:hidden;">
+          <img src="Interior%20Reset.png" alt="Interior Extraction"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="display text-white text-lg mb-2">INTERIOR EXTRACTION</div>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-4 flex-1">
+            Deep extraction on seats, carpet, and mats. Odors gone — not masked.
+          </p>
+          <button type="button" onclick="openBooking('Interior Extraction')" class="btn-ghost block text-center w-full mt-auto">GET A QUOTE</button>
+        </div>
+      </div>
+
+      <!-- Headlight Restoration -->
+      <div class="addon flex flex-col">
+        <div style="height:180px; overflow:hidden;">
+          <img src="headlight.png" alt="Headlight Restoration"
+               class="w-full h-full object-cover" style="object-position: center center;">
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="display text-white text-lg mb-2">HEADLIGHT RESTORE</div>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-4 flex-1">
+            Wet sand, compound, seal. Crystal-clear lenses — not the yellow haze you're driving with now.
+          </p>
+          <button type="button" onclick="openBooking('Headlight Restoration')" class="btn-ghost block text-center w-full mt-auto">GET A QUOTE</button>
+        </div>
+      </div>
+
+      <!-- Boat / Motorcycle -->
+      <div class="addon flex flex-col">
+        <div style="height:180px; overflow:hidden;">
+          <img src="ozone.png" alt="Boat and Motorcycle Detailing"
+               class="w-full h-full object-cover" style="object-position: center center;">
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="display text-white text-lg mb-2">EXOTIC &amp; SUPERCAR</div>
+          <p class="font-body font-300 text-muted text-sm leading-relaxed mb-4 flex-1">
+            Track cars, supercars, weekend exotics. Trailer-in service available — museum-grade results, photographed panel by panel.
+          </p>
+          <button type="button" onclick="openBooking('Exotic / Supercar Detail')" class="btn-ghost block text-center w-full mt-auto">GET A QUOTE</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PROCESS
+══════════════════════════════════════ -->
+<section id="process" class="w-full py-24 md:py-32 px-4 bg-carbon scroll-mt-20"
+         style="border-top:1px solid rgba(255,255,255,0.04);">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <div class="label text-gold mb-3">How It Works</div>
+      <h2 class="display text-white" style="font-size: clamp(2.8rem, 7vw, 6rem);">
+        THREE STEPS.<br><span class="gold-text">ZERO EFFORT ON YOUR PART.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+
+      <!-- Step 1 -->
+      <div class="relative reveal">
+        <div class="overflow-hidden mb-6" style="height:260px;">
+          <img src="Step1-Book.png" alt="Book online in 60 seconds"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="relative pl-4">
+          <div class="step-num">01</div>
+          <div class="relative z-10">
+            <div class="label text-gold mb-2">Step One</div>
+            <h3 class="display text-white text-2xl mb-3">CALL OR TEXT Marcus</h3>
+            <p class="font-body font-300 text-muted text-sm leading-relaxed">
+              Text (555) 014-9260 with what you need. Marcus responds fast and locks in your appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative reveal" style="transition-delay:0.1s;">
+        <div class="overflow-hidden mb-6" style="height:260px;">
+          <img src="Step2-Arrive.png" alt="We come to you"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="relative pl-4">
+          <div class="step-num">02</div>
+          <div class="relative z-10">
+            <div class="label text-gold mb-2">Step Two</div>
+            <h3 class="display text-white text-2xl mb-3">DROP OFF OR SCHEDULE</h3>
+            <p class="font-body font-300 text-muted text-sm leading-relaxed">
+              Bring your vehicle to 418 Prestige Row, River City, or text Marcus to arrange at your location.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative reveal" style="transition-delay:0.2s;">
+        <div class="overflow-hidden mb-6" style="height:260px;">
+          <img src="Action%20Shot.png" alt="We do the work"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="relative pl-4">
+          <div class="step-num">03</div>
+          <div class="relative z-10">
+            <div class="label text-gold mb-2">Step Three</div>
+            <h3 class="display text-white text-2xl mb-3">Marcus DOES THE WORK</h3>
+            <p class="font-body font-300 text-muted text-sm leading-relaxed">
+              Every inch done by hand. No rushing, no shortcuts. You pick it up looking better than you thought possible.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     GUARANTEE
+══════════════════════════════════════ -->
+<section id="guarantee" class="w-full py-24 md:py-32 px-4 bg-ink scroll-mt-20"
+         style="border-top:1px solid rgba(255,255,255,0.04);">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center reveal">
+
+      <!-- Copy -->
+      <div>
+        <div class="label text-muted mb-5">Marcus's standard</div>
+        <h2 class="display text-white mb-8" style="font-size: clamp(2.8rem, 6vw, 5rem);">
+          Marcus DOESN'T<br>CALL IT DONE<br><span class="gold-text">UNTIL YOU'RE HAPPY.</span>
+        </h2>
+        <p class="font-body font-300 text-muted leading-relaxed mb-5 text-lg">
+          Marcus built Fast Exotic Detailing on one thing: doing the job right every single time. His perfect Google rating and 22 Facebook reviews aren't marketing — they're what happens when someone genuinely cares about the craft.
+        </p>
+        <p class="font-body font-300 text-muted leading-relaxed mb-10">
+          If you're not completely satisfied, Marcus fixes it. No arguing, no fine print. He's been doing this since 2017 and his reputation is everything.
+        </p>
+        <!-- Guarantee badge -->
+        <div class="flex items-start gap-5 p-6"
+             style="background:rgba(255,122,28,0.06); border:1px solid rgba(255,122,28,0.15);">
+          <div class="display text-gold leading-none" style="font-size:2.5rem;">✓</div>
+          <div>
+            <div class="display text-white text-xl mb-1">100% SATISFACTION GUARANTEED</div>
+            <div class="font-body font-300 text-muted text-sm leading-relaxed">
+              Not happy with the result? Marcus fixes it on the spot. He's been building his reputation since 2017 and he takes that seriously.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div>
+        <img src="Guarantee-Image.png" alt="Precision detailing"
+             class="w-full object-cover" style="height:420px;">
+        <div class="gold-rule mt-0"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     GALLERY
+══════════════════════════════════════ -->
+<section class="w-full py-20 bg-carbon" style="border-top:1px solid rgba(255,255,255,0.04);">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <div class="text-center mb-12 reveal">
+      <div class="label text-gold mb-3">Portfolio</div>
+      <h2 class="display text-white" style="font-size: clamp(2rem, 5vw, 4rem);">
+        THE WORK SPEAKS
+      </h2>
+    </div>
+
+    <!-- Gallery grid — showcase hero full-width top -->
+    <div class="gallery-item reveal mb-2">
+      <img src="showcase.png" alt="BMW M5 paint correction result in studio"
+           class="w-full object-cover" style="height:420px; object-position: center 25%;">
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 reveal">
+      <div class="gallery-item col-span-2">
+        <img src="Asset%20Protector.png" alt="Lamborghini detail"
+             class="w-full object-cover" style="height:240px;">
+      </div>
+      <div class="gallery-item">
+        <img src="Interior%20Reset.png" alt="Interior restoration"
+             class="w-full object-cover" style="height:240px;">
+      </div>
+      <div class="gallery-item">
+        <img src="Engine%20Bay%20Detail.png" alt="Engine bay detail"
+             class="w-full object-cover" style="height:240px;">
+      </div>
+    </div>
+
+    <!-- Sub-gallery row -->
+    <div class="grid grid-cols-3 gap-2 mt-2 reveal">
+      <div class="gallery-item">
+        <img src="The%20Commuter.png" alt="Daily driver detail"
+             class="w-full object-cover" style="height:160px;">
+      </div>
+      <div class="gallery-item">
+        <img src="Action%20Shot.png" alt="Paint correction process"
+             class="w-full object-cover" style="height:160px;">
+      </div>
+      <div class="gallery-item">
+        <img src="Guarantee-Image.png" alt="Luxury interior detail"
+             class="w-full object-cover" style="height:160px; object-position: center center;">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     REVIEWS — MARQUEE
+══════════════════════════════════════ -->
+<section class="w-full py-20 bg-ink" style="border-top:1px solid rgba(255,255,255,0.04);">
+
+  <div class="text-center mb-12 reveal px-4">
+    <div class="label text-gold mb-3">What Clients Say</div>
+    <h2 class="display text-white" style="font-size: clamp(2rem, 5vw, 4rem);">
+      REAL PEOPLE.<br><span class="gold-text">REAL RESULTS.</span>
+    </h2>
+  </div>
+
+  <div class="marquee-viewport">
+    <div class="marquee-track marquee-track--reviews" id="marquee-reviews">
+
+      <!-- SET 1 — real Google reviews -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"We are very satisfied with the stage 1 package. Even with being a daily driver and the paint in rough shape, he still made it look brand new. I can tell he took his time and truly wants to do great work. Pricing was very reasonable. Don't hesitate with Fast Exotic, he's the man!"</div>
+        <div class="review-author">Zach R.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I drove my Traverse off the lot brand new, then it became a construction mud disaster. I honestly thought it was ruined. My car looks absolutely brand new again. It even has that new car smell. He is very very good and super kind too!! Thank you Marcus, you rock!!!"</div>
+        <div class="review-author">Brianna V.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I recently had my vehicle detailed by Marcus, and I couldn't be more impressed. He went above and beyond, making my car look brand new inside and out. The attention to detail was incredible — every nook and cranny was spotless. He truly cares about his craft and ensuring customer satisfaction."</div>
+        <div class="review-author">Connor P.</div>
+        <div class="review-source">Google Review &middot; Local Guide &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Marcus was awesome — very pleasant, respectful, and great with communication. He was already waiting for me at the agreed time and had my vehicle back right on schedule. My Highlander looks amazing inside and out, and his pricing is amazing for the quality of work."</div>
+        <div class="review-author">M. Navarro</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I had my mom's car detailed at Fast Exotic and Marcus did an amazing job! Her car was A MESS prior to having it detailed. It looks and smells better than it did when she drove it off the lot. Thanks again Marcus!"</div>
+        <div class="review-author">Blair M.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Very honest shop owner does amazing work for a great price. We had no idea the wife's Jeep had a ceramic coating until he let us know. We will definitely be back as a repeat customer!!"</div>
+        <div class="review-author">Kyle T.</div>
+        <div class="review-source">Google Review &middot; Local Guide &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Amazing! My car looks fantastic, even better than new. Every inch spotless. Highly recommend, will absolutely be a repeat customer!!"</div>
+        <div class="review-author">Michael D.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Cleanest my truck has ever been! Seriously though, great service and product!"</div>
+        <div class="review-author">Don W.</div>
+        <div class="review-source">Google Review &middot; Local Guide &middot; River City, FL</div>
+      </div>
+
+      <!-- SET 2 — exact duplicate for seamless JS loop -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"We are very satisfied with the stage 1 package. Even with being a daily driver and the paint in rough shape, he still made it look brand new. I can tell he took his time and truly wants to do great work. Pricing was very reasonable. Don't hesitate with Fast Exotic, he's the man!"</div>
+        <div class="review-author">Zach R.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I drove my Traverse off the lot brand new, then it became a construction mud disaster. I honestly thought it was ruined. My car looks absolutely brand new again. It even has that new car smell. He is very very good and super kind too!! Thank you Marcus, you rock!!!"</div>
+        <div class="review-author">Brianna V.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I recently had my vehicle detailed by Marcus, and I couldn't be more impressed. He went above and beyond, making my car look brand new inside and out. The attention to detail was incredible — every nook and cranny was spotless. He truly cares about his craft and ensuring customer satisfaction."</div>
+        <div class="review-author">Connor P.</div>
+        <div class="review-source">Google Review &middot; Local Guide &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Marcus was awesome — very pleasant, respectful, and great with communication. He was already waiting for me at the agreed time and had my vehicle back right on schedule. My Highlander looks amazing inside and out, and his pricing is amazing for the quality of work."</div>
+        <div class="review-author">M. Navarro</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"I had my mom's car detailed at Fast Exotic and Marcus did an amazing job! Her car was A MESS prior to having it detailed. It looks and smells better than it did when she drove it off the lot. Thanks again Marcus!"</div>
+        <div class="review-author">Blair M.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Very honest shop owner does amazing work for a great price. We had no idea the wife's Jeep had a ceramic coating until he let us know. We will definitely be back as a repeat customer!!"</div>
+        <div class="review-author">Kyle T.</div>
+        <div class="review-source">Google Review &middot; Local Guide &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Amazing! My car looks fantastic, even better than new. Every inch spotless. Highly recommend, will absolutely be a repeat customer!!"</div>
+        <div class="review-author">Michael D.</div>
+        <div class="review-source">Google Review &middot; River City, FL</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Cleanest my truck has ever been! Seriously though, great service and product!"</div>
+        <div class="review-author">Don W.</div>
+        <div class="review-source">Google Review &middot; Local Guide &middot; River City, FL</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Google badge + review CTA -->
+  <div class="text-center mt-10 reveal px-4">
+    <div class="inline-flex items-center gap-3 px-6 py-3 mb-5"
+         style="background:rgba(255,122,28,0.06); border:1px solid rgba(255,122,28,0.15);">
+      <span class="display text-gold text-2xl">5.0</span>
+      <span class="display text-white text-xl">★★★★★</span>
+      <span class="label text-muted" style="font-size:0.62rem;">on Google &middot; 13 Reviews</span>
+    </div>
+    <br>
+    <!--
+      REVIEW LINK — TO UPDATE:
+      1. Open Google Maps on desktop
+      2. Search "Fast Exotic Detailing River City MI"
+      3. Click Share → Copy Link
+      4. The URL contains the Place ID — replace the href below with:
+         https://search.google.com/local/writereview?placeid=PLACE_ID_HERE
+    -->
+    <a href="https://g.page/"
+       target="_blank" rel="noopener"
+       style="display:inline-flex; align-items:center; gap:10px;
+              border:1px solid rgba(255,122,28,0.35); color:#FF7A1C;
+              font-family:'Barlow Condensed',sans-serif; font-weight:700;
+              font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase;
+              padding:13px 28px; text-decoration:none;
+              transition:border-color 0.28s, background 0.28s;"
+       onmouseover="this.style.borderColor='#FF7A1C'; this.style.background='rgba(255,122,28,0.07)'"
+       onmouseout="this.style.borderColor='rgba(255,122,28,0.35)'; this.style.background='transparent'">
+      <!-- Google G icon -->
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      Leave Us a Review
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CTA
+══════════════════════════════════════ -->
+<section class="w-full py-36 md:py-48 relative overflow-hidden cta-bg">
+  <video class="absolute inset-0 w-full h-full object-cover" src="new-video.mp4"
+         autoplay muted loop playsinline preload="metadata" poster="new-hero.jpg" aria-hidden="true"></video>
+  <div class="absolute inset-0 cta-scrim"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-10 reveal">
+    <div class="label text-gold mb-5">Ready?</div>
+    <h2 class="display text-white mb-6"
+        style="font-size: clamp(3.5rem, 10vw, 8.5rem); max-width: 700px;">
+      BOOK YOUR<br><span class="gold-text">DETAIL.</span>
+    </h2>
+    <p class="font-body font-300 text-off-white/70 text-xl mb-10 max-w-lg leading-relaxed">
+      Text Marcus at (555) 014-9260 or fill out the form. He responds fast and the results speak for themselves.
+    </p>
+    <button type="button" onclick="openBooking()" class="btn-gold text-base px-14 py-5">Claim My Spot</button>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER / CONTACT
+══════════════════════════════════════ -->
+<footer id="contact" class="w-full bg-ink pt-20 pb-10 px-4"
+        style="border-top:1px solid rgba(255,255,255,0.04);">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+
+      <!-- Brand -->
+      <div>
+        <div class="mb-6">
+          <img src="detailing-badge.png" alt="Detailing logo badge"
+               style="height:80px; width:auto; display:block;">
+        </div>
+        <p class="font-body font-300 text-muted text-sm leading-relaxed max-w-xs">
+          River City, FL's detail shop for paint correction, ceramic coatings, and full interior restoration. Serving clients since 2017.
+        </p>
+        <!-- Social icons -->
+        <div class="flex gap-5 mt-6">
+          <a href="#" target="_blank" rel="noopener"
+             style="color:rgba(102,102,114,0.9); transition:color 0.25s;"
+             onmouseover="this.style.color='#FF7A1C'" onmouseout="this.style.color='rgba(102,102,114,0.9)'"
+             aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener"
+             style="color:rgba(102,102,114,0.9); transition:color 0.25s;"
+             onmouseover="this.style.color='#FF7A1C'" onmouseout="this.style.color='rgba(102,102,114,0.9)'"
+             aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div>
+        <div class="label text-gold mb-5">Navigate</div>
+        <ul class="space-y-3 font-body font-300 text-sm">
+          <li><a href="#packages"  class="text-muted hover:text-white transition-colors">Packages</a></li>
+          <li><a href="#process"   class="text-muted hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="#guarantee" class="text-muted hover:text-white transition-colors">Our Guarantee</a></li>
+          <li><a href="#proof"     class="text-muted hover:text-white transition-colors">See Results</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="label text-gold mb-5">Get in Touch</div>
+        <div class="space-y-3 font-body font-300 text-sm text-muted">
+          <div><a href="tel:+15550149260" class="hover:text-white transition-colors">📞 (555) 014-9260</a></div>
+          <div>📍 418 Prestige Row, River City, FL 33500</div>
+          <div>📞 Text to book: <a href="sms:+15550149260" class="hover:text-white transition-colors">(555) 014-9260</a></div>
+        </div>
+        <div class="mt-6">
+          <button type="button" onclick="openBooking()" class="btn-gold text-sm">Book My Detail</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="gold-rule mb-8"></div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-3
+         font-body font-300 text-xs text-muted">
+      <div>© 2025 Fast Exotic Detailing. All rights reserved.</div>
+      <div>Website design by <a href="https://brechtland.com/#contact" target="_blank" rel="noopener" class="text-gold" style="text-decoration:none;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">Brechtland</a></div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════ -->
+<script>
+  // ── Marquee — requestAnimationFrame engine ───────
+  // Speed is in px/second — frame-rate independent via deltaTime.
+  function initMarquee(trackId, pxPerSecond) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    let pos = 0;
+    let last = null;
+    let paused = false;
+    const vp = track.closest('.marquee-viewport');
+    if (vp) {
+      vp.addEventListener('mouseenter', () => { paused = true; });
+      vp.addEventListener('mouseleave', () => { paused = false; last = null; });
+    }
+    function step(ts) {
+      if (!paused) {
+        if (last !== null) {
+          const dt = Math.min(ts - last, 50); // cap at 50ms to avoid jump after tab switch
+          const halfW = track.scrollWidth / 2;
+          pos += (pxPerSecond * dt) / 1000;
+          if (pos >= halfW) pos -= halfW;
+          track.style.transform = 'translateX(-' + pos + 'px)';
+        }
+        last = ts;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Wait for fonts + Tailwind to settle, then start
+  window.addEventListener('load', function() {
+    initMarquee('marquee-stats',   38);  // 38px/s
+    initMarquee('marquee-reviews', 26);  // 26px/s
+
+    // ── Gradient animation — RAF engine ─────────────
+    // Uses deltaTime so speed is identical on 60hz and 120hz screens.
+    (function() {
+      var pos = 0;
+      var last = null;
+      var pctPerSec = 7; // 7% per second — full cycle ~14s
+      var els = document.querySelectorAll('.gold-text, .btn-gold');
+      function tick(ts) {
+        if (last !== null) {
+          var dt = Math.min(ts - last, 50);
+          pos = (pos + (pctPerSec * dt) / 1000) % 100;
+          for (var i = 0; i < els.length; i++) {
+            els[i].style.backgroundPosition = pos + '% ' + pos + '%';
+          }
+          // Animate SVG logo gradient in sync — removed (using img tag now)
+        }
+        last = ts;
+        requestAnimationFrame(tick);
+      }
+      if (els.length) requestAnimationFrame(tick);
+    })();
+
+    // ── Mobile sticky bar ───────────────────────────
+    // Must run after load — element is below the script block in the DOM
+    var bar  = document.getElementById('sticky-bar');
+    var hero = document.getElementById('home');
+    if (bar && hero) {
+      function checkSticky() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        bar.style.transform = scrollY >= hero.offsetHeight * 0.85
+          ? 'translateY(0)' : 'translateY(100%)';
+      }
+      window.addEventListener('scroll',     checkSticky, { passive: true });
+      document.addEventListener('touchmove', checkSticky, { passive: true });
+      document.addEventListener('touchend',  checkSticky, { passive: true });
+      checkSticky();
+    }
+  });
+
+  // ── Nav shrink + opaque on scroll ───────────────────
+  const nav = document.getElementById('nav');
+  const navInner = document.getElementById('nav-inner');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navInner.style.paddingTop    = '10px';
+      navInner.style.paddingBottom = '10px';
+      nav.style.background         = 'rgba(6,6,8,0.98)';
+    } else {
+      navInner.style.paddingTop    = '16px';
+      navInner.style.paddingBottom = '16px';
+      nav.style.background         = '';
+    }
+  }, { passive: true });
+
+  // ── Mobile menu ──────────────────────────────────
+  const mobBtn   = document.getElementById('mob-btn');
+  const mobMenu  = document.getElementById('mob-menu');
+  const icOpen   = document.getElementById('ic-open');
+  const icClose  = document.getElementById('ic-close');
+  let   menuOpen = false;
+
+  mobBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobMenu.style.opacity      = menuOpen ? '1' : '0';
+    mobMenu.style.pointerEvents = menuOpen ? 'all' : 'none';
+    icOpen.classList.toggle('hidden',  menuOpen);
+    icClose.classList.toggle('hidden', !menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.mob-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      mobMenu.style.opacity       = '0';
+      mobMenu.style.pointerEvents = 'none';
+      icOpen.classList.remove('hidden');
+      icClose.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ── Before/After Drag Slider ─────────────────────
+  (function() {
+    const wrap    = document.getElementById('ba-wrap');
+    const overlay = document.getElementById('ba-overlay');
+    const handle  = document.getElementById('ba-handle');
+    const hint    = document.getElementById('ba-hint');
+    const overlayImg = overlay ? overlay.querySelector('img') : null;
+    if (!wrap || !overlayImg) return;
+
+    let dragging = false;
+
+    function move(clientX) {
+      const rect = wrap.getBoundingClientRect();
+      let p = ((clientX - rect.left) / rect.width) * 100;
+      p = Math.max(0.5, Math.min(99.5, p));
+      // clip-path: the overlay (before) image is always full size.
+      // We clip away the RIGHT portion — so left side shows before, right shows after.
+      overlayImg.style.clipPath = 'inset(0 ' + (100 - p).toFixed(2) + '% 0 0)';
+      handle.style.left = p + '%';
+      if (hint) hint.style.opacity = '0';
+    }
+
+    // Set initial position
+    move(wrap.getBoundingClientRect().left + wrap.offsetWidth * 0.5);
+
+    // Mouse
+    wrap.addEventListener('mousedown', e => {
+      dragging = true;
+      move(e.clientX);
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => { if (dragging) move(e.clientX); });
+    window.addEventListener('mouseup',   ()  => { dragging = false; });
+
+    // Touch
+    wrap.addEventListener('touchstart', e => {
+      dragging = true;
+      move(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchmove', e => {
+      if (dragging) move(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+  })();
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => ro.observe(el));
+
+    // Logo is text-based — no canvas processing needed
+  function openBooking(service) {
+    var modal      = document.getElementById('booking-modal');
+    var formState  = document.getElementById('booking-form-state');
+    var successState = document.getElementById('booking-success');
+    var bar        = document.getElementById('sticky-bar');
+    formState.style.display    = 'block';
+    successState.style.display = 'none';
+    // Pre-select service if a package button was clicked
+    if (service) {
+      var sel = document.getElementById('b-service');
+      if (sel) sel.value = service;
+    }
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    if (bar) bar.style.transform = 'translateY(100%)'; // hide bar while modal is open
+  }
+
+  function closeBooking() {
+    document.getElementById('booking-modal').style.display = 'none';
+    document.body.style.overflow = '';
+    // Re-show sticky bar if hero is already scrolled past
+    var bar  = document.getElementById('sticky-bar');
+    var hero = document.getElementById('home');
+    if (bar && hero) {
+      bar.style.transform = hero.getBoundingClientRect().bottom <= 0
+        ? 'translateY(0)' : 'translateY(100%)';
+    }
+  }
+
+  function submitBooking(e) {
+    e.preventDefault();
+    // ── FORMSPREE — per-client: create a free form and swap the endpoint ──
+    var formData = {
+      name:    document.getElementById('b-name').value,
+      phone:   document.getElementById('b-phone').value,
+      email:   document.getElementById('b-email').value,
+      service: document.getElementById('b-service').value,
+      vehicle: document.getElementById('b-vehicle').value,
+      message: document.getElementById('b-message').value
+    };
+    fetch('#demo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formData)
+    }).catch(function(err) { console.log('Form error:', err); });
+    // ────────────────────────────────────────────────────────────────────
+
+    document.getElementById('booking-form-state').style.display  = 'none';
+    document.getElementById('booking-success').style.display      = 'block';
+  }
+
+  // Close on overlay click (outside the card)
+  document.getElementById('booking-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeBooking();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeBooking();
+  });
+</script>
+
+<!-- ══════════════════════════════════════
+     MOBILE STICKY BAR
+══════════════════════════════════════ -->
+<div id="sticky-bar"
+     style="position:fixed; bottom:0; left:0; right:0; z-index:8000;
+            background:rgba(6,6,8,0.97); border-top:1px solid rgba(255,122,28,0.2);
+            backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+            padding:12px 20px; align-items:center; justify-content:space-between; gap:12px;
+            transform:translateY(100%); transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);">
+
+  <div>
+    <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:0.95rem;
+                letter-spacing:0.06em; text-transform:uppercase; color:#F2F0EC; line-height:1.1;">
+      Fast Exotic Detailing
+    </div>
+    <div style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.72rem;
+                color:rgba(255,255,255,0.38); margin-top:2px;">
+      River City, FL &middot; Est. 2017
+    </div>
+  </div>
+
+  <button type="button" onclick="openBooking()"
+          style="flex-shrink:0; background:#FF7A1C; color:#060608;
+                 font-family:'Barlow Condensed',sans-serif; font-weight:800;
+                 font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase;
+                 padding:11px 24px; border:none; cursor:pointer;
+                 transition:background 0.25s, transform 0.2s; white-space:nowrap;"
+          onmouseover="this.style.background='#FFA34D'"
+          onmouseout="this.style.background='#FF7A1C'">
+    Get a Free Quote
+  </button>
+
+</div>
+
+
+<!-- ══════════════════════════════════════
+     BOOKING MODAL
+══════════════════════════════════════ -->
+<div id="booking-modal" aria-modal="true" role="dialog"
+     style="display:none; position:fixed; inset:0; z-index:9000;
+            background:rgba(6,6,8,0.93); backdrop-filter:blur(8px);
+            -webkit-backdrop-filter:blur(8px);
+            align-items:center; justify-content:center; padding:16px; overflow-y:auto;">
+
+  <div id="booking-card"
+       style="position:relative; width:100%; max-width:520px; margin:auto;
+              background:linear-gradient(160deg, rgba(22,22,25,0.99) 0%, rgba(10,10,12,1) 100%);
+              border:1px solid rgba(255,122,28,0.2); padding:40px 36px;">
+
+    <!-- Close button -->
+    <button onclick="closeBooking()" aria-label="Close"
+            style="position:absolute; top:16px; right:18px; background:none; border:none;
+                   color:rgba(255,255,255,0.3); cursor:pointer; font-size:1.3rem; line-height:1;
+                   padding:4px 8px; transition:color 0.2s;"
+            onmouseover="this.style.color='#FF7A1C'"
+            onmouseout="this.style.color='rgba(255,255,255,0.3)'">✕</button>
+
+    <!-- FORM STATE -->
+    <div id="booking-form-state">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.65rem;
+                  letter-spacing:0.2em; text-transform:uppercase; color:#FF7A1C; margin-bottom:8px;">
+        Fast Exotic Detailing &middot; River City, FL
+      </div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; text-transform:uppercase;
+                 line-height:0.95; font-size:clamp(1.9rem,5vw,2.7rem); color:#F2F0EC; margin-bottom:10px;">
+        GET A FREE QUOTE
+      </h2>
+      <p style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.875rem;
+                color:rgba(242,240,236,0.5); margin-bottom:28px; line-height:1.65;">
+        Fill this out and Marcus will reach out to confirm your booking within a few hours.
+      </p>
+
+      <form id="booking-form" onsubmit="submitBooking(event)">
+
+        <!-- Name + Phone -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+          <div>
+            <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                          letter-spacing:0.18em; text-transform:uppercase;
+                          color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Full Name *</label>
+            <input type="text" id="b-name" required placeholder="Jane Smith"
+                   style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                          color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                          padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                   onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+          </div>
+          <div>
+            <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                          letter-spacing:0.18em; text-transform:uppercase;
+                          color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Phone *</label>
+            <input type="tel" id="b-phone" required placeholder="(555) 555-0100"
+                   style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                          color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                          padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                   onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div style="margin-bottom:12px;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Email</label>
+          <input type="email" id="b-email" placeholder="jane@email.com"
+                 style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                        color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                        padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                 onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                 onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+
+        <!-- Service select -->
+        <div style="margin-bottom:12px; position:relative;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Service</label>
+          <select id="b-service"
+                  style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                         color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                         padding:10px 13px; outline:none; transition:border-color 0.2s;
+                         cursor:pointer; -webkit-appearance:none; appearance:none;"
+                  onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                  onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <option value="">Not sure — just need a quote</option>
+            <option value="Full Detail">Full Detail (Interior + Exterior)</option>
+            <option value="Stage 1 Paint Correction">Stage 1 Paint Correction</option>
+            <option value="Ceramic Coating">Ceramic Coating</option>
+            <option value="Exotic / Supercar Detail">Exotic / Supercar Detail</option>
+            <option value="Add-On Only">Add-On Service Only</option>
+          </select>
+          <div style="pointer-events:none; position:absolute; right:13px; bottom:11px;
+                      color:rgba(255,122,28,0.6); font-size:0.75rem;">▼</div>
+        </div>
+
+        <!-- Vehicle -->
+        <div style="margin-bottom:12px;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Vehicle (Year / Make / Model)</label>
+          <input type="text" id="b-vehicle" placeholder="e.g. 2019 Honda Civic"
+                 style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                        color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                        padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                 onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                 onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+
+        <!-- Message -->
+        <div style="margin-bottom:24px;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Anything Else?</label>
+          <textarea id="b-message" rows="3"
+                    placeholder="Best time to reach you, specific concerns, etc."
+                    style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                           color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                           padding:10px 13px; outline:none; resize:vertical; transition:border-color 0.2s;"
+                    onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                    onblur="this.style.borderColor='rgba(255,255,255,0.08)'"></textarea>
+        </div>
+
+        <button type="submit"
+                style="width:100%; text-align:center; display:block; background:#FF7A1C; color:#060608;
+                       font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.88rem;
+                       letter-spacing:0.12em; text-transform:uppercase; padding:16px 36px;
+                       border:none; cursor:pointer; transition:background 0.28s ease, transform 0.25s ease;"
+                onmouseover="this.style.background='#FFA34D'; this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.background='#FF7A1C'; this.style.transform='translateY(0)'">
+          Send My Request
+        </button>
+
+        <p style="font-family:'Barlow',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.22);
+                  text-align:center; margin-top:14px;">
+          Prefer to text? <a href="sms:+15550149260"
+            style="color:rgba(255,122,28,0.65); text-decoration:none;">(555) 014-9260</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="booking-success" style="display:none; text-align:center; padding:24px 0;">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:3.5rem;
+                  color:#FF7A1C; margin-bottom:16px;">✓</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; text-transform:uppercase;
+                 font-size:clamp(1.7rem,4vw,2.3rem); color:#F2F0EC; margin-bottom:14px;">
+        REQUEST SENT
+      </h2>
+      <p style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.9rem;
+                color:rgba(242,240,236,0.55); line-height:1.75; margin-bottom:28px;">
+        Marcus will reach out to confirm your appointment shortly.<br>
+        Look out for a call or text from
+        <strong style="color:#FF7A1C;">(555) 014-9260</strong>.
+      </p>
+      <button onclick="closeBooking()"
+              style="display:inline-block; background:#FF7A1C; color:#060608;
+                     font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.88rem;
+                     letter-spacing:0.12em; text-transform:uppercase; padding:14px 40px;
+                     border:none; cursor:pointer; transition:background 0.25s;"
+              onmouseover="this.style.background='#FFA34D'"
+              onmouseout="this.style.background='#FF7A1C'">Done</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PORTFOLIO DEMO MODE — injected by the portfolio build.
+     These are public showcase copies, not live sites: every form is
+     blocked and answered with a demo notice instead of being sent.
+     ═══════════════════════════════════════════════════════════════ -->
+<style>
+#bl-demo-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(4,6,10,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+#bl-demo-ov.show{display:flex}
+#bl-demo-box{background:#0C0E14;border:1px solid rgba(255,255,255,.14);border-top:3px solid #00E5FF;border-radius:10px;max-width:420px;width:100%;padding:32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6);position:relative}
+#bl-demo-box h3{font-size:21px;font-weight:800;color:#fff;margin:0 0 10px;letter-spacing:-.01em}
+#bl-demo-box p{font-size:14px;line-height:1.65;color:#A8B0BE;margin:0 0 22px;font-weight:400}
+#bl-demo-box .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#bl-demo-box a,#bl-demo-box button{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;padding:12px 22px;border-radius:7px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+#bl-demo-box .primary{background:#00E5FF;color:#04212A}
+#bl-demo-box .ghost{background:transparent;color:#C9D1DD;border:1px solid rgba(255,255,255,.22)}
+#bl-demo-box .tag{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#00E5FF;margin-bottom:12px;display:block;font-weight:700}
+#bl-back{position:fixed;left:16px;bottom:16px;z-index:2147482000;display:inline-flex;align-items:center;gap:7px;background:rgba(8,10,14,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);color:#E6EAF2;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:99px;text-decoration:none;transition:border-color .15s,color .15s}
+#bl-back:hover{border-color:#00E5FF;color:#00E5FF}
+@media (max-width:767px){#bl-back{display:none}}
+</style>
+<a id="bl-back" href="/">← All templates</a>
+<div id="bl-demo-ov" role="dialog" aria-modal="true" aria-label="Demo site notice">
+  <div id="bl-demo-box">
+    <span class="tag">Demo site</span>
+    <h3>Nothing was sent</h3>
+    <p>This is a live design demo, so the booking form is switched off. Like this look? We'll rebuild it around your business, your photos and your services.</p>
+    <div class="row">
+      <a class="primary" href="https://brechtland.com" target="_blank" rel="noopener">Get this site</a>
+      <button class="ghost" type="button" onclick="document.getElementById('bl-demo-ov').classList.remove('show')">Keep looking</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  // Capture phase + stopImmediatePropagation: this runs BEFORE the template's own
+  // submit handler and stops the event reaching it, so no template's JS can post
+  // to Formspree and no native submit ever fires.
+  document.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    ev.stopImmediatePropagation();
+    var ov = document.getElementById('bl-demo-ov');
+    if(ov) ov.classList.add('show');
+    return false;
+  }, true);
+  document.addEventListener('keydown', function(ev){
+    if(ev.key === 'Escape'){
+      var ov = document.getElementById('bl-demo-ov');
+      if(ov) ov.classList.remove('show');
+    }
+  });
+  var ov = document.getElementById('bl-demo-ov');
+  if(ov) ov.addEventListener('click', function(ev){ if(ev.target === ov) ov.classList.remove('show'); });
+})();
+</script>
+
+</body>
+</html>
