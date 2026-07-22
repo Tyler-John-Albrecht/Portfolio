@@ -972,41 +972,55 @@ document.querySelectorAll('.pstep').forEach(s => {
 </script>
 <!-- ═══════════════════════════════════════════════════════════════
      PORTFOLIO DEMO MODE — injected by the portfolio build.
-     These are public showcase copies, not live sites: every form is
-     blocked and answered with a demo notice instead of being sent.
+     Public showcase copies, not live sites: every form is blocked and
+     answered with a demo notice. Also adds a persistent toolbar so a
+     visitor can always get back to the portfolio without the browser
+     back button (the demo navs use anchor links, so "back" can take a
+     dozen presses to escape).
      ═══════════════════════════════════════════════════════════════ -->
 <style>
-#bl-demo-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(4,6,10,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+#bl-bar{position:fixed;left:14px;bottom:14px;z-index:2147482000;display:flex;gap:8px;align-items:center;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+#bl-bar a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 16px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:transform .15s,border-color .15s,box-shadow .15s;backdrop-filter:blur(12px)}
+#bl-bar a:hover{transform:translateY(-2px)}
+#bl-back{background:rgba(8,10,14,.9);border:1px solid rgba(255,255,255,.28);color:#EEF2F8}
+#bl-back:hover{border-color:#00E5FF;color:#00E5FF}
+#bl-book{background:#00E5FF;border:1px solid #00E5FF;color:#04212A;box-shadow:0 8px 24px rgba(0,229,255,.3)}
+#bl-book:hover{box-shadow:0 12px 32px rgba(0,229,255,.45)}
+/* Sit above any sticky mobile CTA bar the template itself renders. */
+@media (max-width:767px){
+  #bl-bar{left:10px;right:10px;bottom:84px;justify-content:center}
+  #bl-bar a{font-size:12.5px;padding:9px 14px}
+}
+#bl-demo-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(4,6,10,.84);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
 #bl-demo-ov.show{display:flex}
-#bl-demo-box{background:#0C0E14;border:1px solid rgba(255,255,255,.14);border-top:3px solid #00E5FF;border-radius:10px;max-width:420px;width:100%;padding:32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6);position:relative}
+#bl-demo-box{background:#0C0E14;border:1px solid rgba(255,255,255,.14);border-top:3px solid #00E5FF;border-radius:10px;max-width:430px;width:100%;padding:32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 #bl-demo-box h3{font-size:21px;font-weight:800;color:#fff;margin:0 0 10px;letter-spacing:-.01em}
-#bl-demo-box p{font-size:14px;line-height:1.65;color:#A8B0BE;margin:0 0 22px;font-weight:400}
+#bl-demo-box p{font-size:14px;line-height:1.65;color:#A8B0BE;margin:0 0 22px}
 #bl-demo-box .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 #bl-demo-box a,#bl-demo-box button{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;padding:12px 22px;border-radius:7px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
 #bl-demo-box .primary{background:#00E5FF;color:#04212A}
 #bl-demo-box .ghost{background:transparent;color:#C9D1DD;border:1px solid rgba(255,255,255,.22)}
 #bl-demo-box .tag{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#00E5FF;margin-bottom:12px;display:block;font-weight:700}
-#bl-back{position:fixed;left:16px;bottom:16px;z-index:2147482000;display:inline-flex;align-items:center;gap:7px;background:rgba(8,10,14,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);color:#E6EAF2;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:99px;text-decoration:none;transition:border-color .15s,color .15s}
-#bl-back:hover{border-color:#00E5FF;color:#00E5FF}
-@media (max-width:767px){#bl-back{display:none}}
 </style>
-<a id="bl-back" href="/">← All templates</a>
+<div id="bl-bar">
+  <a id="bl-back" href="/">← All templates</a>
+  <a id="bl-book" href="https://calendar.app.google/nvRoWGZRCp37TzjR7" target="_blank" rel="noopener">Get this site</a>
+</div>
 <div id="bl-demo-ov" role="dialog" aria-modal="true" aria-label="Demo site notice">
   <div id="bl-demo-box">
     <span class="tag">Demo site</span>
     <h3>Nothing was sent</h3>
     <p>This is a live design demo, so the booking form is switched off. Like this look? We'll rebuild it around your business, your photos and your services.</p>
     <div class="row">
-      <a class="primary" href="https://brechtland.com" target="_blank" rel="noopener">Get this site</a>
+      <a class="primary" href="https://calendar.app.google/nvRoWGZRCp37TzjR7" target="_blank" rel="noopener">Book a call</a>
       <button class="ghost" type="button" onclick="document.getElementById('bl-demo-ov').classList.remove('show')">Keep looking</button>
     </div>
   </div>
 </div>
 <script>
 (function(){
-  // Capture phase + stopImmediatePropagation: this runs BEFORE the template's own
-  // submit handler and stops the event reaching it, so no template's JS can post
-  // to Formspree and no native submit ever fires.
+  // Capture phase + stopImmediatePropagation: runs BEFORE the template's own submit
+  // handler and stops the event reaching it, so nothing is ever posted anywhere.
   document.addEventListener('submit', function(ev){
     ev.preventDefault();
     ev.stopImmediatePropagation();

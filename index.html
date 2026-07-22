@@ -92,6 +92,24 @@ footer a:hover{color:var(--cy)}
   .sec{padding:14px 0 64px}
   .grid{grid-template-columns:1fr}
 }
+
+/* ── Booking modal (Google Calendar appointment schedule) ── */
+#bk{position:fixed;inset:0;z-index:200;background:rgba(4,6,10,.86);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:22px}
+#bk.open{display:flex}
+#bkBox{background:var(--panel);border:1px solid var(--line2);border-radius:14px;width:100%;max-width:940px;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 40px 100px rgba(0,0,0,.65);overflow:hidden}
+#bkHead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px 26px 18px;border-bottom:1px solid var(--line)}
+#bkHead h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.01em}
+#bkHead p{font-size:13.5px;color:var(--dim);font-weight:300;margin-top:5px}
+#bkClose{flex-shrink:0;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--line2);color:var(--dim);font-size:16px;line-height:1;cursor:pointer;transition:color .15s,border-color .15s}
+#bkClose:hover{color:#fff;border-color:var(--cy)}
+#bkFrame{flex:1;min-height:560px;background:#fff;border:0;width:100%}
+#bkFoot{padding:12px 26px;border-top:1px solid var(--line);text-align:center;font-size:12.5px;color:var(--dim2)}
+#bkFoot a{color:var(--cy);font-weight:600}
+@media (max-width:640px){
+  #bk{padding:0}
+  #bkBox{max-width:100%;max-height:100vh;height:100vh;border-radius:0;border:0}
+  #bkFrame{min-height:420px}
+}
 </style>
 </head>
 <body>
@@ -99,7 +117,7 @@ footer a:hover{color:var(--cy)}
 <header>
   <div class="wrap row">
     <a href="#top" class="logo">BRECHT<b>LAND</b><small>WEBSITE PORTFOLIO</small></a>
-    <a href="https://brechtland.com" target="_blank" rel="noopener" class="btn btn-cy">Book a call</a>
+    <a href="#book" data-book class="btn btn-cy">Book a call</a>
   </div>
 </header>
 
@@ -110,7 +128,7 @@ footer a:hover{color:var(--cy)}
     <p class="lead">You spend twelve hours correcting paint nobody else would touch — then send that customer to a site that looks like it was built in 2013. Here's what we'd send them to instead. Every site below is real and clickable: open one and use it exactly like your customer would.</p>
     <div class="cta">
       <a href="#work" class="btn btn-cy">See the sites</a>
-      <a href="https://brechtland.com" target="_blank" rel="noopener" class="btn btn-ghost">Book a call</a>
+      <a href="#book" data-book class="btn btn-ghost">Book a call</a>
     </div>
     <p class="note">Demo content only — <b>your site gets your photos, your services, your pricing.</b> Best viewed on desktop.</p>
   </div>
@@ -242,7 +260,7 @@ footer a:hover{color:var(--cy)}
     <h2 class="disp">Pick the one you liked. <span class="cy">We'll make it yours.</span></h2>
     <p>Your photos, your services, your pricing, your city — rebuilt on whichever of these fits your shop. Unlimited revisions until you say publish.</p>
     <div class="row">
-      <a href="https://brechtland.com" target="_blank" rel="noopener" class="btn btn-cy">Book a call</a>
+      <a href="#book" data-book class="btn btn-cy">Book a call</a>
       <a href="mailto:tyler@brechtland.com" class="btn btn-ghost">tyler@brechtland.com</a>
     </div>
   </div>
@@ -255,7 +273,39 @@ footer a:hover{color:var(--cy)}
   </div>
 </footer>
 
+<!-- ═══ BOOKING MODAL ═══ -->
+<div id="bk" role="dialog" aria-modal="true" aria-label="Book your free consultation">
+  <div id="bkBox">
+    <div id="bkHead">
+      <div>
+        <h3>Book your free consultation</h3>
+        <p>Pick a time that works — it lands straight on our calendar. Plan for up to an hour.</p>
+      </div>
+      <button id="bkClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <iframe id="bkFrame" title="Booking calendar" loading="lazy"></iframe>
+    <div id="bkFoot">Trouble loading? <a href="https://calendar.app.google/nvRoWGZRCp37TzjR7" target="_blank" rel="noopener">Open the booking page in a new tab ↗</a></div>
+  </div>
+</div>
+
 <script>
+// ── Booking modal ──
+// The calendar iframe src is set on first open, not on page load: embedding
+// Google Calendar up front would cost every visitor a third-party load before
+// they've even looked at the work.
+const BK_SRC = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ADtDFmqNRc5APhnF2voUE2VZn0LjaI6xKdBIgLTCP_g81AJGGsp-RUyALNBwrE_lyFisacm4n?gv=true';
+const bk = document.getElementById('bk'), bkFrame = document.getElementById('bkFrame');
+function openBooking(){
+  if(!bkFrame.src) bkFrame.src = BK_SRC;
+  bk.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBooking(){ bk.classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('[data-book]').forEach(el => el.addEventListener('click', ev => { ev.preventDefault(); openBooking(); }));
+document.getElementById('bkClose').addEventListener('click', closeBooking);
+bk.addEventListener('click', ev => { if(ev.target === bk) closeBooking(); });
+addEventListener('keydown', ev => { if(ev.key === 'Escape') closeBooking(); });
+
 // Hover-to-play: the page ships poster stills so it loads fast for a prospect,
 // and only fetches a clip when they actually hover a card. Touch devices never
 // trigger it, so mobile stays on the (much lighter) stills.
