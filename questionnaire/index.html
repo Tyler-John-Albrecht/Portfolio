@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brechtland — New Website Questionnaire</title>
+<meta name="description" content="A few quick details and we'll build your site around them. Takes about 4 minutes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070A0F'/%3E%3Cpath d='M32 22h20c11 0 18 6 18 15 0 6-3 11-9 13 8 2 12 8 12 15 0 10-8 17-20 17H32z' fill='%2300E5FF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#070A0F;--panel:#0D1118;--panel2:#11161F;--line:#1C2230;--line2:#2A3346;--text:#EEF2F8;--dim:#9AA4B4;--dim2:#5D6878;--cy:#00E5FF;--red:#ff6b6b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--ink);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.disp{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+.cy{color:var(--cy)}
+
+/* Header */
+header{border-bottom:1px solid var(--line);background:rgba(7,10,15,.9);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+header .row{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px}
+.logo b{color:var(--cy)}
+.logo small{display:block;font-size:8.5px;letter-spacing:.32em;color:var(--dim2);margin-top:2px;font-weight:400}
+.stepper{font-size:12px;color:var(--dim2);font-family:'Space Grotesk',sans-serif}
+
+/* Hero */
+.top{padding:44px 0 8px}
+.kick{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim2);margin-bottom:14px}
+.top h1{font-size:clamp(26px,5vw,40px);max-width:15ch}
+.top p{margin-top:14px;color:var(--dim);font-weight:300;max-width:56ch}
+
+/* Form */
+form{padding:34px 0 90px}
+.sec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 24px 26px;margin-bottom:18px}
+.sec-h{display:flex;align-items:center;gap:11px;margin-bottom:6px}
+.sec-n{width:26px;height:26px;flex:0 0 26px;border-radius:7px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.32);color:var(--cy);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.sec-h h2{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700}
+.sec-sub{font-size:12.5px;color:var(--dim2);margin:0 0 18px 37px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.fld{margin-bottom:14px}
+.fld.last{margin-bottom:0}
+label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px}
+label .req{color:var(--cy)}
+label .opt{color:var(--dim2);font-weight:400}
+.hint{font-size:11.5px;color:var(--dim2);margin-top:5px;line-height:1.5}
+.hint a{color:var(--cy)}
+input,select,textarea{width:100%;background:var(--panel2);border:1px solid var(--line2);border-radius:9px;padding:12px 13px;font-family:inherit;font-size:14px;color:var(--text);outline:none;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{border-color:var(--cy);box-shadow:0 0 0 3px rgba(0,229,255,.12)}
+input::placeholder,textarea::placeholder{color:var(--dim2)}
+textarea{min-height:96px;resize:vertical;line-height:1.5}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%239AA4B4' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px}
+
+/* Submit */
+.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;padding:15px 32px;border-radius:9px;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .15s}
+.btn-cy{background:var(--cy);color:#04212A;box-shadow:0 10px 30px rgba(0,229,255,.22)}
+.btn-cy:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,229,255,.34)}
+.btn-cy:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.actions .note{font-size:12px;color:var(--dim2)}
+.err-msg{display:none;color:var(--red);font-size:13px;margin-top:14px;font-weight:500}
+
+/* Success */
+#done{display:none;padding:70px 0 90px;text-align:center}
+#done .check{width:74px;height:74px;margin:0 auto 24px;border-radius:50%;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.4);display:flex;align-items:center;justify-content:center;font-size:36px}
+#done h2{font-size:clamp(26px,4.5vw,36px);margin-bottom:14px}
+#done p{color:var(--dim);font-weight:300;max-width:48ch;margin:0 auto}
+footer{border-top:1px solid var(--line);padding:22px 0;text-align:center}
+footer span{font-size:11.5px;color:var(--dim2)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <div class="logo">BRECHT<b>LAND</b><small>WEBSITE INTAKE</small></div>
+    <div class="stepper" id="stepper">~4 minutes</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- FORM -->
+  <div id="formZone">
+    <div class="top">
+      <div class="kick">New website questionnaire</div>
+      <h1 class="disp">Let's build it <span class="cy">around your shop.</span></h1>
+      <p>Fill this out once and we'll load every detail straight into your site — your name, your services, your reviews. Takes about 4 minutes. A <span class="cy">★</span> means we need it; everything else is optional but helps.</p>
+    </div>
+
+    <form id="qform" novalidate>
+
+      <!-- 1 · Business -->
+      <div class="sec">
+        <div class="sec-h"><div class="sec-n">1</div><h2>Your business</h2></div>
+        <div class="sec-sub">The basics we'll put front and center.</div>
+        <div class="grid2">
+          <div class="fld">
+            <label for="business_name">Business name <span class="req">★</span></label>
+            <input id="business_name" name="business_name" required placeholder="Apex Auto Detailing">
+          </div>
+          <div class="fld">
+            <label for="business_short">Short name <span class="opt">(optional)</span></label>
+            <input id="business_short" name="business_short" placeholder="Apex">
+            <div class="hint">A one-word version we use in short copy (e.g. "Apex" instead of the full name).</div>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="fld last">
+            <label for="owner_name">Your first name <span class="req">★</span></label>
+            <input id="owner_name" name="owner_name" required placeholder="Marcus">
+          </div>
+          <div class="fld last">
+            <label for="niche">What do you do? <span class="req">★</span></label>
+            <select id="niche" name="niche" required>
+              <option value="" disabled selected>Choose your main service…</option>
+              <option>Auto Detailing</option>
+              <option>Window Tint</option>
+              <option>Vehicle Wraps</option>
+              <option>Ceramic Coating</option>
+              <option>Paint Protection (PPF)</option>
+              <option>Restoration</option>
+              <option>Auto Interior</option>
+              <option>Aviation / Aircraft Detailing</option>
+              <option>Multiple of the above</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 · Contact & location -->
+      <div class="sec">
+        <div class="sec-h"><div class="sec-n">2</div><h2>Contact &amp; location</h2></div>
+        <div class="sec-sub">How customers reach you and where you're based.</div>
+        <div class="grid2">
+          <div class="fld">
+            <label for="phone_display">Business phone <span class="req">★</span></label>
+            <input id="phone_display" name="phone_display" required inputmode="tel" placeholder="(555) 123-4567">
+            <div class="hint">Exactly how you want it shown. We'll make it tap-to-call automatically.</div>
+          </div>
+          <div class="fld">
+            <label for="email">Business email <span class="req">★</span></label>
+            <input id="email" name="email" type="email" required placeholder="marcus@apexdetailing.com">
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="fld">
+            <label for="address">Street address <span class="opt">(optional)</span></label>
+            <input id="address" name="address" placeholder="123 Main St, Suite B">
+          </div>
+          <div class="fld">
+            <label for="city">City <span class="req">★</span></label>
+            <input id="city" name="city" required placeholder="Tampa, FL">
+          </div>
+        </div>
+        <div class="fld last">
+          <label for="hours">Business hours <span class="opt">(optional)</span></label>
+          <input id="hours" name="hours" placeholder="Mon–Sat 8am–6pm · Sun closed">
+        </div>
+      </div>
+
+      <!-- 3 · Google reviews -->
+      <div class="sec">
+        <div class="sec-h"><div class="sec-n">3</div><h2>Your Google reviews</h2></div>
+        <div class="sec-sub">Your reviews are your best salesperson — we'll feature them.</div>
+        <div class="fld">
+          <label for="review_url">Link to read your reviews <span class="opt">(optional)</span></label>
+          <input id="review_url" name="review_url" placeholder="https://g.page/r/… or your Google Maps listing link">
+          <div class="hint">On Google Maps, open your business → Share → copy the link. Don't have it handy? Skip it — we'll find it.</div>
+        </div>
+        <div class="fld last">
+          <label for="review_write_url">Link for customers to leave a review <span class="opt">(optional)</span></label>
+          <input id="review_write_url" name="review_write_url" placeholder="https://g.page/r/…/review">
+          <div class="hint">Your "leave us a review" link, if you have it. Optional.</div>
+        </div>
+      </div>
+
+      <!-- 4 · Services & extras -->
+      <div class="sec">
+        <div class="sec-h"><div class="sec-n">4</div><h2>Your services &amp; extras</h2></div>
+        <div class="sec-sub">Helps us write your copy. Not sure? Give us the gist.</div>
+        <div class="fld">
+          <label for="services">Services you offer <span class="opt">(optional)</span></label>
+          <textarea id="services" name="services" placeholder="e.g. Full details, ceramic coating, paint correction, interior deep-clean, headlight restoration…"></textarea>
+        </div>
+        <div class="grid2">
+          <div class="fld">
+            <label for="facebook">Facebook page <span class="opt">(optional)</span></label>
+            <input id="facebook" name="facebook" placeholder="facebook.com/yourshop">
+          </div>
+          <div class="fld">
+            <label for="instagram">Instagram <span class="opt">(optional)</span></label>
+            <input id="instagram" name="instagram" placeholder="@yourshop">
+          </div>
+        </div>
+        <div class="fld last">
+          <label for="notes">Anything else we should know? <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="notes" placeholder="What makes you different, colors you love, sites you admire, must-haves…"></textarea>
+        </div>
+      </div>
+
+      <!-- Formspree meta -->
+      <input type="hidden" name="_subject" id="_subject" value="New Website Questionnaire">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="actions">
+        <button type="submit" class="btn btn-cy" id="submitBtn">Submit my details →</button>
+        <span class="note">We'll take it from here and start your build.</span>
+      </div>
+      <div class="err-msg" id="errMsg">Something went wrong sending that. Please try again, or email us at tyler@brechtland.com.</div>
+    </form>
+  </div>
+
+  <!-- SUCCESS -->
+  <div id="done">
+    <div class="check">✓</div>
+    <h2 class="disp">Got it — thank you!</h2>
+    <p>Your details are in. We'll start building your site around them and reach out shortly. Talk soon.</p>
+  </div>
+
+</main>
+
+<footer><span>© <span id="yr"></span> Brechtland LLC · Website design &amp; management</span></footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// Formspree endpoint. This defaults to the shared Brechtland form so it works
+// out of the box. For CLEAN one-click imports, create a DEDICATED Formspree form
+// for questionnaires and paste its ID here (Formspree → New Form → copy the
+// "https://formspree.io/f/XXXX" id). A dedicated form means the CSV you export
+// contains ONLY questionnaire rows — nothing else to sort through.
+const FORMSPREE = 'https://formspree.io/f/xreyyvlr';  // dedicated "Website Questionnaires" form
+// ─────────────────────────────────────────────────────────────────────────────
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const form = document.getElementById('qform');
+const btn  = document.getElementById('submitBtn');
+const err  = document.getElementById('errMsg');
+
+// Personalize the email subject with the business name so submissions are easy to spot.
+form.addEventListener('input', () => {
+  const b = document.getElementById('business_name').value.trim();
+  document.getElementById('_subject').value = b ? ('New Website Questionnaire — ' + b) : 'New Website Questionnaire';
+});
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  err.style.display = 'none';
+
+  // Native validation for required fields
+  if(!form.checkValidity()){ form.reportValidity(); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try{
+    const res = await fetch(FORMSPREE, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if(res.ok){
+      document.getElementById('formZone').style.display = 'none';
+      document.getElementById('done').style.display = 'block';
+      document.getElementById('stepper').textContent = 'Done';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      throw new Error('Formspree responded ' + res.status);
+    }
+  }catch(ex){
+    err.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Submit my details →';
+  }
+});
+</script>
+</body>
+</html>
