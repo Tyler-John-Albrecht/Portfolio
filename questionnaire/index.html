@@ -227,12 +227,10 @@ footer span{font-size:11.5px;color:var(--dim2)}
 
 <script>
 // ─────────────────────────────────────────────────────────────────────────────
-// Formspree endpoint. This defaults to the shared Brechtland form so it works
-// out of the box. For CLEAN one-click imports, create a DEDICATED Formspree form
-// for questionnaires and paste its ID here (Formspree → New Form → copy the
-// "https://formspree.io/f/XXXX" id). A dedicated form means the CSV you export
-// contains ONLY questionnaire rows — nothing else to sort through.
-const FORMSPREE = 'https://formspree.io/f/xreyyvlr';  // dedicated "Website Questionnaires" form
+// Submissions post to a Google Apps Script web app, which writes each one to a
+// Google Sheet (+ emails Tyler) and serves them back to Brechtland Studio for
+// live-sync. Free, self-hosted, no third-party form service.
+const SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbxbPZz-XXW-z63GjGAdhABmX1IZhzaLYBL5XQgL4cQuoaOZ-f2dKeKaLkyNh23xmA/exec';
 // ─────────────────────────────────────────────────────────────────────────────
 
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -257,20 +255,19 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.textContent = 'Sending…';
 
+  // Apps Script web apps don't return CORS headers, so we post no-cors: the write
+  // still happens, we just can't read the (opaque) response — so we optimistically
+  // show the thank-you. A true network failure is the only thing that throws.
   try{
-    const res = await fetch(FORMSPREE, {
+    await fetch(SUBMIT_URL, {
       method: 'POST',
       body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      mode: 'no-cors'
     });
-    if(res.ok){
-      document.getElementById('formZone').style.display = 'none';
-      document.getElementById('done').style.display = 'block';
-      document.getElementById('stepper').textContent = 'Done';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      throw new Error('Formspree responded ' + res.status);
-    }
+    document.getElementById('formZone').style.display = 'none';
+    document.getElementById('done').style.display = 'block';
+    document.getElementById('stepper').textContent = 'Done';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }catch(ex){
     err.style.display = 'block';
     btn.disabled = false;
