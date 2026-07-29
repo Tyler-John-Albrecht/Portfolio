@@ -728,7 +728,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:90px 0 0}
       <h2 class="rv">Frequently asked <span class="grad">questions</span></h2>
     </div>
     <div class="qa">
-      <details class="rv" open>
+      <details class="rv">
         <summary>How much does a full color-change wrap cost?</summary>
         <div class="a">It depends on vehicle size, finish, and complexity — exotic finishes like color-flip or chrome run higher than standard gloss. What we promise: you get an exact number for YOUR car, in writing, before we book anything. No ranges, no surprises on pickup.</div>
       </details>
@@ -1073,6 +1073,17 @@ document.querySelectorAll('.step').forEach(s => {
   document.getElementById('lbClose').addEventListener('click', closeLb);
   ov.addEventListener('click', e => { if(e.target === ov) closeLb(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && ov.classList.contains('open')) closeLb(); });
+})();
+</script>
+<script>
+/* FAQ accordion — one panel open at a time (works on all browsers). */
+(function(){
+  document.querySelectorAll('.qa details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      d.closest('.qa').querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
 })();
 </script>
 <!-- ═══════════════════════════════════════════════════════════════

@@ -707,7 +707,7 @@ Leave us a Google review
       <h2 class="display rv" style="transition-delay:.07s">Tint questions, <span class="grn">straight answers</span></h2>
     </div>
     <div class="qa">
-      <details class="rv" open>
+      <details class="rv">
         <summary>Is dark tint legal in Florida?</summary>
         <div class="a">Front side windows must allow 28%+ of light through; rear sides and back glass can go to 15%. We know the rules cold and will keep your car street-legal — or walk you through the medical exemption process if you qualify.</div>
       </details>
@@ -958,6 +958,17 @@ document.querySelectorAll('.pstep').forEach(s => {
   a.addEventListener('click', e => { e.preventDefault(); openBk(); });
   s.appendChild(a);
 });
+</script>
+<script>
+/* FAQ accordion — one panel open at a time (works on all browsers). */
+(function(){
+  document.querySelectorAll('.qa details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      d.closest('.qa').querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
+})();
 </script>
 <!-- ═══════════════════════════════════════════════════════════════
      PORTFOLIO DEMO MODE — injected by the portfolio build.

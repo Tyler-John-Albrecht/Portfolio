@@ -716,7 +716,7 @@ a.xp-mini:hover{color:#E8FF3C}
     <span class="caps rv">Asked before reserving</span>
     <h2 class="rv">Quiet answers to fair questions.</h2>
     <div class="qa rv">
-      <details open>
+      <details>
         <summary>Why one car per bay per day?</summary>
         <div class="a">Because rushing is how swirl marks happen. A booked day means your car is never moved aside for a walk-in, never polished against a clock, and never handed to whoever's free. One craftsman starts it and finishes it.</div>
       </details>
@@ -969,6 +969,17 @@ document.querySelectorAll('.pstep').forEach(s => {
   a.addEventListener('click', e => { e.preventDefault(); openBk(); });
   s.appendChild(a);
 });
+</script>
+<script>
+/* FAQ accordion — one panel open at a time (works on all browsers). */
+(function(){
+  document.querySelectorAll('.qa details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      d.closest('.qa').querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
+})();
 </script>
 <!-- ═══════════════════════════════════════════════════════════════
      PORTFOLIO DEMO MODE — injected by the portfolio build.

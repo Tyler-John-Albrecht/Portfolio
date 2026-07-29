@@ -695,7 +695,7 @@ footer{background:#1A1D1B;color:#fff;padding:84px 0 0}
       <h2 class="display rv">What people ask before booking</h2>
     </div>
     <div class="qa">
-      <details class="rv" open>
+      <details class="rv">
         <summary>What makes a real detail different from a $30 car wash?</summary>
         <div class="a">Everything. A car wash rinses the surface. A detail is decontamination, paint correction, interior extraction, and protection — done by hand, under lighting that shows every flaw. A wash lasts a week. A detail you feel for months.</div>
       </details>
@@ -1018,6 +1018,17 @@ document.querySelectorAll('.pstep').forEach(s => {
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
+})();
+</script>
+<script>
+/* FAQ accordion — one panel open at a time (works on all browsers). */
+(function(){
+  document.querySelectorAll('.qa details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      d.closest('.qa').querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
 })();
 </script>
 <!-- ═══════════════════════════════════════════════════════════════

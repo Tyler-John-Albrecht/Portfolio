@@ -676,7 +676,7 @@ footer{background:#0E1830;padding:90px 0 0}
       <h2 class="display rv">Fair questions, <b>straight answers</b></h2>
     </div>
     <div class="qa">
-      <details class="rv" open>
+      <details class="rv">
         <summary>Ceramic coating vs. PPF — which do I actually need?</summary>
         <div class="a">Different jobs. Ceramic makes the car easier to keep clean and blocks UV; PPF physically absorbs rock chips and scratches. High-impact panels (front bumper, hood) want PPF; the rest of the car wants ceramic. Most of our packages combine both for exactly that reason.</div>
       </details>
@@ -981,6 +981,17 @@ document.querySelectorAll('.pstep').forEach(s => {
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
+})();
+</script>
+<script>
+/* FAQ accordion — one panel open at a time (works on all browsers). */
+(function(){
+  document.querySelectorAll('.qa details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      d.closest('.qa').querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
 })();
 </script>
 <!-- ═══════════════════════════════════════════════════════════════
