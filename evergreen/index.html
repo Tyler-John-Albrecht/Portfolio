@@ -376,6 +376,37 @@ footer{background:#1A1D1B;color:#fff;padding:84px 0 0}
   #stickyBar a.sb-book{display:flex;align-items:center;padding:0 22px;background:#0E9C20;color:#fff;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:13px}
 }
 
+/* --- sticky bar polish (generated) --- */
+@media(max-width:760px){
+  /* clear the iPhone home indicator instead of sitting under it */
+  body{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px))}
+  #stickyBar{height:auto;min-height:60px;
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    transform:translateY(115%);
+    transition:transform .38s cubic-bezier(.16,1,.3,1);
+    will-change:transform;box-shadow:0 -8px 28px rgba(0,0,0,.34)}
+  #stickyBar.sb-show{transform:translateY(0)}
+  #stickyBar .sb-name{flex:1 1 auto;min-width:0;overflow:hidden;
+    white-space:nowrap;text-overflow:ellipsis}
+  #stickyBar a.sb-call,#stickyBar a.sb-book{
+    flex:0 0 auto;min-height:60px;text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+    transition:filter .18s ease,opacity .18s ease}
+  #stickyBar a.sb-call{gap:7px;justify-content:center}
+  #stickyBar a.sb-call svg{width:15px;height:15px;flex-shrink:0}
+  #stickyBar a.sb-call:active{opacity:.55}
+  #stickyBar a.sb-book:active{filter:brightness(.86)}
+}
+/* very small screens: drop the wordmark, split the two actions evenly */
+@media(max-width:380px){
+  #stickyBar .sb-name{display:none}
+  #stickyBar a.sb-call,#stickyBar a.sb-book{flex:1 1 50%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  #stickyBar{transition:none}
+}
+/* --- end sticky bar polish --- */
+
 /* booking modal */
 #bkOverlay{position:fixed;inset:0;z-index:100;background:rgba(20,24,20,.78);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:18px}
 #bkOverlay.open{display:flex}
@@ -842,6 +873,33 @@ Leave us a Google review
   <a href="tel:5550188220" class="sb-call">Call</a>
   <a href="#" class="sb-book" data-book>Book Now</a>
 </div>
+<script>
+/* --- sticky bar behaviour (generated) --- */
+(function(){
+  var bar = document.getElementById('stickyBar');
+  if (!bar) return;
+
+  // tap-to-call reads faster with a glyph than the word alone
+  var call = bar.querySelector('.sb-call');
+  if (call && !call.querySelector('svg')) {
+    call.insertAdjacentHTML('afterbegin',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>');
+  }
+
+  // stay out of the way over the hero, slide up once they start reading
+  function update(){
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var trigger = Math.max(320, window.innerHeight * 0.7);
+    if (y >= trigger) bar.classList.add('sb-show');
+    else bar.classList.remove('sb-show');
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+})();
+</script>
 
 <!-- ═══ BOOKING MODAL ═══ -->
 <div id="bkOverlay" role="dialog" aria-modal="true" aria-label="Booking request" data-label="Booking Modal">
@@ -963,20 +1021,14 @@ bkForm.addEventListener('submit', e => {
   e.preventDefault();
   const btn = document.getElementById('bkSubmit');
   btn.disabled = true; btn.querySelector('span').textContent = 'Sending…';
-  fetch('#demo', {
-    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body: JSON.stringify({
-      name: bkForm.name.value, phone: bkForm.phone.value, email: bkForm.email.value,
-      service: bkForm.service.value, details: bkForm.details.value,
-      _subject: 'Booking request — Evergreen Auto Spa template'
-    })
-  }).then(r => {
-    if(!r.ok) throw new Error('send failed');
+  window.BrechtlandLead.send({
+    name: bkForm.name.value, phone: bkForm.phone.value,
+    customerEmail: bkForm.email.value,
+    service: bkForm.service.value, note: bkForm.details.value,
+    source: 'Booking form'
+  }, () => {
     bkForm.style.display = 'none';
     document.getElementById('bkSuccess').style.display = 'block';
-  }).catch(() => {
-    btn.disabled = false; btn.querySelector('span').textContent = 'Send Booking Request';
-    document.getElementById('bkErr').style.display = 'block';
   });
 });
 
@@ -1031,14 +1083,653 @@ document.querySelectorAll('.pstep').forEach(s => {
   });
 })();
 </script>
-<!-- ═══════════════════════════════════════════════════════════════
-     PORTFOLIO DEMO MODE — injected by the portfolio build.
+
+
+
+
+
+
+<!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
+<script>
+window.BRECHTLAND_ADVISOR = {
+  business      : "Evergreen Auto Spa",
+  brand         : "Evergreen",
+  owner         : "Nathan",
+  phoneDisplay  : "(555) 018-8220",
+  phoneTel      : "5550188220",
+  email         : "leads@evergreenautospa.com",
+  city          : "River City",
+  address       : "1160 Cypress Bend Rd",
+  hours         : "Mon–Sat · 8:00 AM – 6:00 PM",
+
+  services      : ["Waterless Exterior Detail", "Interior Deep Clean", "Ceramic Coating", "Paint Correction", "Fleet & Commercial"],
+  mobile        : true,
+  accent        : "#0E9C20",
+  accentSoft    : "#15D42E",
+  ink           : "#12150F",
+  panel         : "#1A1D1B",
+  text          : "#EFF3EE",
+  fontDisplay   : "'Oswald', sans-serif",
+  fontBody      : "'Inter', system-ui, sans-serif",
+  callbackWindow: "shortly",
+  bookingUrl    : "",
+  siteId        : "evergreen-eco-detail",
+  endpoint      : "https://script.google.com/macros/s/AKfycbygaRA6kYTeA1LXzhqP75AmcvNSCQAuHsRZx1oRPQd0MU9f9oMykiZXEqXeVbG-5lwC/exec",
+  demo          : false,
+  bottomOffsetMobile: 84
+};
+</script>
+<script>
+/* ============================================================================
+   BRECHTLAND SERVICE ADVISOR  —  master source
+   ----------------------------------------------------------------------------
+   Tap-only lead-capture widget for automotive service sites.
+   No dependencies. No API keys. No cost. Renders inside a Shadow DOM so it
+   can never collide with the host template's CSS.
+
+   THIS FILE IS THE MASTER COPY. Each template carries an inlined duplicate so
+   that (a) Studio's tokenizer can swap client info on export and (b) the
+   exported site has zero external dependencies. To change the flow everywhere:
+   edit this file, then re-inline it into each template.
+
+   Configure by defining window.BRECHTLAND_ADVISOR before this script runs.
+   Every string that differs per client is a Studio token — do not hardcode.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var C = window.BRECHTLAND_ADVISOR || {};
+  var cfg = {
+    business:     C.business     || 'our shop',
+    brand:        C.brand        || C.business || 'our shop',
+    owner:        C.owner        || 'the owner',
+    phoneDisplay: C.phoneDisplay || '',
+    phoneTel:     C.phoneTel     || '',
+    email:        C.email        || '',
+    city:         C.city         || '',
+    address:      C.address      || '',
+    hours:        C.hours        || '',
+    bookingUrl:   C.bookingUrl   || '',
+    mobile:       C.mobile !== false,          // does the shop come to you?
+    services:     C.services     || ['Full Detail', 'Ceramic Coating', 'Paint Correction'],
+    callbackWindow: C.callbackWindow || 'shortly',
+    accent:       C.accent       || '#FF7A1C',
+    accentSoft:   C.accentSoft   || '#FFA34D',
+    ink:          C.ink          || '#0B0B0D',
+    panel:        C.panel        || '#161619',
+    text:         C.text         || '#F2F0EC',
+    fontDisplay:  C.fontDisplay  || "'Barlow Condensed', 'Oswald', sans-serif",
+    fontBody:     C.fontBody     || "'Barlow', system-ui, sans-serif",
+    bottomOffset: C.bottomOffset || 24,
+    bottomOffsetMobile: C.bottomOffsetMobile || 82,
+    endpoint:     C.endpoint     || '',
+    siteId:       C.siteId       || '',
+    teaseAfter:   C.teaseAfter   || 22000,     // ms before the nudge appears
+    demo:         C.demo === true || isPreviewHost()
+  };
+
+  /* Only a real client site should create real leads. Demos, local Studio
+     previews and files opened straight off disk run the whole conversation and
+     show the confirmation, but never submit — so clicking through a template on
+     a sales call can't bury a client's actual leads. */
+  function isPreviewHost() {
+    try {
+      var h = (location.hostname || '').toLowerCase();
+      return location.protocol === 'file:' ||
+             h === 'localhost' || h === '127.0.0.1' || h === '::1' ||
+             h.indexOf('portfolio.') === 0 ||
+             h.indexOf('.github.io') > -1;
+    } catch (e) { return false; }
+  }
+
+  if (!cfg.phoneTel && !cfg.endpoint) return;  // nothing to do
+
+  /* ---------------------------------------------------------------- helpers */
+  var lead = { service: '', vehicle: '', note: '', name: '', phone: '' };
+  var opened = false, teased = false, sent = false;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function seen(k) {
+    try { return sessionStorage.getItem('bla_' + k) === '1'; } catch (e) { return false; }
+  }
+  function mark(k) {
+    try { sessionStorage.setItem('bla_' + k, '1'); } catch (e) {}
+  }
+
+  /* ------------------------------------------------------------------- host */
+  var host = document.createElement('div');
+  host.setAttribute('data-brechtland-advisor', '');
+  host.style.cssText = 'position:fixed;z-index:2147483000;bottom:0;right:0;width:0;height:0;';
+  document.body.appendChild(host);
+  var root = host.attachShadow({ mode: 'open' });
+
+  var css = [
+    ':host,*{box-sizing:border-box;}',
+    '.wrap{position:fixed;right:20px;bottom:' + cfg.bottomOffset + 'px;',
+    '  display:flex;flex-direction:column;align-items:flex-end;gap:10px;',
+    '  font-family:' + cfg.fontBody + ';}',
+
+    /* launcher */
+    '.launch{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;',
+    '  background:' + cfg.accent + ';color:' + cfg.ink + ';display:flex;align-items:center;',
+    '  justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,.45);',
+    '  transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s;}',
+    '.launch:hover{background:' + cfg.accentSoft + ';transform:translateY(-3px) scale(1.04);}',
+    '.launch svg{width:27px;height:27px;}',
+    '.launch .x{display:none;}',
+    '.open .launch .chat{display:none;}',
+    '.open .launch .x{display:block;}',
+    '.pulse{position:absolute;inset:0;border-radius:50%;background:' + cfg.accent + ';',
+    '  opacity:.55;animation:bla-pulse 2.6s ease-out infinite;pointer-events:none;}',
+    '@keyframes bla-pulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.65);opacity:0}100%{opacity:0}}',
+    '.open .pulse,.hasteased .pulse{display:none;}',
+
+    /* teaser */
+    '.tease{max-width:262px;background:' + cfg.panel + ';color:' + cfg.text + ';',
+    '  border:1px solid rgba(255,255,255,.09);border-left:3px solid ' + cfg.accent + ';',
+    '  padding:13px 15px;font-size:.86rem;line-height:1.5;cursor:pointer;position:relative;',
+    '  box-shadow:0 14px 40px rgba(0,0,0,.5);animation:bla-in .45s cubic-bezier(.16,1,.3,1);}',
+    '.tease b{color:' + cfg.accent + ';font-weight:700;}',
+    '.tease .close{position:absolute;top:4px;right:7px;background:none;border:none;',
+    '  color:rgba(255,255,255,.34);font-size:16px;cursor:pointer;line-height:1;padding:3px;}',
+    '.tease .close:hover{color:' + cfg.text + ';}',
+    '@keyframes bla-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}',
+
+    /* panel */
+    '.panel{width:352px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);',
+    '  background:' + cfg.ink + ';border:1px solid rgba(255,255,255,.09);',
+    '  box-shadow:0 24px 70px rgba(0,0,0,.62);display:none;flex-direction:column;overflow:hidden;}',
+    '.open .panel{display:flex;animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+
+    '.head{background:' + cfg.panel + ';border-bottom:1px solid rgba(255,255,255,.07);',
+    '  padding:14px 16px;display:flex;align-items:center;gap:11px;flex-shrink:0;}',
+    '.dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;flex-shrink:0;',
+    '  box-shadow:0 0 0 3px rgba(61,220,132,.16);}',
+    '.htxt{flex:1;min-width:0;}',
+    '.htitle{font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.92rem;',
+    '  letter-spacing:.1em;text-transform:uppercase;color:' + cfg.text + ';line-height:1.15;}',
+    '.hsub{font-size:.68rem;color:rgba(255,255,255,.4);margin-top:2px;}',
+    '.hcall{color:' + cfg.accent + ';text-decoration:none;font-size:.72rem;font-weight:700;',
+    '  border:1px solid rgba(255,255,255,.14);padding:6px 10px;white-space:nowrap;transition:.2s;}',
+    '.hcall:hover{background:' + cfg.accent + ';color:' + cfg.ink + ';border-color:' + cfg.accent + ';}',
+
+    '.body{flex:1;overflow-y:auto;padding:18px 16px 4px;scrollbar-width:thin;}',
+    '.body::-webkit-scrollbar{width:5px;}',
+    '.body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.13);}',
+
+    '.msg{background:' + cfg.panel + ';color:rgba(242,240,236,.9);font-size:.87rem;line-height:1.6;',
+    '  padding:12px 14px;margin-bottom:12px;max-width:92%;border-left:2px solid ' + cfg.accent + ';',
+    '  animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+    '.msg b{color:' + cfg.text + ';font-weight:700;}',
+    '.msg .hi{color:' + cfg.accent + ';font-weight:700;}',
+    '.msg ul{margin:8px 0 0;padding-left:17px;}',
+    '.msg li{margin-bottom:3px;}',
+
+    '.you{background:rgba(255,255,255,.055);border:none;border-right:2px solid rgba(255,255,255,.2);',
+    '  margin-left:auto;text-align:right;color:rgba(242,240,236,.62);font-size:.8rem;padding:9px 13px;}',
+
+    '.chips{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 16px;',
+    '  animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+    '.chip{background:transparent;color:' + cfg.text + ';border:1px solid rgba(255,255,255,.17);',
+    '  font-family:' + cfg.fontBody + ';font-size:.81rem;padding:9px 13px;cursor:pointer;',
+    '  transition:.18s;text-align:left;}',
+    '.chip:hover{border-color:' + cfg.accent + ';color:' + cfg.accent + ';}',
+    '.chip.go{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:700;}',
+    '.chip.go:hover{background:' + cfg.accentSoft + ';border-color:' + cfg.accentSoft + ';color:' + cfg.ink + ';}',
+    '.chip.sel{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:700;}',
+    '.chip.sel:before{content:"\\2713\\00a0";}',
+    '.hint{font-size:.72rem;color:rgba(255,255,255,.32);margin:-6px 0 9px;}',
+
+    '.form{margin-bottom:16px;animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+    '.lab{font-family:' + cfg.fontDisplay + ';font-weight:700;font-size:.6rem;letter-spacing:.17em;',
+    '  text-transform:uppercase;color:rgba(255,255,255,.36);display:block;margin-bottom:5px;}',
+    '.in{width:100%;background:' + cfg.panel + ';border:1px solid rgba(255,255,255,.1);',
+    '  color:' + cfg.text + ';font-family:' + cfg.fontBody + ';font-size:.9rem;padding:11px 13px;',
+    '  outline:none;transition:border-color .2s;margin-bottom:11px;resize:vertical;}',
+    '.in:focus{border-color:' + cfg.accent + ';}',
+    '.in::placeholder{color:rgba(255,255,255,.24);}',
+    '.err{color:#ff6b5e;font-size:.74rem;margin:-6px 0 10px;display:none;}',
+
+    '.sub{width:100%;background:' + cfg.accent + ';color:' + cfg.ink + ';border:none;',
+    '  font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.85rem;letter-spacing:.11em;',
+    '  text-transform:uppercase;padding:14px;cursor:pointer;transition:.2s;}',
+    '.sub:hover{background:' + cfg.accentSoft + ';}',
+    '.sub:disabled{opacity:.5;cursor:default;}',
+
+    '.done{text-align:center;padding:14px 4px;animation:bla-in .4s cubic-bezier(.16,1,.3,1);}',
+    '.done .tick{font-family:' + cfg.fontDisplay + ';font-weight:900;font-size:3rem;color:' + cfg.accent + ';}',
+    '.done h3{font-family:' + cfg.fontDisplay + ';font-weight:900;text-transform:uppercase;',
+    '  font-size:1.4rem;color:' + cfg.text + ';margin:6px 0 12px;letter-spacing:.04em;}',
+    '.done p{font-size:.86rem;line-height:1.7;color:rgba(242,240,236,.6);margin:0 0 18px;}',
+    '.done .num{color:' + cfg.accent + ';font-weight:700;}',
+    '.savebtn{display:inline-block;background:' + cfg.accent + ';color:' + cfg.ink + ';text-decoration:none;',
+    '  font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.82rem;letter-spacing:.11em;',
+    '  text-transform:uppercase;padding:13px 26px;}',
+
+    '.foot{flex-shrink:0;padding:9px 16px 11px;border-top:1px solid rgba(255,255,255,.06);',
+    '  font-size:.64rem;color:rgba(255,255,255,.2);text-align:center;letter-spacing:.05em;}',
+
+    /* templates show their sticky CTA bar at <=760px (Signature at <=767px) —
+       clear it, and clear the iPhone home indicator underneath it */
+    '@media (max-width:767px){',
+    '  .wrap{bottom:calc(' + cfg.bottomOffsetMobile + 'px + env(safe-area-inset-bottom,0px));}',
+    '}',
+    '@media (max-width:520px){',
+    '  .wrap{right:14px;left:14px;align-items:flex-end;}',
+    '  .panel{width:100%;height:min(74vh,540px);}',
+    '  .tease{max-width:100%;}',
+    '}',
+    '@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}'
+  ].join('\n');
+
+  root.innerHTML =
+    '<style>' + css + '</style>' +
+    '<div class="wrap" part="wrap">' +
+      '<div class="tease" style="display:none" role="button" tabindex="0">' +
+        '<button class="close" aria-label="Dismiss">&times;</button>' +
+        '<span class="teasetxt"></span>' +
+      '</div>' +
+      '<div class="panel" role="dialog" aria-label="Service Advisor">' +
+        '<div class="head">' +
+          '<span class="dot"></span>' +
+          '<div class="htxt">' +
+            '<div class="htitle">Service Advisor</div>' +
+            '<div class="hsub"></div>' +
+          '</div>' +
+          (cfg.phoneTel ? '<a class="hcall" href="tel:' + esc(cfg.phoneTel) + '">Call</a>' : '') +
+        '</div>' +
+        '<div class="body"></div>' +
+        '<div class="foot">Powered by Brechtland</div>' +
+      '</div>' +
+      '<button class="launch" aria-label="Open Service Advisor">' +
+        '<span class="pulse"></span>' +
+        '<svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 21l1.9-4.8A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
+        '<svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+      '</button>' +
+    '</div>';
+
+  var wrap   = root.querySelector('.wrap');
+  var body   = root.querySelector('.body');
+  var tease  = root.querySelector('.tease');
+  var launch = root.querySelector('.launch');
+
+  root.querySelector('.hsub').textContent =
+    cfg.city ? 'Typically replies in minutes · ' + cfg.city : 'Typically replies in minutes';
+  root.querySelector('.teasetxt').innerHTML =
+    'Question about your vehicle? <b>I\'m right here</b> — or I can have ' +
+    esc(cfg.owner) + ' reach out personally.';
+
+  /* ------------------------------------------------------------ conversation */
+  function say(html, cls) {
+    var d = document.createElement('div');
+    d.className = 'msg' + (cls ? ' ' + cls : '');
+    d.innerHTML = html;
+    body.appendChild(d);
+    scroll();
+  }
+  function you(txt) { say(esc(txt), 'you'); }
+
+  function ask(options) {
+    var box = document.createElement('div');
+    box.className = 'chips';
+    options.forEach(function (o) {
+      if (o.when === false) return;
+      var b = document.createElement('button');
+      b.className = 'chip' + (o.go ? ' go' : '');
+      b.textContent = o.label;
+      b.addEventListener('click', function () {
+        box.remove();
+        if (o.echo !== false) you(o.label);
+        if (o.href) { window.location.href = o.href; return; }
+        setTimeout(function () { o.next(); }, 180);
+      });
+      box.appendChild(b);
+    });
+    body.appendChild(box);
+    scroll();
+  }
+  /* Multi-select: tap as many as you like, then Continue. */
+  function askMulti(items, hint, onDone) {
+    var holder = document.createElement('div');
+    var picked = [];
+
+    if (hint) {
+      var h = document.createElement('div');
+      h.className = 'hint';
+      h.textContent = hint;
+      holder.appendChild(h);
+    }
+
+    var box = document.createElement('div');
+    box.className = 'chips';
+    items.forEach(function (label) {
+      var b = document.createElement('button');
+      b.className = 'chip';
+      b.textContent = label;
+      b.addEventListener('click', function () {
+        var i = picked.indexOf(label);
+        if (i > -1) { picked.splice(i, 1); b.classList.remove('sel'); }
+        else { picked.push(label); b.classList.add('sel'); }
+        go.disabled = picked.length === 0;
+        go.textContent = picked.length > 1
+          ? 'Continue with ' + picked.length
+          : 'Continue';
+      });
+      box.appendChild(b);
+    });
+    holder.appendChild(box);
+
+    var go = document.createElement('button');
+    go.className = 'sub';
+    go.disabled = true;
+    go.textContent = 'Continue';
+    go.addEventListener('click', function () {
+      if (!picked.length) return;
+      holder.remove();
+      you(picked.join(', '));
+      setTimeout(function () { onDone(picked.slice()); }, 180);
+    });
+    holder.appendChild(go);
+
+    body.appendChild(holder);
+    scroll();
+  }
+
+  function scroll() {
+    setTimeout(function () { body.scrollTop = body.scrollHeight; }, 30);
+  }
+
+  /* -- steps -------------------------------------------------------------- */
+
+  /* Chips offered after any informational answer. Always a way forward,
+     never a dead end, never a price pitch. */
+  function moreHelp(extra) {
+    var opts = (extra || []).slice();
+    opts.push({ label: 'Have ' + cfg.owner + ' reach out', next: stepService, go: true });
+    opts.push({ label: 'I have another question', next: stepTopics });
+    if (cfg.phoneTel) {
+      opts.push({ label: 'Call now', href: 'tel:' + cfg.phoneTel, next: stepService });
+    }
+    ask(opts);
+  }
+
+  function greet() {
+    say('Hi — I\'m the service desk here at <b>' + esc(cfg.brand) + '</b>.<br><br>' +
+        'Happy to answer whatever you need, or put you straight through to <b class="hi">' +
+        esc(cfg.owner) + '</b>.');
+    stepTopics();
+  }
+
+  function stepTopics() {
+    say('What can I help you with?');
+    ask([
+      { label: 'What services do you offer?', next: stepMenu },
+      { label: 'How does it work?',           next: stepHow },
+      { label: 'Do you come to me?',          next: stepMobile, when: cfg.mobile },
+      { label: 'Hours & location',            next: stepInfo, when: !!(cfg.hours || cfg.address) },
+      { label: 'Have ' + cfg.owner + ' reach out', next: stepService, go: true }
+    ]);
+  }
+
+  function stepMenu() {
+    say('Here\'s what we take care of at <b>' + esc(cfg.brand) + '</b>:<ul><li>' +
+        cfg.services.map(esc).join('</li><li>') + '</li></ul>' +
+        '<br>Every vehicle\'s a bit different, so ' + esc(cfg.owner) +
+        ' likes to go over the details with you directly.');
+    moreHelp([
+      { label: 'What does it cost?', next: stepPrice }
+    ]);
+  }
+
+  function stepHow() {
+    say('Pretty simple:<ul>' +
+        '<li>Tell us what you\'re after</li>' +
+        '<li>' + esc(cfg.owner) + ' reaches out to go over the details</li>' +
+        '<li>We lock in a time that works and take care of it</li></ul>' +
+        '<br>No pressure and no hard sell — he\'ll just tell you straight what your vehicle needs.');
+    moreHelp([
+      { label: 'What does it cost?', next: stepPrice }
+    ]);
+  }
+
+  function stepPrice() {
+    say('Every vehicle comes to us in different shape — condition, size, how it\'s been ' +
+        'looked after. Quoting you a number off a menu wouldn\'t be honest.<br><br>' +
+        esc(cfg.owner) + ' would rather look at what yours actually needs and give you a ' +
+        'straight answer, no surprises later.');
+    moreHelp();
+  }
+
+  function stepMobile() {
+    say('Yes — we come to you.<br><br>Driveway, office lot, wherever the vehicle sits. ' +
+        esc(cfg.owner) + ' will confirm the area when he reaches out.');
+    moreHelp();
+  }
+
+  function stepInfo() {
+    var h = '';
+    if (cfg.hours)   h += '<b>Hours</b><br>' + esc(cfg.hours) + '<br><br>';
+    if (cfg.address) h += '<b>Where we are</b><br>' + esc(cfg.address);
+    say(h);
+    moreHelp();
+  }
+
+  function stepService() {
+    say('Happy to get that moving. What are you interested in?');
+    var opts = cfg.services.slice();
+    opts.push('Something else');
+    askMulti(opts, 'Pick as many as you need.', function (picked) {
+      lead.service = picked.join(', ');
+      if (picked.indexOf('Something else') > -1) stepNote();
+      else stepVehicle();
+    });
+  }
+
+  function stepNote() {
+    say('No problem — tell me a little more and ' + esc(cfg.owner) +
+        ' will cover it when he reaches out.');
+    var f = document.createElement('div');
+    f.className = 'form';
+    f.innerHTML =
+      '<label class="lab">What did you have in mind?</label>' +
+      '<textarea class="in note" rows="3" placeholder="e.g. matte black wrap on a lifted truck"></textarea>' +
+      '<button class="sub">Continue</button>';
+    body.appendChild(f);
+    var ta = f.querySelector('.note');
+    f.querySelector('.sub').addEventListener('click', function () {
+      lead.note = ta.value.trim();
+      f.remove();
+      if (lead.note) you(lead.note);
+      setTimeout(stepVehicle, 180);
+    });
+    scroll();
+    setTimeout(function () { ta.focus(); }, 120);
+  }
+
+  function stepVehicle() {
+    say('And what are we working on?');
+    askMulti(['Car', 'Truck / SUV', 'Van / Fleet', 'Something else'],
+      'Pick as many as you need.',
+      function (picked) { lead.vehicle = picked.join(', '); stepCapture(); });
+  }
+
+  function stepCapture() {
+    say('Last thing — how\'s the best way for ' + esc(cfg.owner) + ' to reach you?');
+    var f = document.createElement('div');
+    f.className = 'form';
+    f.innerHTML =
+      '<label class="lab">Your name</label>' +
+      '<input class="in nm" type="text" autocomplete="given-name" placeholder="First name">' +
+      '<label class="lab">Best number</label>' +
+      '<input class="in ph" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567">' +
+      '<div class="err"></div>' +
+      '<button class="sub">Get My Call Back</button>';
+    body.appendChild(f);
+
+    var nm  = f.querySelector('.nm');
+    var ph  = f.querySelector('.ph');
+    var err = f.querySelector('.err');
+    var btn = f.querySelector('.sub');
+
+    function fail(m) { err.textContent = m; err.style.display = 'block'; }
+
+    btn.addEventListener('click', function () {
+      var name  = nm.value.trim();
+      var phone = ph.value.trim();
+      if (name.length < 2) return fail('Mind adding your name?');
+      if (phone.replace(/\D/g, '').length < 10) return fail('That number looks short — need all 10 digits.');
+      err.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      lead.name = name;
+      lead.phone = phone;
+      submit(function () { f.remove(); stepDone(); });
+    });
+
+    [nm, ph].forEach(function (i) {
+      i.addEventListener('keydown', function (e) { if (e.key === 'Enter') btn.click(); });
+    });
+    scroll();
+    setTimeout(function () { nm.focus(); }, 120);
+  }
+
+  function stepDone() {
+    sent = true;
+    var d = document.createElement('div');
+    d.className = 'done';
+    /* On a demo the callback promise would be a lie — say so plainly. It also
+       makes the point on a sales call: this is what their customer would see. */
+    d.innerHTML = cfg.demo
+      ? '<div class="tick">&#10003;</div>' +
+        '<h3>That\'s the flow</h3>' +
+        '<p>On a live site, ' + esc(cfg.owner) + ' would now have your name, your number ' +
+        'and what you need — and would reach out ' + esc(cfg.callbackWindow) + '.' +
+        '<br><br><b>This is a demo, so nothing was sent.</b></p>'
+      : '<div class="tick">&#10003;</div>' +
+        '<h3>All set</h3>' +
+        '<p>' + esc(cfg.owner) + ' has your details and will reach out ' + esc(cfg.callbackWindow) + '.<br><br>' +
+        (cfg.phoneDisplay
+          ? 'It\'ll come from <span class="num">' + esc(cfg.phoneDisplay) + '</span> — save it so you know it\'s him.'
+          : '') +
+        '</p>' +
+        (cfg.phoneTel
+          ? '<a class="savebtn" href="tel:' + esc(cfg.phoneTel) + '">Call ' + esc(cfg.brand) + ' Now</a>'
+          : '');
+    body.appendChild(d);
+    scroll();
+  }
+
+  /* ---------------------------------------------------------------- delivery */
+  /* One code path for every lead this site produces — the chat below and the
+     template's own contact/booking forms. Same endpoint, same recipient from
+     Studio, same demo protection. */
+  function post(payload, done) {
+    if (cfg.demo || !cfg.endpoint) { setTimeout(done, 420); return; }
+
+    var finished = false;
+    var finish = function () { if (!finished) { finished = true; done(); } };
+
+    try {
+      fetch(cfg.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).then(finish)['catch'](finish);
+    } catch (e) { finish(); }
+
+    setTimeout(finish, 3500);   // never leave the visitor hanging
+  }
+
+  function submit(done) {
+    post({
+      site:     cfg.siteId,
+      business: cfg.business,
+      to:       cfg.email,
+      name:     lead.name,
+      phone:    lead.phone,
+      service:  lead.service,
+      vehicle:  lead.vehicle,
+      note:     lead.note,
+      page:     location.href,
+      source:   'Service Advisor',
+      ts:       new Date().toISOString()
+    }, done);
+  }
+
+  /* Public hook for the template's own forms:
+       window.BrechtlandLead.send({ name, phone, customerEmail, service, note }, onDone)
+     Always calls onDone — the visitor never gets stuck on a spinner. */
+  window.BrechtlandLead = {
+    send: function (data, done) {
+      var payload = {
+        site: cfg.siteId, business: cfg.business, to: cfg.email,
+        name: '', phone: '', customerEmail: '', service: '', vehicle: '', note: '',
+        page: location.href, source: 'Website form',
+        ts: new Date().toISOString()
+      };
+      if (data) {
+        for (var k in data) {
+          if (Object.prototype.hasOwnProperty.call(data, k)) payload[k] = data[k];
+        }
+      }
+      post(payload, done || function () {});
+    },
+    isDemo: function () { return cfg.demo; }
+  };
+
+  /* ------------------------------------------------------------------ wiring */
+  function open() {
+    if (opened) return;
+    opened = true;
+    wrap.classList.add('open');
+    hideTease();
+    mark('opened');
+    if (!body.childNodes.length) setTimeout(greet, 200);
+  }
+  function close() { opened = false; wrap.classList.remove('open'); }
+  function toggle() { opened ? close() : open(); }
+
+  function showTease() {
+    if (teased || opened || seen('teased') || seen('opened')) return;
+    teased = true;
+    wrap.classList.add('hasteased');
+    tease.style.display = 'block';
+    mark('teased');
+  }
+  function hideTease() { tease.style.display = 'none'; }
+
+  launch.addEventListener('click', toggle);
+  tease.addEventListener('click', function (e) {
+    if (e.target.classList.contains('close')) { hideTease(); return; }
+    open();
+  });
+  tease.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && opened) close();
+  });
+
+  setTimeout(showTease, cfg.teaseAfter);
+  document.addEventListener('mouseleave', function (e) {
+    if (e.clientY <= 0) showTease();
+  });
+})();
+
+</script>
+<!-- BRECHTLAND-ADVISOR:END -->
+<!-- ===============================================================
+     PORTFOLIO DEMO MODE - injected by advisor/build-portfolio.ps1.
      Public showcase copies, not live sites: every form is blocked and
      answered with a demo notice. Also adds a persistent toolbar so a
      visitor can always get back to the portfolio without the browser
      back button (the demo navs use anchor links, so "back" can take a
      dozen presses to escape).
-     ═══════════════════════════════════════════════════════════════ -->
+     =============================================================== -->
 <style>
 #bl-bar{position:fixed;left:14px;bottom:14px;z-index:2147482000;display:flex;gap:8px;align-items:center;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
 #bl-bar a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 16px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:transform .15s,border-color .15s,box-shadow .15s;backdrop-filter:blur(12px)}
@@ -1047,10 +1738,14 @@ document.querySelectorAll('.pstep').forEach(s => {
 #bl-back:hover{border-color:#00E5FF;color:#00E5FF}
 #bl-book{background:#00E5FF;border:1px solid #00E5FF;color:#04212A;box-shadow:0 8px 24px rgba(0,229,255,.3)}
 #bl-book:hover{box-shadow:0 12px 32px rgba(0,229,255,.45)}
-/* Sit above any sticky mobile CTA bar the template itself renders. */
+/* Sit above the template's sticky mobile CTA bar, and stop short of the
+   Service Advisor launcher in the bottom-right corner. */
 @media (max-width:767px){
-  #bl-bar{left:10px;right:10px;bottom:84px;justify-content:center}
-  #bl-bar a{font-size:12.5px;padding:9px 14px}
+  #bl-bar{left:10px;right:86px;bottom:calc(84px + env(safe-area-inset-bottom,0px));justify-content:flex-start}
+  #bl-bar a{font-size:12.5px;padding:9px 13px}
+}
+@media (max-width:400px){
+  #bl-bar a{font-size:11.5px;padding:8px 11px;gap:5px}
 }
 #bl-demo-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(4,6,10,.84);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
 #bl-demo-ov.show{display:flex}
@@ -1064,7 +1759,7 @@ document.querySelectorAll('.pstep').forEach(s => {
 #bl-demo-box .tag{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#00E5FF;margin-bottom:12px;display:block;font-weight:700}
 </style>
 <div id="bl-bar">
-  <a id="bl-back" href="/">← All templates</a>
+  <a id="bl-back" href="/">&larr; All templates</a>
   <a id="bl-book" href="https://calendar.app.google/nvRoWGZRCp37TzjR7" target="_blank" rel="noopener">Get this site</a>
 </div>
 <div id="bl-demo-ov" role="dialog" aria-modal="true" aria-label="Demo site notice">
@@ -1099,6 +1794,5 @@ document.querySelectorAll('.pstep').forEach(s => {
   if(ov) ov.addEventListener('click', function(ev){ if(ev.target === ov) ov.classList.remove('show'); });
 })();
 </script>
-
 </body>
 </html>
