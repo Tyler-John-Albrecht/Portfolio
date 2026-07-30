@@ -428,16 +428,23 @@ footer{border-top:1px solid rgba(255,255,255,.07);padding:90px 0 0}
 @media(max-width:560px){#bkForm{grid-template-columns:1fr}.tiers{grid-template-columns:1fr}.gwrap{flex-direction:column;text-align:center;padding:36px 26px}}
 @media(min-width:561px) and (max-width:960px){.tiers{grid-template-columns:1fr;max-width:440px;margin:0 auto}.steps.three{grid-template-columns:1fr}}
 </style>
+<!-- BRECHTLAND-MOBILE-CHROME:START (generated) -->
+<!-- Paints the phone's status-bar strip in the site colour. Without it iOS
+     renders page content up there next to the clock, which reads as the page
+     spilling out above the header. -->
+<meta name="theme-color" content="#0A0A0F">
 <style>
 /* --- no horizontal scroll (generated) --- */
 /* Nothing should ever pan sideways on a phone. `clip` is used where supported
    because it stops the pan WITHOUT creating a scroll container - unlike
    `hidden`, which silently breaks position:sticky on descendants. `hidden` is
-   the fallback for older browsers. */
+   the fallback for older browsers. Note: overflow-x on <body> alone is not
+   enough - iOS Safari still allows the pan unless <html> carries it too. */
 html,body{max-width:100%;overflow-x:hidden}
 @supports (overflow:clip){html,body{overflow-x:clip}}
 /* --- end no horizontal scroll --- */
 </style>
+<!-- BRECHTLAND-MOBILE-CHROME:END -->
 </head>
 <body>
 
@@ -1148,6 +1155,7 @@ document.querySelectorAll('.step').forEach(s => {
   });
 })();
 </script>
+
 
 
 
@@ -1870,6 +1878,26 @@ window.BRECHTLAND_ADVISOR = {
     clearTimeout(restTimer);
     restTimer = setTimeout(function () { wrap.classList.remove('hidden'); }, 850);
   }, { passive: true });
+
+  /* Sit a fixed distance above the site's own sticky CTA bar.
+
+     Hardcoding the offset double-counted the safe area on real iPhones: the
+     bar already pads itself by env(safe-area-inset-bottom), and the widget was
+     adding it again — invisible in a desktop emulator where env() is 0, but a
+     visible dead gap on a phone. Measuring the bar's rendered height instead
+     is self-correcting on every device, and drops the per-site tuning. */
+  function parkAboveBar() {
+    if (window.innerWidth > 767) { wrap.style.bottom = ''; return; }
+    var bar = document.getElementById('stickyBar') ||
+              document.getElementById('sticky-bar') ||
+              document.getElementById('mobbar');
+    var h = bar ? bar.offsetHeight : 0;   // offsetHeight includes its safe-area padding
+    wrap.style.bottom = h ? (h + 14) + 'px' : '';
+  }
+  parkAboveBar();
+  setTimeout(parkAboveBar, 600);          // after fonts/layout settle
+  window.addEventListener('resize', parkAboveBar);
+  window.addEventListener('orientationchange', function () { setTimeout(parkAboveBar, 250); });
 
   /* Get out of the way of the site's own modals.
 
