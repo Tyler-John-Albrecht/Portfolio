@@ -1028,6 +1028,8 @@ document.querySelectorAll('.pstep').forEach(s => {
 
 
 
+
+
 <!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
 <script>
 window.BRECHTLAND_ADVISOR = {
@@ -1104,6 +1106,7 @@ window.BRECHTLAND_ADVISOR = {
     endpoint:     C.endpoint     || '',
     siteId:       C.siteId       || '',
     teaseAfter:   C.teaseAfter   || 22000,     // ms before the nudge appears
+    copy:         C.copy         || {},        // per-site wording overrides
     demo:         C.demo === true || isPreviewHost()
   };
 
@@ -1132,6 +1135,14 @@ window.BRECHTLAND_ADVISOR = {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  /* Every line below defaults to auto-shop wording. A site in another trade
+     (or an agency selling TO shops) overrides just the keys it needs via
+     config.copy — no second copy of the engine. */
+  function t(key, fallback) {
+    var v = cfg.copy[key];
+    return (v === undefined || v === null || v === '') ? fallback : v;
+  }
+
   function seen(k) {
     try { return sessionStorage.getItem('bla_' + k) === '1'; } catch (e) { return false; }
   }
@@ -1153,7 +1164,7 @@ window.BRECHTLAND_ADVISOR = {
     '  font-family:' + cfg.fontBody + ';}',
 
     /* launcher */
-    '.launch{width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;',
+    '.launch{position:relative;width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;',
     '  background:' + cfg.accent + ';color:' + cfg.ink + ';display:flex;align-items:center;',
     '  justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,.45);',
     '  transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s;}',
@@ -1162,29 +1173,37 @@ window.BRECHTLAND_ADVISOR = {
     '.launch .x{display:none;}',
     '.open .launch .chat{display:none;}',
     '.open .launch .x{display:block;}',
-    '.pulse{position:absolute;inset:0;border-radius:50%;background:' + cfg.accent + ';',
-    '  opacity:.55;animation:bla-pulse 2.6s ease-out infinite;pointer-events:none;}',
-    '@keyframes bla-pulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.65);opacity:0}100%{opacity:0}}',
-    '.open .pulse,.hasteased .pulse{display:none;}',
 
-    /* teaser */
-    '.tease{max-width:262px;background:' + cfg.panel + ';color:' + cfg.text + ';',
-    '  border:1px solid rgba(255,255,255,.09);border-left:3px solid ' + cfg.accent + ';',
-    '  padding:13px 15px;font-size:.86rem;line-height:1.5;cursor:pointer;position:relative;',
-    '  box-shadow:0 14px 40px rgba(0,0,0,.5);animation:bla-in .45s cubic-bezier(.16,1,.3,1);}',
+    /* unread badge — reads as a waiting message, not decoration */
+    '.badge{position:absolute;top:-3px;right:-3px;min-width:22px;height:22px;padding:0 6px;',
+    '  border-radius:999px;background:#FF3B30;color:#fff;border:2px solid ' + cfg.ink + ';',
+    '  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;',
+    '  font-size:12px;font-weight:700;line-height:1;display:flex;align-items:center;',
+    '  justify-content:center;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.4);',
+    '  animation:bla-pop .42s cubic-bezier(.2,1.5,.4,1) both;}',
+    '@keyframes bla-pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}',
+    '.open .badge,.read .badge{display:none;}',
+
+    /* teaser — a message bubble, not a callout box */
+    '.tease{max-width:266px;background:' + cfg.panel + ';color:' + cfg.text + ';',
+    '  border:1px solid rgba(255,255,255,.13);border-radius:20px 20px 6px 20px;',
+    '  padding:14px 17px;font-size:.88rem;line-height:1.5;cursor:pointer;position:relative;',
+    '  box-shadow:0 18px 46px rgba(0,0,0,.55);animation:bla-in .45s cubic-bezier(.16,1,.3,1);}',
     '.tease b{color:' + cfg.accent + ';font-weight:700;}',
-    '.tease .close{position:absolute;top:4px;right:7px;background:none;border:none;',
+    '.tease .close{position:absolute;top:5px;right:9px;background:none;border:none;',
     '  color:rgba(255,255,255,.34);font-size:16px;cursor:pointer;line-height:1;padding:3px;}',
     '.tease .close:hover{color:' + cfg.text + ';}',
     '@keyframes bla-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}',
 
-    /* panel */
-    '.panel{width:352px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);',
-    '  background:' + cfg.ink + ';border:1px solid rgba(255,255,255,.09);',
-    '  box-shadow:0 24px 70px rgba(0,0,0,.62);display:none;flex-direction:column;overflow:hidden;}',
+    /* panel — must read as a separate surface even on a near-black page */
+    '.panel{width:358px;max-width:calc(100vw - 28px);height:544px;max-height:calc(100vh - 120px);',
+    '  background:' + cfg.ink + ';border:1px solid rgba(255,255,255,.16);border-radius:20px;',
+    '  box-shadow:0 40px 90px rgba(0,0,0,.72), 0 0 0 1px rgba(0,0,0,.5),',
+    '    0 0 60px -18px ' + cfg.accent + '55;',
+    '  display:none;flex-direction:column;overflow:hidden;}',
     '.open .panel{display:flex;animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
 
-    '.head{background:' + cfg.panel + ';border-bottom:1px solid rgba(255,255,255,.07);',
+    '.head{background:' + cfg.panel + ';border-bottom:1px solid rgba(255,255,255,.09);',
     '  padding:14px 16px;display:flex;align-items:center;gap:11px;flex-shrink:0;}',
     '.dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;flex-shrink:0;',
     '  box-shadow:0 0 0 3px rgba(61,220,132,.16);}',
@@ -1200,23 +1219,31 @@ window.BRECHTLAND_ADVISOR = {
     '.body::-webkit-scrollbar{width:5px;}',
     '.body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.13);}',
 
-    '.msg{background:' + cfg.panel + ';color:rgba(242,240,236,.9);font-size:.87rem;line-height:1.6;',
-    '  padding:12px 14px;margin-bottom:12px;max-width:92%;border-left:2px solid ' + cfg.accent + ';',
-    '  animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+    /* message bubbles — incoming grey, outgoing accent, iMessage-style tails */
+    '.msg{background:rgba(255,255,255,.085);color:' + cfg.text + ';font-size:.88rem;line-height:1.55;',
+    '  padding:11px 15px;margin-bottom:9px;max-width:84%;width:fit-content;',
+    '  border-radius:20px 20px 20px 6px;',
+    '  animation:bla-in .3s cubic-bezier(.16,1,.3,1);}',
+    '.msg + .msg{margin-top:0;}',
     '.msg b{color:' + cfg.text + ';font-weight:700;}',
     '.msg .hi{color:' + cfg.accent + ';font-weight:700;}',
     '.msg ul{margin:8px 0 0;padding-left:17px;}',
     '.msg li{margin-bottom:3px;}',
 
-    '.you{background:rgba(255,255,255,.055);border:none;border-right:2px solid rgba(255,255,255,.2);',
-    '  margin-left:auto;text-align:right;color:rgba(242,240,236,.62);font-size:.8rem;padding:9px 13px;}',
+    '.you{background:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:600;',
+    '  border-radius:20px 20px 6px 20px;margin-left:auto;margin-bottom:14px;',
+    '  text-align:left;font-size:.85rem;padding:10px 15px;}',
+    '.you b{color:' + cfg.ink + ';}',
 
     '.chips{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 16px;',
     '  animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
-    '.chip{background:transparent;color:' + cfg.text + ';border:1px solid rgba(255,255,255,.17);',
-    '  font-family:' + cfg.fontBody + ';font-size:.81rem;padding:9px 13px;cursor:pointer;',
-    '  transition:.18s;text-align:left;}',
-    '.chip:hover{border-color:' + cfg.accent + ';color:' + cfg.accent + ';}',
+    '.chip{background:rgba(255,255,255,.04);color:' + cfg.text + ';',
+    '  border:1px solid rgba(255,255,255,.2);border-radius:999px;',
+    '  font-family:' + cfg.fontBody + ';font-size:.82rem;padding:9px 15px;cursor:pointer;',
+    '  transition:.18s;text-align:left;-webkit-tap-highlight-color:transparent;}',
+    '.chip:hover{border-color:' + cfg.accent + ';color:' + cfg.accent + ';',
+    '  background:' + cfg.accent + '14;}',
+    '.chip:active{transform:scale(.97);}',
     '.chip.go{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:700;}',
     '.chip.go:hover{background:' + cfg.accentSoft + ';border-color:' + cfg.accentSoft + ';color:' + cfg.ink + ';}',
     '.chip.sel{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:700;}',
@@ -1226,17 +1253,22 @@ window.BRECHTLAND_ADVISOR = {
     '.form{margin-bottom:16px;animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
     '.lab{font-family:' + cfg.fontDisplay + ';font-weight:700;font-size:.6rem;letter-spacing:.17em;',
     '  text-transform:uppercase;color:rgba(255,255,255,.36);display:block;margin-bottom:5px;}',
-    '.in{width:100%;background:' + cfg.panel + ';border:1px solid rgba(255,255,255,.1);',
-    '  color:' + cfg.text + ';font-family:' + cfg.fontBody + ';font-size:.9rem;padding:11px 13px;',
-    '  outline:none;transition:border-color .2s;margin-bottom:11px;resize:vertical;}',
+    '.in{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);',
+    '  border-radius:12px;',
+    '  color:' + cfg.text + ';font-family:' + cfg.fontBody + ';font-size:.95rem;padding:12px 14px;',
+    '  outline:none;transition:border-color .2s,background .2s;margin-bottom:11px;resize:vertical;}',
+    '.in:focus{background:rgba(255,255,255,.09);}',
     '.in:focus{border-color:' + cfg.accent + ';}',
     '.in::placeholder{color:rgba(255,255,255,.24);}',
     '.err{color:#ff6b5e;font-size:.74rem;margin:-6px 0 10px;display:none;}',
 
     '.sub{width:100%;background:' + cfg.accent + ';color:' + cfg.ink + ';border:none;',
+    '  border-radius:999px;',
     '  font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.85rem;letter-spacing:.11em;',
-    '  text-transform:uppercase;padding:14px;cursor:pointer;transition:.2s;}',
+    '  text-transform:uppercase;padding:14px;cursor:pointer;transition:.2s;',
+    '  -webkit-tap-highlight-color:transparent;}',
     '.sub:hover{background:' + cfg.accentSoft + ';}',
+    '.sub:active{transform:scale(.985);}',
     '.sub:disabled{opacity:.5;cursor:default;}',
 
     '.done{text-align:center;padding:14px 4px;animation:bla-in .4s cubic-bezier(.16,1,.3,1);}',
@@ -1285,7 +1317,7 @@ window.BRECHTLAND_ADVISOR = {
         '<div class="foot">Powered by Brechtland</div>' +
       '</div>' +
       '<button class="launch" aria-label="Open Service Advisor">' +
-        '<span class="pulse"></span>' +
+        '<span class="badge" aria-hidden="true">1</span>' +
         '<svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 21l1.9-4.8A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
         '<svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
       '</button>' +
@@ -1296,11 +1328,15 @@ window.BRECHTLAND_ADVISOR = {
   var tease  = root.querySelector('.tease');
   var launch = root.querySelector('.launch');
 
+  // already read it in a previous session — don't re-badge them
+  if (seen('opened')) wrap.classList.add('read');
+
   root.querySelector('.hsub').textContent =
     cfg.city ? 'Typically replies in minutes · ' + cfg.city : 'Typically replies in minutes';
   root.querySelector('.teasetxt').innerHTML =
-    'Question about your vehicle? <b>I\'m right here</b> — or I can have ' +
-    esc(cfg.owner) + ' reach out personally.';
+    t('tease',
+      'Question about your vehicle? <b>I\'m right here</b> — or I can have ' +
+      esc(cfg.owner) + ' reach out personally.');
 
   /* ------------------------------------------------------------ conversation */
   function say(html, cls) {
@@ -1397,9 +1433,10 @@ window.BRECHTLAND_ADVISOR = {
   }
 
   function greet() {
-    say('Hi — I\'m the service desk here at <b>' + esc(cfg.brand) + '</b>.<br><br>' +
-        'Happy to answer whatever you need, or put you straight through to <b class="hi">' +
-        esc(cfg.owner) + '</b>.');
+    say(t('greet',
+      'Hi — I\'m the service desk here at <b>' + esc(cfg.brand) + '</b>.<br><br>' +
+      'Happy to answer whatever you need, or put you straight through to <b class="hi">' +
+      esc(cfg.owner) + '</b>.'));
     stepTopics();
   }
 
@@ -1415,37 +1452,43 @@ window.BRECHTLAND_ADVISOR = {
   }
 
   function stepMenu() {
-    say('Here\'s what we take care of at <b>' + esc(cfg.brand) + '</b>:<ul><li>' +
-        cfg.services.map(esc).join('</li><li>') + '</li></ul>' +
-        '<br>Every vehicle\'s a bit different, so ' + esc(cfg.owner) +
-        ' likes to go over the details with you directly.');
+    say(t('menuIntro', 'Here\'s what we take care of at <b>' + esc(cfg.brand) + '</b>:') +
+        '<ul><li>' + cfg.services.map(esc).join('</li><li>') + '</li></ul>' +
+        '<br>' + t('menuOutro', 'Every vehicle\'s a bit different, so ' + esc(cfg.owner) +
+        ' likes to go over the details with you directly.'));
     moreHelp([
       { label: 'What does it cost?', next: stepPrice }
     ]);
   }
 
   function stepHow() {
-    say('Pretty simple:<ul>' +
-        '<li>Tell us what you\'re after</li>' +
-        '<li>' + esc(cfg.owner) + ' reaches out to go over the details</li>' +
-        '<li>We lock in a time that works and take care of it</li></ul>' +
-        '<br>No pressure and no hard sell — he\'ll just tell you straight what your vehicle needs.');
+    var steps = cfg.copy.howSteps || [
+      'Tell us what you\'re after',
+      esc(cfg.owner) + ' reaches out to go over the details',
+      'We lock in a time that works and take care of it'
+    ];
+    say(t('howIntro', 'Pretty simple:') +
+        '<ul><li>' + steps.join('</li><li>') + '</li></ul>' +
+        '<br>' + t('howOutro',
+          'No pressure and no hard sell — he\'ll just tell you straight what your vehicle needs.'));
     moreHelp([
       { label: 'What does it cost?', next: stepPrice }
     ]);
   }
 
   function stepPrice() {
-    say('Every vehicle comes to us in different shape — condition, size, how it\'s been ' +
-        'looked after. Quoting you a number off a menu wouldn\'t be honest.<br><br>' +
-        esc(cfg.owner) + ' would rather look at what yours actually needs and give you a ' +
-        'straight answer, no surprises later.');
+    say(t('price',
+      'Every vehicle comes to us in different shape — condition, size, how it\'s been ' +
+      'looked after. Quoting you a number off a menu wouldn\'t be honest.<br><br>' +
+      esc(cfg.owner) + ' would rather look at what yours actually needs and give you a ' +
+      'straight answer, no surprises later.'));
     moreHelp();
   }
 
   function stepMobile() {
-    say('Yes — we come to you.<br><br>Driveway, office lot, wherever the vehicle sits. ' +
-        esc(cfg.owner) + ' will confirm the area when he reaches out.');
+    say(t('mobile',
+      'Yes — we come to you.<br><br>Driveway, office lot, wherever the vehicle sits. ' +
+      esc(cfg.owner) + ' will confirm the area when he reaches out.'));
     moreHelp();
   }
 
@@ -1475,7 +1518,7 @@ window.BRECHTLAND_ADVISOR = {
     f.className = 'form';
     f.innerHTML =
       '<label class="lab">What did you have in mind?</label>' +
-      '<textarea class="in note" rows="3" placeholder="e.g. matte black wrap on a lifted truck"></textarea>' +
+      '<textarea class="in note" rows="3" placeholder="' + esc(t('notePlaceholder', 'e.g. matte black wrap on a lifted truck')) + '"></textarea>' +
       '<button class="sub">Continue</button>';
     body.appendChild(f);
     var ta = f.querySelector('.note');
@@ -1490,8 +1533,8 @@ window.BRECHTLAND_ADVISOR = {
   }
 
   function stepVehicle() {
-    say('And what are we working on?');
-    askMulti(['Car', 'Truck / SUV', 'Van / Fleet', 'Something else'],
+    say(t('qualifierQ', 'And what are we working on?'));
+    askMulti(cfg.copy.qualifierOptions || ['Car', 'Truck / SUV', 'Van / Fleet', 'Something else'],
       'Pick as many as you need.',
       function (picked) { lead.vehicle = picked.join(', '); stepCapture(); });
   }
@@ -1625,6 +1668,7 @@ window.BRECHTLAND_ADVISOR = {
     if (opened) return;
     opened = true;
     wrap.classList.add('open');
+    wrap.classList.add('read');   // badge is an unread count — once opened it stays gone
     hideTease();
     mark('opened');
     if (!body.childNodes.length) setTimeout(greet, 200);
