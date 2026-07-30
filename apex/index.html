@@ -438,6 +438,16 @@ footer{background:#14161C;border-top:1px solid rgba(255,255,255,.07);padding:80p
 @media(max-width:560px){#bkForm{grid-template-columns:1fr}.psteps,.tiers{grid-template-columns:1fr}.gwrap{flex-direction:column;text-align:center;padding:36px 26px}}
 @media(min-width:561px) and (max-width:960px){.tiers{grid-template-columns:1fr;max-width:440px;margin:0 auto}.psteps{grid-template-columns:1fr}}
 </style>
+<style>
+/* --- no horizontal scroll (generated) --- */
+/* Nothing should ever pan sideways on a phone. `clip` is used where supported
+   because it stops the pan WITHOUT creating a scroll container - unlike
+   `hidden`, which silently breaks position:sticky on descendants. `hidden` is
+   the fallback for older browsers. */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+/* --- end no horizontal scroll --- */
+</style>
 </head>
 <body>
 

@@ -461,6 +461,16 @@ a.xp-mini:hover{color:#E8FF3C}
 @media(max-width:560px){#bkForm{grid-template-columns:1fr}}
 @media(max-width:960px){.tiers,.psteps{grid-template-columns:1fr}.gwrap{flex-direction:column;text-align:center;padding:40px 28px}}
 </style>
+<style>
+/* --- no horizontal scroll (generated) --- */
+/* Nothing should ever pan sideways on a phone. `clip` is used where supported
+   because it stops the pan WITHOUT creating a scroll container - unlike
+   `hidden`, which silently breaks position:sticky on descendants. `hidden` is
+   the fallback for older browsers. */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+/* --- end no horizontal scroll --- */
+</style>
 </head>
 <body>
 

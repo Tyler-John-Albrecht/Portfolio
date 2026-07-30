@@ -372,6 +372,16 @@ footer{background:#050609;border-top:1px solid rgba(255,255,255,.06)}
   .foot{grid-template-columns:1fr}
 }
 </style>
+<style>
+/* --- no horizontal scroll (generated) --- */
+/* Nothing should ever pan sideways on a phone. `clip` is used where supported
+   because it stops the pan WITHOUT creating a scroll container - unlike
+   `hidden`, which silently breaks position:sticky on descendants. `hidden` is
+   the fallback for older browsers. */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+/* --- end no horizontal scroll --- */
+</style>
 </head>
 <body>
 
