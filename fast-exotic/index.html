@@ -121,28 +121,18 @@
 
     /* ── Nav ──────────────────────────────────────── */
     .nav-glass {
-      padding-top: env(safe-area-inset-top, 0px);
+      /* The bar's box starts 240px above the top of the screen so its own
+         background paints the strip behind the phone's clock. The matching
+         padding puts the logo back exactly where it was. Nothing here relies
+         on the browser honouring viewport-fit or safe-area insets. */
+      top: -240px !important;
+      padding-top: calc(240px + env(safe-area-inset-top, 0px));
       background: rgba(6,6,8,0.97);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,122,28,0.07);
       transition: padding 0.3s ease;
     }
-      /* Paint whatever sits above this bar in the bar's own colour.
-         Belt-and-braces: on iOS the strip behind the clock sometimes ends up
-         above a top:0 fixed element no matter what viewport-fit says. This
-         pseudo-element rides along with the bar and fills that gap solid, so
-         page content can never show through up there. If there is no gap it
-         renders off-screen and costs nothing. */
-      .nav-glass::before{
-        content:'';
-        position:absolute;
-        left:0; right:0;
-        bottom:100%;
-        height:220px;
-        background:#060608;
-        pointer-events:none;
-      }
 
 
     /* ── Hero ─────────────────────────────────────── */
@@ -663,7 +653,9 @@
    the fallback for older browsers. Note: overflow-x on <body> alone is not
    enough - iOS Safari still allows the pan unless <html> carries it too. */
 html,body{max-width:100%;overflow-x:hidden}
-@supports (overflow:clip){html,body{overflow-x:clip}}
+@supports (overflow:clip){html,body{overflow-x:clip;overflow-y:visible}}
+/* The bar's own colour, so the strip behind the phone's clock is never bare. */
+html{background:#060608}
 /* --- end no horizontal scroll --- */
 </style>
 <!-- BRECHTLAND-MOBILE-CHROME:END -->
@@ -2067,6 +2059,8 @@ html,body{max-width:100%;overflow-x:hidden}
 
   </div>
 </div>
+
+
 
 
 
