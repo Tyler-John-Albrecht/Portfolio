@@ -158,7 +158,6 @@ body.menu-open .os-mid{opacity:0;pointer-events:none}
 .os-mid h1{font-size:clamp(40px,6.6vw,82px);font-weight:500;line-height:1.03;max-width:880px;margin:0 auto}
 .os-mid p{max-width:52ch;margin:24px auto 0;color:#C9CBC4;font-size:16.5px;font-weight:300}
 .os-bot{display:flex;align-items:center;justify-content:center;position:relative;padding:10px 8px 6px}
-.os-bot .login{position:absolute;right:14px;bottom:14px;color:#F1EFE9}
 .scrollcue{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:10px;color:#8A8C86;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
 .scrollcue i{display:block;width:26px;height:1px;background:#E8FF3C;animation:cue 2.2s ease-in-out infinite}
 @keyframes cue{0%,100%{transform:scaleX(.4);opacity:.5}50%{transform:scaleX(1);opacity:1}}
@@ -527,7 +526,6 @@ html,body{max-width:100%;overflow-x:hidden}
     </a>
     <a href="#" class="xp xp-act" data-book><span class="xp-ico" aria-hidden="true">✦</span><b>Reserve a Consultation</b><span class="xp-arr" aria-hidden="true">↗</span></a>
     <a href="#membership" class="xp xp-act"><span class="xp-ico" aria-hidden="true">◈</span><b>Membership</b><span class="xp-arr" aria-hidden="true">↗</span></a>
-    <a href="#contact" class="xp xp-act"><span class="xp-ico" aria-hidden="true">→</span><b>Client Login</b><span class="xp-arr" aria-hidden="true">↗</span></a>
     <a href="#" class="xp xp-mini xp-m1" aria-label="Instagram">Instagram</a>
     <a href="#" class="xp xp-mini xp-m2" aria-label="Facebook">Facebook</a>
     <a href="tel:5550137741" class="xp xp-mini xp-m3">(555) 013-7741</a>
@@ -573,7 +571,6 @@ html,body{max-width:100%;overflow-x:hidden}
           <span class="x-face x-close">Close <i>✕</i></span>
         </span>
       </button>
-      <a href="#contact" class="underlink login">Client Login</a>
     </div>
   </div>
 </section>
@@ -781,12 +778,12 @@ html,body{max-width:100%;overflow-x:hidden}
         <div class="a">Both. The standard doesn't change with the badge — a well-kept daily gets the same light, the same process, and the same walkaround as a Chiron.</div>
       </details>
     </div>
-    <div class="rv" style="margin-top:44px">
+    <div class="rv" style="margin-top:44px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
       <a href="https://g.page/" target="_blank" rel="noopener" class="gbtn">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A11 11 0 0 0 12 1 11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>
         Read our reviews on Google ↗
       </a>
-<a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener" class="gbtn" style="margin-left:10px">
+<a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener" class="gbtn">
 <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#FBBC05" d="M12 2l2.9 5.88 6.5.94-4.7 4.58 1.11 6.47L12 16.9l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.94L12 2z"/></svg>
 Leave us a Google review
 </a>
@@ -829,7 +826,6 @@ Leave us a Google review
           <li><a href="#services">Services</a></li>
           <li><a href="#membership">Membership</a></li>
           <li><a href="#gallery">Recent work</a></li>
-          <li><a href="#hero">Client login</a></li>
         </ul>
       </div>
       <div>
@@ -997,7 +993,6 @@ mm.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
     setMenu(false);
   }
 }));
-document.querySelector('.login').addEventListener('click', () => setMenu(false));
 document.addEventListener('keydown', e => { if(e.key === 'Escape' && menuOpen()) setMenu(false); });
 
 // booking modal + sticky bar
