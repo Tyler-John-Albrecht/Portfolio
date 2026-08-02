@@ -444,6 +444,21 @@ html,body{max-width:100%;overflow-x:hidden}
 /* --- end no horizontal scroll --- */
 </style>
 <!-- BRECHTLAND-MOBILE-CHROME:END -->
+<style id="scroll-container-fix">
+/* iOS Safari paints the strip behind the phone's clock from the SCROLLING
+   CONTENT layer and leaves position:fixed layers out of it. With <body> as the
+   scroller, page photos render up there and no header styling can cover them.
+   Moving the scroll into a container removes that layer, so the strip falls
+   back to the page background. Everything position:fixed must stay OUTSIDE
+   #scrollport - a fixed element inside a scrolling container is trapped in
+   that layer. */
+html,body{height:100%;overflow:hidden;background:#0A0A0F;}
+#scrollport{height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+/* The page behind a modal can no longer scroll to reveal a tall form, so the
+   modal needs its own internal scroll. */
+#bkOverlay{overscroll-behavior:contain;}
+#bkOverlay > div{max-height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+</style>
 </head>
 <body>
 
@@ -473,6 +488,7 @@ html,body{max-width:100%;overflow-x:hidden}
 </header>
 
 <!-- ═══ HERO — scroll-expand video ═══ -->
+<div id="scrollport">
 <section id="hero" data-label="Hero">
   <div class="hero-pin">
     <div class="hero-bgimg" aria-hidden="true"></div>
@@ -869,6 +885,7 @@ Leave us a Google review
     </div>
   </div>
 </footer>
+</div><!-- /scrollport -->
 
 <!-- ═══ LIGHTBOX ═══ -->
 <div id="lbOverlay" role="dialog" aria-modal="true" aria-label="Gallery lightbox" data-label="Gallery Lightbox">
@@ -1931,6 +1948,32 @@ window.BRECHTLAND_ADVISOR = {
 
 </script>
 <!-- BRECHTLAND-ADVISOR:END -->
+<script id="scrollport-shim">
+/* The page's scripts listen for scroll on window and read pageYOffset. Neither
+   fires now that #scrollport is the scroller, so re-broadcast its scroll and
+   map the usual position reads onto it - keeps the sticky bar, the shrinking
+   header and anchor links working. */
+(function(){
+  var sp=document.getElementById('scrollport'); if(!sp) return;
+  sp.addEventListener('scroll',function(){window.dispatchEvent(new Event('scroll'));},{passive:true});
+  try{
+    Object.defineProperty(window,'pageYOffset',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(window,'scrollY',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(document.documentElement,'scrollTop',{
+      get:function(){return sp.scrollTop;},set:function(v){sp.scrollTop=v;},configurable:true});
+  }catch(e){}
+  window.scrollTo=function(x,y){
+    if(typeof x==='object'&&x){sp.scrollTo(x);return;}
+    sp.scrollTop=(y===undefined?x:y)||0;
+  };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    e.preventDefault(); sp.scrollTo({top:el.offsetTop,behavior:'smooth'});
+  },true);
+})();
+</script>
 <!-- ===============================================================
      PORTFOLIO DEMO MODE - injected by advisor/build-portfolio.ps1.
      Public showcase copies, not live sites: every form is blocked and
@@ -1941,12 +1984,18 @@ window.BRECHTLAND_ADVISOR = {
      =============================================================== -->
 <style>
 #bl-bar{position:fixed;left:14px;bottom:14px;z-index:2147482000;display:flex;gap:8px;align-items:center;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
-#bl-bar a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 16px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:transform .15s,border-color .15s,box-shadow .15s;backdrop-filter:blur(12px)}
-#bl-bar a:hover{transform:translateY(-2px)}
+#bl-bar a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 16px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:transform .15s,border-color .15s,box-shadow .15s;backdrop-filter:blur(12px);touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,229,255,.25)}
 #bl-back{background:rgba(8,10,14,.9);border:1px solid rgba(255,255,255,.28);color:#EEF2F8}
-#bl-back:hover{border-color:#00E5FF;color:#00E5FF}
 #bl-book{background:#00E5FF;border:1px solid #00E5FF;color:#04212A;box-shadow:0 8px 24px rgba(0,229,255,.3)}
-#bl-book:hover{box-shadow:0 12px 32px rgba(0,229,255,.45)}
+/* Hover effects ONLY on real pointers. On iOS a :hover rule makes the first tap
+   apply hover instead of activating the link - you have to tap twice, unless a
+   scroll happens to clear the hover state first. hover:hover keeps the desktop
+   polish and gives touch a single reliable tap. */
+@media (hover:hover) and (pointer:fine){
+  #bl-bar a:hover{transform:translateY(-2px)}
+  #bl-back:hover{border-color:#00E5FF;color:#00E5FF}
+  #bl-book:hover{box-shadow:0 12px 32px rgba(0,229,255,.45)}
+}
 /* Sit above the template's sticky mobile CTA bar, and stop short of the
    Service Advisor launcher in the bottom-right corner. */
 @media (max-width:767px){
