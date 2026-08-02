@@ -195,7 +195,7 @@ body.menu-open .os-mid{opacity:0;pointer-events:none}
 .srow:hover .sarrow{background:#E8FF3C;color:#101114;border-color:#E8FF3C}
 
 /* ═══ QUOTE BAND ═══ */
-#band{position:relative;padding:190px 0;color:#F1EFE9;text-align:center;overflow:hidden}
+#band{position:relative;padding:120px 0 96px;color:#F1EFE9;text-align:center;overflow:hidden}
 #band .bg{position:absolute;inset:0;background:url('photos/meridian-quote-bg.jpg') center 40%/cover no-repeat}
 #band .dim{position:absolute;inset:0;background:rgba(16,17,20,.78)}
 #band .inner{position:relative;z-index:2}
@@ -203,6 +203,19 @@ body.menu-open .os-mid{opacity:0;pointer-events:none}
 #band blockquote b{color:#E8FF3C;font-weight:500}
 #band cite{font-style:normal;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B9BBB4}
 #band .stars{color:#E8FF3C;letter-spacing:6px;font-size:15px;margin-bottom:26px;display:block}
+#band .kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#E8FF3C;margin-bottom:18px;display:block}
+/* Three supporting quotes, each answering a different reason someone
+   hesitates - the work, handing over the keys, and the price. */
+.bandgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:44px auto 0;max-width:1000px;text-align:left}
+.bq{background:rgba(26,27,32,.72);border:1px solid rgba(241,239,233,.10);border-radius:12px;padding:22px 22px 20px;backdrop-filter:blur(6px)}
+.bq p{font-size:14.5px;line-height:1.6;font-weight:300;color:#E7E5DE}
+.bq p b{color:#E8FF3C;font-weight:500}
+.bq cite{display:block;margin-top:14px}
+#band .gbtns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+@media(max-width:900px){
+  #band{padding:96px 0 84px}
+  .bandgrid{grid-template-columns:1fr;max-width:520px;gap:12px}
+}
 
 /* ═══ MEMBERSHIP ═══ */
 #membership{padding:150px 0}
@@ -326,7 +339,7 @@ a.xp-mini:hover{color:#E8FF3C}
 .xp-alt{grid-row:4;background:#1A1B20;color:#F1EFE9;display:flex;align-items:center;gap:14px;padding:0 22px;font-weight:600;font-size:15px}
 .xp-alt .xp-ico{width:34px;height:34px;border:1.5px solid rgba(232,255,60,.55);color:#E8FF3C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .xp-alt .xp-arr{position:static;margin-left:auto}
-.xp-s1{grid-column:1/7}.xp-s2{grid-column:7/13}
+.xp-s1{grid-column:1/5}.xp-s2{grid-column:5/9}.xp-s3{grid-column:9/13}
 @media(max-width:900px){
   #mobileMenu{padding:110px 12px 84px}
   .xgrid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto}
@@ -576,7 +589,8 @@ html,body{height:100%;overflow:hidden;background:#101114;}
     <a href="#process" class="xp xp-act xp-a2"><span class="xp-ico" aria-hidden="true">◈</span><b>How It Works</b><span class="xp-arr" aria-hidden="true">↗</span></a>
     <a href="#guaranteeBlock" class="xp xp-act xp-a3"><span class="xp-ico" aria-hidden="true">◆</span><b>The Guarantee</b><span class="xp-arr" aria-hidden="true">↗</span></a>
     <a href="#faq" class="xp xp-alt xp-s1"><span class="xp-ico" aria-hidden="true">?</span><b>Questions</b><span class="xp-arr" aria-hidden="true">↗</span></a>
-    <a href="#contact" class="xp xp-alt xp-s2"><span class="xp-ico" aria-hidden="true">◎</span><b>Visit the Studio</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#band" class="xp xp-alt xp-s2"><span class="xp-ico" aria-hidden="true">★</span><b>Owner Stories</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#contact" class="xp xp-alt xp-s3"><span class="xp-ico" aria-hidden="true">◎</span><b>Visit the Studio</b><span class="xp-arr" aria-hidden="true">↗</span></a>
     <a href="#" class="xp xp-mini xp-m1" aria-label="Instagram">Instagram</a>
     <a href="#" class="xp xp-mini xp-m2" aria-label="Facebook">Facebook</a>
     <a href="tel:5550137741" class="xp xp-mini xp-m3">(555) 013-7741</a>
@@ -769,13 +783,40 @@ html,body{height:100%;overflow:hidden;background:#101114;}
 </section>
 
 <!-- ═══ QUOTE BAND ═══ -->
-<section id="band" data-label="Testimonial Band">
+<section id="band" data-label="Owner Stories">
   <div class="bg" role="img" aria-label="Dark green Porsche 911 GT3 on a rain-soaked Paris street"></div>
   <div class="dim"></div>
   <div class="wrap inner">
-    <span class="stars rv" aria-label="Five stars">★★★★★</span>
+    <span class="kick rv">Owner stories</span>
+    <span class="stars rv" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
     <blockquote class="rv" style="transition-delay:.08s">"I've had this car detailed in three cities. Meridian is the first shop where I <b>couldn't find a single thing</b> to point at."</blockquote>
-    <cite class="rv" style="transition-delay:.16s">— GT owner, member since 2023</cite>
+    <cite class="rv" style="transition-delay:.16s">&mdash; GT owner, River City</cite>
+
+    <div class="bandgrid">
+      <div class="bq rv" style="transition-delay:.22s">
+        <p>"They sent photos at every stage. I knew exactly what was happening to my car without having to <b>chase anyone for an update</b>."</p>
+        <cite>&mdash; 911 Turbo owner</cite>
+      </div>
+      <div class="bq rv" style="transition-delay:.28s">
+        <p>"One car in the bay at a time. Mine wasn't sitting outside waiting its turn &mdash; it was <b>behind a closed door the whole time</b>."</p>
+        <cite>&mdash; Aston Martin owner</cite>
+      </div>
+      <div class="bq rv" style="transition-delay:.34s">
+        <p>"The quote was the price. No upsell when I arrived, no line items I didn't agree to. <b>It cost what they said it would.</b>"</p>
+        <cite>&mdash; Range Rover owner</cite>
+      </div>
+    </div>
+
+    <div class="gbtns rv" style="transition-delay:.4s">
+      <a href="https://g.page/" target="_blank" rel="noopener" class="gbtn">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A11 11 0 0 0 12 1 11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>
+        Read our reviews on Google &#8599;
+      </a>
+      <a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener" class="gbtn">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#FBBC05" d="M12 2l2.9 5.88 6.5.94-4.7 4.58 1.11 6.47L12 16.9l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.94L12 2z"/></svg>
+        Leave us a Google review
+      </a>
+    </div>
   </div>
 </section>
 
@@ -803,16 +844,6 @@ html,body{height:100%;overflow:hidden;background:#101114;}
         <summary>Do you work on daily drivers, or just exotics?</summary>
         <div class="a">Both. The standard doesn't change with the badge — a well-kept daily gets the same light, the same process, and the same walkaround as a Chiron.</div>
       </details>
-    </div>
-    <div class="rv" style="margin-top:44px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-      <a href="https://g.page/" target="_blank" rel="noopener" class="gbtn">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A11 11 0 0 0 12 1 11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>
-        Read our reviews on Google ↗
-      </a>
-<a href="https://search.google.com/local/writereview?placeid=PLACE_ID" target="_blank" rel="noopener" class="gbtn">
-<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#FBBC05" d="M12 2l2.9 5.88 6.5.94-4.7 4.58 1.11 6.47L12 16.9l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.94L12 2z"/></svg>
-Leave us a Google review
-</a>
     </div>
   </div>
 </section>
