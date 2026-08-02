@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fast Exotic Detailing | River City, FL Auto Detailing & Ceramic Coatings</title>
   <meta name="description" content="Paint correction, ceramic coatings, and full interior restoration for exotics, luxury cars, and daily drivers. Done by hand in River City, FL — 100% satisfaction guaranteed.">
   <meta property="og:type" content="website">
@@ -67,9 +67,8 @@
       font-family: "Barlow", sans-serif;
       background-color: #060608;
       color: #F2F0EC;
-      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-    }
+    overflow-x:hidden;}
 
     /* ── Noise grain overlay ──────────────────────── */
     body::after {
@@ -121,13 +120,7 @@
 
     /* ── Nav ──────────────────────────────────────── */
     .nav-glass {
-      /* The bar's box starts 240px above the top of the screen so its own
-         background paints the strip behind the phone's clock. The matching
-         padding puts the logo back exactly where it was. Nothing here relies
-         on the browser honouring viewport-fit or safe-area insets. */
-      top: -240px !important;
-      padding-top: calc(240px + env(safe-area-inset-top, 0px));
-      background: rgba(6,6,8,0.97);
+      background: rgba(6,6,8,0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,122,28,0.07);
@@ -640,33 +633,53 @@
       to   { stroke-dashoffset: 0; }
     }
   </style>
+<style>/* === HERO TOP OFFSET — same structure as the dental template ===
+   Dental's hero is `padding-top:76px` with the photo as a CHILD element, so the
+   top strip of the page is plain background and nothing can bleed behind the
+   nav or into the phone's status bar.
+
+   Here the photo is a background-image on the section itself, which paints the
+   FULL box from y=0 - including behind the nav. Padding alone does not stop
+   that, because backgrounds fill the padding area by default. Clipping the
+   background to the content box does: the photo now starts below the nav and
+   the strip above it is solid page background. */
+#home.hero-img{
+  padding-top: var(--navh, 101px);
+  background-clip: content-box;
+  background-origin: content-box;
+  background-color: #060608;
+}
+@media (max-width: 767px){
+  #home.hero-img{ padding-top: var(--navh-m, 101px); }
+}
+/* the absolutely-positioned overlays inside the hero must respect it too */
+#home > .absolute{ top: var(--navh, 101px); }
+@media (max-width: 767px){
+  #home > .absolute{ top: var(--navh-m, 101px); }
+}
+</style>
+
+<style id="scroll-container-fix">
+/* iOS Safari paints the strip behind the phone's clock from the SCROLLING
+   CONTENT layer and leaves fixed layers out of it. With <body> as the scroller,
+   page photos render up there and no header styling can cover them. Moving the
+   scroll into a container removes that layer, so the strip falls back to the
+   page background. Everything position:fixed must stay OUTSIDE #scrollport. */
+html,body{height:100%;overflow:hidden;background:#060608;}
+#scrollport{height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+#booking-modal{overscroll-behavior:contain;}
+#booking-modal > div{max-height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+</style>
 <!-- BRECHTLAND-MOBILE-CHROME:START (generated) -->
 <!-- Paints the phone's status-bar strip in the site colour. Without it iOS
      renders page content up there next to the clock, which reads as the page
      spilling out above the header. -->
 <meta name="theme-color" content="#060608">
-<style>
-/* --- no horizontal scroll (generated) --- */
-/* Nothing should ever pan sideways on a phone. `clip` is used where supported
-   because it stops the pan WITHOUT creating a scroll container - unlike
-   `hidden`, which silently breaks position:sticky on descendants. `hidden` is
-   the fallback for older browsers. Note: overflow-x on <body> alone is not
-   enough - iOS Safari still allows the pan unless <html> carries it too. */
-html,body{max-width:100%;overflow-x:hidden}
-@supports (overflow:clip){html,body{overflow-x:clip;overflow-y:visible}}
-/* The bar's own colour, so the strip behind the phone's clock is never bare. */
-html{background:#060608}
-/* --- end no horizontal scroll --- */
-</style>
 <!-- BRECHTLAND-MOBILE-CHROME:END -->
 </head>
 
 <body>
-
-<!-- ══════════════════════════════════════
-     NAV
-══════════════════════════════════════ -->
-<nav class="fixed top-0 w-full z-50 nav-glass" id="nav">
+<nav class="top-0 w-full z-50 nav-glass" id="nav">
   <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between" id="nav-inner">
 
     <a href="#home" class="logo">FAST<b>EXOTIC</b><small>DETAILING</small></a>
@@ -690,8 +703,6 @@ html{background:#060608}
     </button>
   </div>
 </nav>
-
-<!-- ── Mobile menu ── -->
 <div id="mob-menu" class="fixed inset-0 bg-ink/96 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8
      opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
   <a href="#packages" class="mob-link display text-5xl text-white">PACKAGES</a>
@@ -701,6 +712,228 @@ html{background:#060608}
 </div>
 
 
+
+<div id="booking-modal" aria-modal="true" role="dialog"
+     style="display:none; position:fixed; inset:0; z-index:9000;
+            background:rgba(6,6,8,0.93); backdrop-filter:blur(8px);
+            -webkit-backdrop-filter:blur(8px);
+            align-items:center; justify-content:center; padding:16px; overflow-y:auto;">
+
+  <div id="booking-card"
+       style="position:relative; width:100%; max-width:520px; margin:auto;
+              background:linear-gradient(160deg, rgba(22,22,25,0.99) 0%, rgba(10,10,12,1) 100%);
+              border:1px solid rgba(255,122,28,0.2); padding:40px 36px;">
+
+    <!-- Close button -->
+    <button onclick="closeBooking()" aria-label="Close"
+            style="position:absolute; top:16px; right:18px; background:none; border:none;
+                   color:rgba(255,255,255,0.3); cursor:pointer; font-size:1.3rem; line-height:1;
+                   padding:4px 8px; transition:color 0.2s;"
+            onmouseover="this.style.color='#FF7A1C'"
+            onmouseout="this.style.color='rgba(255,255,255,0.3)'">✕</button>
+
+    <!-- FORM STATE -->
+    <div id="booking-form-state">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.65rem;
+                  letter-spacing:0.2em; text-transform:uppercase; color:#FF7A1C; margin-bottom:8px;">
+        Fast Exotic Detailing &middot; River City, FL
+      </div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; text-transform:uppercase;
+                 line-height:0.95; font-size:clamp(1.9rem,5vw,2.7rem); color:#F2F0EC; margin-bottom:10px;">
+        GET A FREE QUOTE
+      </h2>
+      <p style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.875rem;
+                color:rgba(242,240,236,0.5); margin-bottom:28px; line-height:1.65;">
+        Fill this out and Marcus will reach out to confirm your booking within a few hours.
+      </p>
+
+      <form id="booking-form" onsubmit="submitBooking(event)">
+
+        <!-- Name + Phone -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+          <div>
+            <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                          letter-spacing:0.18em; text-transform:uppercase;
+                          color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Full Name *</label>
+            <input type="text" id="b-name" required placeholder="Jane Smith"
+                   style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                          color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                          padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                   onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+          </div>
+          <div>
+            <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                          letter-spacing:0.18em; text-transform:uppercase;
+                          color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Phone *</label>
+            <input type="tel" id="b-phone" required placeholder="(555) 555-0100"
+                   style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                          color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                          padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                   onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div style="margin-bottom:12px;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Email</label>
+          <input type="email" id="b-email" placeholder="jane@email.com"
+                 style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                        color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                        padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                 onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                 onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+
+        <!-- Service select -->
+        <div style="margin-bottom:12px; position:relative;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Service</label>
+          <select id="b-service"
+                  style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                         color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                         padding:10px 13px; outline:none; transition:border-color 0.2s;
+                         cursor:pointer; -webkit-appearance:none; appearance:none;"
+                  onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                  onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <option value="">Not sure — just need a quote</option>
+            <option value="Full Detail">Full Detail (Interior + Exterior)</option>
+            <option value="Stage 1 Paint Correction">Stage 1 Paint Correction</option>
+            <option value="Ceramic Coating">Ceramic Coating</option>
+            <option value="Exotic / Supercar Detail">Exotic / Supercar Detail</option>
+            <option value="Add-On Only">Add-On Service Only</option>
+          </select>
+          <div style="pointer-events:none; position:absolute; right:13px; bottom:11px;
+                      color:rgba(255,122,28,0.6); font-size:0.75rem;">▼</div>
+        </div>
+
+        <!-- Vehicle -->
+        <div style="margin-bottom:12px;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Vehicle (Year / Make / Model)</label>
+          <input type="text" id="b-vehicle" placeholder="e.g. 2019 Honda Civic"
+                 style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                        color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                        padding:10px 13px; outline:none; transition:border-color 0.2s;"
+                 onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                 onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+
+        <!-- Message -->
+        <div style="margin-bottom:24px;">
+          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
+                        letter-spacing:0.18em; text-transform:uppercase;
+                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Anything Else?</label>
+          <textarea id="b-message" rows="3"
+                    placeholder="Best time to reach you, specific concerns, etc."
+                    style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
+                           color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
+                           padding:10px 13px; outline:none; resize:vertical; transition:border-color 0.2s;"
+                    onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
+                    onblur="this.style.borderColor='rgba(255,255,255,0.08)'"></textarea>
+        </div>
+
+        <button type="submit"
+                style="width:100%; text-align:center; display:block; background:#FF7A1C; color:#060608;
+                       font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.88rem;
+                       letter-spacing:0.12em; text-transform:uppercase; padding:16px 36px;
+                       border:none; cursor:pointer; transition:background 0.28s ease, transform 0.25s ease;"
+                onmouseover="this.style.background='#FFA34D'; this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.background='#FF7A1C'; this.style.transform='translateY(0)'">
+          Send My Request
+        </button>
+
+        <p style="font-family:'Barlow',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.22);
+                  text-align:center; margin-top:14px;">
+          Prefer to text? <a href="sms:+15550149260"
+            style="color:rgba(255,122,28,0.65); text-decoration:none;">(555) 014-9260</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="booking-success" style="display:none; text-align:center; padding:24px 0;">
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:3.5rem;
+                  color:#FF7A1C; margin-bottom:16px;">✓</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; text-transform:uppercase;
+                 font-size:clamp(1.7rem,4vw,2.3rem); color:#F2F0EC; margin-bottom:14px;">
+        REQUEST SENT
+      </h2>
+      <p style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.9rem;
+                color:rgba(242,240,236,0.55); line-height:1.75; margin-bottom:28px;">
+        Marcus will reach out to confirm your appointment shortly.<br>
+        Look out for a call or text from
+        <strong style="color:#FF7A1C;">(555) 014-9260</strong>.
+      </p>
+      <button onclick="closeBooking()"
+              style="display:inline-block; background:#FF7A1C; color:#060608;
+                     font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.88rem;
+                     letter-spacing:0.12em; text-transform:uppercase; padding:14px 40px;
+                     border:none; cursor:pointer; transition:background 0.25s;"
+              onmouseover="this.style.background='#FFA34D'"
+              onmouseout="this.style.background='#FF7A1C'">Done</button>
+    </div>
+
+  </div>
+</div>
+<div id="sticky-bar"
+     style="position:fixed; bottom:0; left:0; right:0; z-index:8000;
+            background:rgba(6,6,8,0.97); border-top:1px solid rgba(255,122,28,0.2);
+            backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+            padding:12px 20px; align-items:center; justify-content:space-between; gap:12px;
+            transform:translateY(100%); transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);">
+
+  <div class="sb-id" style="min-width:0; overflow:hidden;">
+    <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:0.95rem;
+                letter-spacing:0.06em; text-transform:uppercase; color:#F2F0EC; line-height:1.1;
+                white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+      Fast Exotic Detailing
+    </div>
+    <div style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.72rem;
+                color:rgba(255,255,255,0.38); margin-top:2px; white-space:nowrap;
+                overflow:hidden; text-overflow:ellipsis;">
+      River City, FL &middot; Est. 2017
+    </div>
+  </div>
+
+  <a href="tel:+15550149260" class="sb-call" aria-label="Call Fast Exotic Detailing"
+     style="flex-shrink:0; display:flex; align-items:center; gap:7px; text-decoration:none;
+            color:#F2F0EC; font-family:'Barlow Condensed',sans-serif; font-weight:800;
+            font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase;
+            padding:11px 16px; border:1px solid rgba(255,255,255,0.18);">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/>
+    </svg>
+    Call
+  </a>
+
+  <button type="button" onclick="openBooking()" class="sb-book"
+          style="flex-shrink:0; background:#FF7A1C; color:#060608;
+                 font-family:'Barlow Condensed',sans-serif; font-weight:800;
+                 font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase;
+                 padding:11px 22px; border:none; cursor:pointer;
+                 transition:background 0.25s, transform 0.2s; white-space:nowrap;"
+          onmouseover="this.style.background='#FFA34D'"
+          onmouseout="this.style.background='#FF7A1C'">
+    Free Quote
+  </button>
+
+</div>
+<div id="scrollport">
+
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+
+
+<!-- ── Mobile menu ── -->
 <!-- ══════════════════════════════════════
      HERO
 ══════════════════════════════════════ -->
@@ -1693,7 +1926,7 @@ html{background:#060608}
     if (window.scrollY > 60) {
       navInner.style.paddingTop    = '10px';
       navInner.style.paddingBottom = '10px';
-      nav.style.background         = 'rgba(6,6,8,0.98)';
+      nav.style.background         = '#060608';
     } else {
       navInner.style.paddingTop    = '16px';
       navInner.style.paddingBottom = '16px';
@@ -1842,242 +2075,64 @@ html{background:#060608}
 <!-- ══════════════════════════════════════
      MOBILE STICKY BAR
 ══════════════════════════════════════ -->
-<div id="sticky-bar"
-     style="position:fixed; bottom:0; left:0; right:0; z-index:8000;
-            background:rgba(6,6,8,0.97); border-top:1px solid rgba(255,122,28,0.2);
-            backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-            padding:12px 20px; align-items:center; justify-content:space-between; gap:12px;
-            transform:translateY(100%); transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);">
 
-  <div class="sb-id" style="min-width:0; overflow:hidden;">
-    <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:0.95rem;
-                letter-spacing:0.06em; text-transform:uppercase; color:#F2F0EC; line-height:1.1;
-                white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-      Fast Exotic Detailing
-    </div>
-    <div style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.72rem;
-                color:rgba(255,255,255,0.38); margin-top:2px; white-space:nowrap;
-                overflow:hidden; text-overflow:ellipsis;">
-      River City, FL &middot; Est. 2017
-    </div>
-  </div>
-
-  <a href="tel:+15550149260" class="sb-call" aria-label="Call Fast Exotic Detailing"
-     style="flex-shrink:0; display:flex; align-items:center; gap:7px; text-decoration:none;
-            color:#F2F0EC; font-family:'Barlow Condensed',sans-serif; font-weight:800;
-            font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase;
-            padding:11px 16px; border:1px solid rgba(255,255,255,0.18);">
-    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
-         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/>
-    </svg>
-    Call
-  </a>
-
-  <button type="button" onclick="openBooking()" class="sb-book"
-          style="flex-shrink:0; background:#FF7A1C; color:#060608;
-                 font-family:'Barlow Condensed',sans-serif; font-weight:800;
-                 font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase;
-                 padding:11px 22px; border:none; cursor:pointer;
-                 transition:background 0.25s, transform 0.2s; white-space:nowrap;"
-          onmouseover="this.style.background='#FFA34D'"
-          onmouseout="this.style.background='#FF7A1C'">
-    Free Quote
-  </button>
-
-</div>
 
 
 <!-- ══════════════════════════════════════
      BOOKING MODAL
 ══════════════════════════════════════ -->
-<div id="booking-modal" aria-modal="true" role="dialog"
-     style="display:none; position:fixed; inset:0; z-index:9000;
-            background:rgba(6,6,8,0.93); backdrop-filter:blur(8px);
-            -webkit-backdrop-filter:blur(8px);
-            align-items:center; justify-content:center; padding:16px; overflow-y:auto;">
 
-  <div id="booking-card"
-       style="position:relative; width:100%; max-width:520px; margin:auto;
-              background:linear-gradient(160deg, rgba(22,22,25,0.99) 0%, rgba(10,10,12,1) 100%);
-              border:1px solid rgba(255,122,28,0.2); padding:40px 36px;">
 
-    <!-- Close button -->
-    <button onclick="closeBooking()" aria-label="Close"
-            style="position:absolute; top:16px; right:18px; background:none; border:none;
-                   color:rgba(255,255,255,0.3); cursor:pointer; font-size:1.3rem; line-height:1;
-                   padding:4px 8px; transition:color 0.2s;"
-            onmouseover="this.style.color='#FF7A1C'"
-            onmouseout="this.style.color='rgba(255,255,255,0.3)'">✕</button>
 
-    <!-- FORM STATE -->
-    <div id="booking-form-state">
-      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.65rem;
-                  letter-spacing:0.2em; text-transform:uppercase; color:#FF7A1C; margin-bottom:8px;">
-        Fast Exotic Detailing &middot; River City, FL
-      </div>
-      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; text-transform:uppercase;
-                 line-height:0.95; font-size:clamp(1.9rem,5vw,2.7rem); color:#F2F0EC; margin-bottom:10px;">
-        GET A FREE QUOTE
-      </h2>
-      <p style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.875rem;
-                color:rgba(242,240,236,0.5); margin-bottom:28px; line-height:1.65;">
-        Fill this out and Marcus will reach out to confirm your booking within a few hours.
-      </p>
 
-      <form id="booking-form" onsubmit="submitBooking(event)">
 
-        <!-- Name + Phone -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
-          <div>
-            <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
-                          letter-spacing:0.18em; text-transform:uppercase;
-                          color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Full Name *</label>
-            <input type="text" id="b-name" required placeholder="Jane Smith"
-                   style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
-                          color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
-                          padding:10px 13px; outline:none; transition:border-color 0.2s;"
-                   onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
-                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-          </div>
-          <div>
-            <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
-                          letter-spacing:0.18em; text-transform:uppercase;
-                          color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Phone *</label>
-            <input type="tel" id="b-phone" required placeholder="(555) 555-0100"
-                   style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
-                          color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
-                          padding:10px 13px; outline:none; transition:border-color 0.2s;"
-                   onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
-                   onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-          </div>
-        </div>
 
-        <!-- Email -->
-        <div style="margin-bottom:12px;">
-          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
-                        letter-spacing:0.18em; text-transform:uppercase;
-                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Email</label>
-          <input type="email" id="b-email" placeholder="jane@email.com"
-                 style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
-                        color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
-                        padding:10px 13px; outline:none; transition:border-color 0.2s;"
-                 onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
-                 onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-        </div>
 
-        <!-- Service select -->
-        <div style="margin-bottom:12px; position:relative;">
-          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
-                        letter-spacing:0.18em; text-transform:uppercase;
-                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Service</label>
-          <select id="b-service"
-                  style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
-                         color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
-                         padding:10px 13px; outline:none; transition:border-color 0.2s;
-                         cursor:pointer; -webkit-appearance:none; appearance:none;"
-                  onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
-                  onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-            <option value="">Not sure — just need a quote</option>
-            <option value="Full Detail">Full Detail (Interior + Exterior)</option>
-            <option value="Stage 1 Paint Correction">Stage 1 Paint Correction</option>
-            <option value="Ceramic Coating">Ceramic Coating</option>
-            <option value="Exotic / Supercar Detail">Exotic / Supercar Detail</option>
-            <option value="Add-On Only">Add-On Service Only</option>
-          </select>
-          <div style="pointer-events:none; position:absolute; right:13px; bottom:11px;
-                      color:rgba(255,122,28,0.6); font-size:0.75rem;">▼</div>
-        </div>
 
-        <!-- Vehicle -->
-        <div style="margin-bottom:12px;">
-          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
-                        letter-spacing:0.18em; text-transform:uppercase;
-                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Vehicle (Year / Make / Model)</label>
-          <input type="text" id="b-vehicle" placeholder="e.g. 2019 Honda Civic"
-                 style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
-                        color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
-                        padding:10px 13px; outline:none; transition:border-color 0.2s;"
-                 onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
-                 onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-        </div>
 
-        <!-- Message -->
-        <div style="margin-bottom:24px;">
-          <label style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.6rem;
-                        letter-spacing:0.18em; text-transform:uppercase;
-                        color:rgba(255,255,255,0.38); display:block; margin-bottom:6px;">Anything Else?</label>
-          <textarea id="b-message" rows="3"
-                    placeholder="Best time to reach you, specific concerns, etc."
-                    style="width:100%; background:#161619; border:1px solid rgba(255,255,255,0.08);
-                           color:#F2F0EC; font-family:'Barlow',sans-serif; font-size:0.875rem;
-                           padding:10px 13px; outline:none; resize:vertical; transition:border-color 0.2s;"
-                    onfocus="this.style.borderColor='rgba(255,122,28,0.55)'"
-                    onblur="this.style.borderColor='rgba(255,255,255,0.08)'"></textarea>
-        </div>
 
-        <button type="submit"
-                style="width:100%; text-align:center; display:block; background:#FF7A1C; color:#060608;
-                       font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.88rem;
-                       letter-spacing:0.12em; text-transform:uppercase; padding:16px 36px;
-                       border:none; cursor:pointer; transition:background 0.28s ease, transform 0.25s ease;"
-                onmouseover="this.style.background='#FFA34D'; this.style.transform='translateY(-2px)'"
-                onmouseout="this.style.background='#FF7A1C'; this.style.transform='translateY(0)'">
-          Send My Request
-        </button>
 
-        <p style="font-family:'Barlow',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.22);
-                  text-align:center; margin-top:14px;">
-          Prefer to text? <a href="sms:+15550149260"
-            style="color:rgba(255,122,28,0.65); text-decoration:none;">(555) 014-9260</a>
-        </p>
-      </form>
-    </div>
 
-    <!-- SUCCESS STATE -->
-    <div id="booking-success" style="display:none; text-align:center; padding:24px 0;">
-      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:3.5rem;
-                  color:#FF7A1C; margin-bottom:16px;">✓</div>
-      <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; text-transform:uppercase;
-                 font-size:clamp(1.7rem,4vw,2.3rem); color:#F2F0EC; margin-bottom:14px;">
-        REQUEST SENT
-      </h2>
-      <p style="font-family:'Barlow',sans-serif; font-weight:300; font-size:0.9rem;
-                color:rgba(242,240,236,0.55); line-height:1.75; margin-bottom:28px;">
-        Marcus will reach out to confirm your appointment shortly.<br>
-        Look out for a call or text from
-        <strong style="color:#FF7A1C;">(555) 014-9260</strong>.
-      </p>
-      <button onclick="closeBooking()"
-              style="display:inline-block; background:#FF7A1C; color:#060608;
-                     font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.88rem;
-                     letter-spacing:0.12em; text-transform:uppercase; padding:14px 40px;
-                     border:none; cursor:pointer; transition:background 0.25s;"
-              onmouseover="this.style.background='#FFA34D'"
-              onmouseout="this.style.background='#FF7A1C'">Done</button>
-    </div>
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script id="scrollport-shim">
+/* The page's scripts listen for scroll on window and read pageYOffset. Neither
+   fires now that #scrollport is the scroller, so re-broadcast its scroll and
+   map the usual position reads onto it - keeps the sticky bar, the shrinking
+   header and anchor links working. */
+(function(){
+  var sp=document.getElementById('scrollport'); if(!sp) return;
+  sp.addEventListener('scroll',function(){window.dispatchEvent(new Event('scroll'));},{passive:true});
+  try{
+    Object.defineProperty(window,'pageYOffset',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(window,'scrollY',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(document.documentElement,'scrollTop',{
+      get:function(){return sp.scrollTop;},set:function(v){sp.scrollTop=v;},configurable:true});
+  }catch(e){}
+  window.scrollTo=function(x,y){
+    if(typeof x==='object'&&x){sp.scrollTo(x);return;}
+    sp.scrollTop=(y===undefined?x:y)||0;
+  };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    e.preventDefault(); sp.scrollTo({top:el.offsetTop,behavior:'smooth'});
+  },true);
+})();
+</script>
 <!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
 <script>
 window.BRECHTLAND_ADVISOR = {
@@ -2819,9 +2874,11 @@ window.BRECHTLAND_ADVISOR = {
      range from 100 to 9000), watch for the body scroll lock that every one of
      them sets when a modal opens, and hide until it's released. */
   function siteModalOpen() {
-    var b = document.body;
-    if (b.style.overflow === 'hidden') return true;
-    try { return getComputedStyle(b).overflow === 'hidden'; } catch (e) { return false; }
+    /* Only the INLINE style counts. Every template opens a modal with
+       `document.body.style.overflow = 'hidden'`. Reading the computed value
+       instead would also match a stylesheet rule - which a scroll-container
+       layout sets permanently, and the widget would hide itself forever. */
+    return document.body.style.overflow === 'hidden';
   }
   function syncModalState() {
     host.style.display = siteModalOpen() ? 'none' : '';
