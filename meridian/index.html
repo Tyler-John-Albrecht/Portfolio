@@ -510,13 +510,19 @@ html,body{height:100%;overflow:hidden;background:#101114;}
    Explore dashboard is how you move between them. A panel scrolls INSIDE
    itself when its content is taller than the phone - that is the only
    scrolling anywhere on the page. */
-#scrollport{position:fixed;inset:0;overflow:hidden;}
+#scrollport{position:fixed;inset:0;overflow:hidden;background:#F1EFE9;}
 #scrollport > section,#scrollport > footer{
   position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
   -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity .5s cubic-bezier(.22,1,.36,1),visibility 0s linear .5s;
 }
+/* In the old scrolling layout each section borrowed its top spacing from
+   whatever sat above it. Standing alone, several opened flush against the top
+   edge - the FAQ kicker was touching y=0. Panels are viewport-height now, so a
+   tighter uniform value also shows more content before you have to scroll. */
+#scrollport > section:not(#hero),#scrollport > footer{padding-top:88px}
+@media(max-width:767px){#scrollport > section:not(#hero),#scrollport > footer{padding-top:68px}}
 #scrollport > section.pan-on,#scrollport > footer.pan-on{
   opacity:1;visibility:visible;pointer-events:auto;
   transition:opacity .5s cubic-bezier(.22,1,.36,1),visibility 0s;
@@ -532,7 +538,19 @@ html,body{height:100%;overflow:hidden;background:#101114;}
   touch-action:manipulation}
 #panBack.on{display:flex;opacity:1;transform:translateX(-50%) translateY(0)}
 @media(hover:hover) and (pointer:fine){#panBack:hover{filter:brightness(1.06)}}
-@media(max-width:767px){#panBack{bottom:calc(74px + env(safe-area-inset-bottom,0px));font-size:13.5px;padding:12px 20px}}
+@media(max-width:767px){
+  /* Clears the sticky Call/Reserve bar AND the portfolio's back link,
+     both of which live in the bottom strip on a phone. */
+  #panBack{bottom:calc(140px + env(safe-area-inset-bottom,0px));font-size:13.5px;padding:12px 20px}
+  /* The Service Advisor bubble owns the bottom-right corner on a phone,
+     so the hero actions stack and stop short of it instead of sitting
+     underneath it. */
+  /* Bottom of a phone screen is crowded: advisor bubble bottom-right, and on
+     the portfolio a "back to templates" pill bottom-left. The hero actions
+     stack, stop short of the bubble, and sit above the pill's lane. */
+  .os-bot{flex-direction:column;align-items:stretch;gap:9px;padding-right:70px;
+          padding-bottom:calc(124px + env(safe-area-inset-bottom,0px))}
+}
 /* The page behind a modal can no longer scroll to reveal a tall form, so the
    modal needs its own internal scroll. */
 #bkOverlay{overscroll-behavior:contain;}
@@ -645,7 +663,7 @@ html,body{height:100%;overflow:hidden;background:#101114;}
 <section id="statement" data-label="Statement & Numbers">
   <div class="wrap">
     <span class="caps rv">The difference is in the hours</span>
-    <h2 class="rv">Swirl marks are what happen when <em>"good enough"</em> touches your paint. Nothing in this studio is good enough.</h2>
+    <h2 class="rv">Swirl marks don't come from bad luck. They come from <em>a shop in a hurry.</em></h2>
     <div class="stats rv">
       <div class="stat-cell">
         <div class="num"><span data-count="14">0</span><span>yrs</span></div>
@@ -1949,7 +1967,6 @@ window.BRECHTLAND_ADVISOR = {
 #bl-bar{position:fixed;left:14px;bottom:14px;z-index:2147482000;display:flex;gap:8px;align-items:center;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
 #bl-bar a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 16px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:transform .15s,border-color .15s,box-shadow .15s;backdrop-filter:blur(12px);touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,229,255,.25)}
 #bl-back{background:rgba(8,10,14,.9);border:1px solid rgba(255,255,255,.28);color:#EEF2F8}
-#bl-book{background:#00E5FF;border:1px solid #00E5FF;color:#04212A;box-shadow:0 8px 24px rgba(0,229,255,.3)}
 /* Hover effects ONLY on real pointers. On iOS a :hover rule makes the first tap
    apply hover instead of activating the link - you have to tap twice, unless a
    scroll happens to clear the hover state first. hover:hover keeps the desktop
@@ -1957,7 +1974,6 @@ window.BRECHTLAND_ADVISOR = {
 @media (hover:hover) and (pointer:fine){
   #bl-bar a:hover{transform:translateY(-2px)}
   #bl-back:hover{border-color:#00E5FF;color:#00E5FF}
-  #bl-book:hover{box-shadow:0 12px 32px rgba(0,229,255,.45)}
 }
 /* Sit above the template's sticky mobile CTA bar, and stop short of the
    Service Advisor launcher in the bottom-right corner. */
@@ -1981,7 +1997,6 @@ window.BRECHTLAND_ADVISOR = {
 </style>
 <div id="bl-bar">
   <a id="bl-back" href="/">&larr; All templates</a>
-  <a id="bl-book" href="https://calendar.app.google/nvRoWGZRCp37TzjR7" target="_blank" rel="noopener">Get this site</a>
 </div>
 <div id="bl-demo-ov" role="dialog" aria-modal="true" aria-label="Demo site notice">
   <div id="bl-demo-box">
