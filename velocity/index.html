@@ -42,9 +42,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Archivo',sans-serif;background:#0A0A0F;color:#F4F4F8;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6;
-}
+  font-family:'Archivo',sans-serif;background:#0A0A0F;color:#F4F4F8;-webkit-font-smoothing:antialiased;line-height:1.6;
+overflow-x:hidden;}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
@@ -1166,6 +1165,12 @@ document.querySelectorAll('.step').forEach(s => {
 
 
 
+
+
+
+
+
+
 <!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
 <script>
 window.BRECHTLAND_ADVISOR = {
@@ -1907,9 +1912,11 @@ window.BRECHTLAND_ADVISOR = {
      range from 100 to 9000), watch for the body scroll lock that every one of
      them sets when a modal opens, and hide until it's released. */
   function siteModalOpen() {
-    var b = document.body;
-    if (b.style.overflow === 'hidden') return true;
-    try { return getComputedStyle(b).overflow === 'hidden'; } catch (e) { return false; }
+    /* Only the INLINE style counts. Every template opens a modal with
+       `document.body.style.overflow = 'hidden'`. Reading the computed value
+       instead would also match a stylesheet rule - which a scroll-container
+       layout sets permanently, and the widget would hide itself forever. */
+    return document.body.style.overflow === 'hidden';
   }
   function syncModalState() {
     host.style.display = siteModalOpen() ? 'none' : '';
