@@ -298,6 +298,20 @@ footer{background:#1A1D1B;color:#fff;padding:84px 0 0}
   .revtrack .rev{width:290px}
   .ba{height:380px}
   .rail .scard{flex-basis:260px}
+  /* The ribbon stayed a side-by-side row on phones: the 56px icon column plus
+     46px of side padding left the copy only 163px wide - 23 characters a line,
+     a 10-line paragraph, and a tall empty green slab under the icon. Stacking
+     it gives the copy the full card width. */
+  .ribbon{flex-direction:column;gap:16px;padding:30px 26px}
+  .ribbon .ric{width:44px;height:44px;font-size:19px}
+  .ribbon p{max-width:none}
+  /* Grow the link to a thumb-sized target without letting its underline drift
+     away from the text: the real border goes transparent and a pseudo-element
+     draws the rule tight under the words. */
+  .ribbon a{padding:11px 0;border-bottom-color:transparent;position:relative}
+  .ribbon a::after{content:'';position:absolute;left:0;right:0;bottom:11px;
+                   height:1px;background:rgba(255,255,255,.5)}
+  .ribbon a:active::after{background:#fff}
 }
 
 /* ═══ CONVERSION KIT ═══ */
