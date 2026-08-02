@@ -294,7 +294,7 @@ footer .fmark span{color:#E8FF3C}
 /* ── EXPLORE DASHBOARD (panel grid) ── */
 #mobileMenu{position:fixed;inset:0;z-index:59;background:rgba(13,14,17,.97);backdrop-filter:blur(18px);overflow-y:auto;padding:122px 14px 96px;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;display:flex;align-items:flex-start;justify-content:center}
 #mobileMenu.open{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
-.xgrid{display:grid;width:min(1240px,100%);grid-template-columns:repeat(12,1fr);grid-template-rows:300px 210px 118px 60px;gap:10px}
+.xgrid{display:grid;width:min(1240px,100%);grid-template-columns:repeat(12,1fr);grid-template-rows:288px 200px 104px 104px 56px;gap:10px}
 .xp{position:relative;border-radius:12px;overflow:hidden;background:#1A1B20;border:1px solid rgba(241,239,233,.09);opacity:0;transform:translateY(20px) scale(.985);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1),border-color .3s}
 #mobileMenu.open .xp{opacity:1;transform:none}
 #mobileMenu.leaving .xp{opacity:0;transform:translateY(-16px) scale(.99);transition-delay:0s !important;transition-duration:.3s}
@@ -313,20 +313,27 @@ a.xp:hover .xp-arr{transform:translate(3px,-3px)}
 .xp-cotw{grid-column:9/13;grid-row:1/3}
 .xp-sv{grid-column:1/5;grid-row:2}
 .xp-pk{grid-column:5/9;grid-row:2}
-.xp-act{grid-column:span 4;grid-row:3;background:#E8FF3C;color:#101114;display:flex;align-items:center;gap:14px;padding:0 22px;font-weight:600;font-size:15px}
+.xp-act{grid-row:3;background:#E8FF3C;color:#101114;display:flex;align-items:center;gap:14px;padding:0 22px;font-weight:600;font-size:15px}
 .xp-act .xp-ico{width:34px;height:34px;border:1.5px solid #101114;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .xp-act .xp-arr{position:static;margin-left:auto;color:#101114}
 .xp-act:hover{border-color:#101114}
-.xp-mini{grid-row:4;display:flex;align-items:center;justify-content:center;font-size:13px;color:#C9CBC4;font-weight:500}
+.xp-mini{grid-row:5;display:flex;align-items:center;justify-content:center;font-size:13px;color:#C9CBC4;font-weight:500}
 a.xp-mini:hover{color:#E8FF3C}
 .xp-m1{grid-column:1/3}.xp-m2{grid-column:3/5}.xp-m3{grid-column:5/9}.xp-m4{grid-column:9/13}
+.xp-a1{grid-column:1/5}.xp-a2{grid-column:5/9}.xp-a3{grid-column:9/13}
+/* Row 4: same shape as the action tiles but secondary, so the yellow
+   Reserve tile stays the one thing your eye lands on. */
+.xp-alt{grid-row:4;background:#1A1B20;color:#F1EFE9;display:flex;align-items:center;gap:14px;padding:0 22px;font-weight:600;font-size:15px}
+.xp-alt .xp-ico{width:34px;height:34px;border:1.5px solid rgba(232,255,60,.55);color:#E8FF3C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.xp-alt .xp-arr{position:static;margin-left:auto}
+.xp-s1{grid-column:1/7}.xp-s2{grid-column:7/13}
 @media(max-width:900px){
   #mobileMenu{padding:110px 12px 84px}
   .xgrid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto}
   .xp{grid-column:1/-1 !important;grid-row:auto !important}
   .xp-photo{height:190px}
   .xp-cotw{height:250px}
-  .xp-act{height:76px}
+  .xp-act,.xp-alt{height:76px}
   .xp-mini{height:52px;grid-column:span 1 !important;background:#1A1B20}
   .xp-m3,.xp-m4{grid-column:1/-1 !important}
 }
@@ -485,7 +492,34 @@ html,body{max-width:100%;overflow-x:hidden}
    #scrollport - a fixed element inside a scrolling container is trapped in
    that layer. */
 html,body{height:100%;overflow:hidden;background:#101114;}
-#scrollport{height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+/* The site never scrolls. #scrollport is a fixed stage and each top-level
+   section is a full-viewport panel; only one is visible at a time and the
+   Explore dashboard is how you move between them. A panel scrolls INSIDE
+   itself when its content is taller than the phone - that is the only
+   scrolling anywhere on the page. */
+#scrollport{position:fixed;inset:0;overflow:hidden;}
+#scrollport > section,#scrollport > footer{
+  position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .5s cubic-bezier(.22,1,.36,1),visibility 0s linear .5s;
+}
+#scrollport > section.pan-on,#scrollport > footer.pan-on{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transition:opacity .5s cubic-bezier(.22,1,.36,1),visibility 0s;
+}
+/* Back to the dashboard - mirrors the Explore pill, bottom centre. */
+#panBack{position:fixed;left:50%;transform:translateX(-50%) translateY(14px);
+  bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:75;
+  display:none;align-items:center;gap:10px;background:#E8FF3C;color:#101114;
+  border:0;border-radius:10px;padding:14px 24px;cursor:pointer;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;
+  box-shadow:0 14px 36px rgba(0,0,0,.45);opacity:0;
+  transition:opacity .35s ease,transform .35s cubic-bezier(.22,1,.36,1);
+  touch-action:manipulation}
+#panBack.on{display:flex;opacity:1;transform:translateX(-50%) translateY(0)}
+@media(hover:hover) and (pointer:fine){#panBack:hover{filter:brightness(1.06)}}
+@media(max-width:767px){#panBack{bottom:calc(74px + env(safe-area-inset-bottom,0px));font-size:13.5px;padding:12px 20px}}
 /* The page behind a modal can no longer scroll to reveal a tall form, so the
    modal needs its own internal scroll. */
 #bkOverlay{overscroll-behavior:contain;}
@@ -538,8 +572,11 @@ html,body{height:100%;overflow:hidden;background:#101114;}
       <div class="xp-body"><h3>Packages</h3></div>
       <span class="xp-arr" aria-hidden="true">↗</span>
     </a>
-    <a href="#" class="xp xp-act" data-book><span class="xp-ico" aria-hidden="true">✦</span><b>Reserve a Consultation</b><span class="xp-arr" aria-hidden="true">↗</span></a>
-    <a href="#membership" class="xp xp-act"><span class="xp-ico" aria-hidden="true">◈</span><b>Membership</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#" class="xp xp-act xp-a1" data-book><span class="xp-ico" aria-hidden="true">✦</span><b>Reserve a Consultation</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#process" class="xp xp-act xp-a2"><span class="xp-ico" aria-hidden="true">◈</span><b>How It Works</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#guaranteeBlock" class="xp xp-act xp-a3"><span class="xp-ico" aria-hidden="true">◆</span><b>The Guarantee</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#faq" class="xp xp-alt xp-s1"><span class="xp-ico" aria-hidden="true">?</span><b>Questions</b><span class="xp-arr" aria-hidden="true">↗</span></a>
+    <a href="#contact" class="xp xp-alt xp-s2"><span class="xp-ico" aria-hidden="true">◎</span><b>Visit the Studio</b><span class="xp-arr" aria-hidden="true">↗</span></a>
     <a href="#" class="xp xp-mini xp-m1" aria-label="Instagram">Instagram</a>
     <a href="#" class="xp xp-mini xp-m2" aria-label="Facebook">Facebook</a>
     <a href="tel:5550137741" class="xp xp-mini xp-m3">(555) 013-7741</a>
@@ -743,32 +780,6 @@ html,body{height:100%;overflow:hidden;background:#101114;}
 </section>
 
 <!-- ═══ MEMBERSHIP ═══ -->
-<section id="membership" data-label="Membership">
-  <div class="wrap memgrid">
-    <div>
-      <span class="caps rv">Collection care</span>
-      <h2 class="rv">Your garage, permanently guest-ready.</h2>
-      <p class="rv">The hardest part of owning nice cars is keeping them nice. Membership puts your vehicles on a standing schedule — wash cadence, coating top-ups, interior care, and seasonal inspections handled without you booking a thing.</p>
-      <p class="rv"><span class="cap-note">Capped at 30 garages · 4 seats open</span></p>
-    </div>
-    <div class="memcard rv">
-      <span class="caps">Meridian Membership</span>
-      <div class="price" style="font-size:30px">By application<small> · terms on consultation</small></div>
-      <ul>
-        <li>Twice-monthly maintenance detail at your home or our studio</li>
-        <li>Annual ceramic inspection &amp; top-up included</li>
-        <li>Priority booking — 48-hour turnaround, guaranteed</li>
-        <li>Pre-event &amp; concours prep at member rates</li>
-      </ul>
-      <a href="tel:5550137741" class="pill">Request Membership
-        <span class="arr" aria-hidden="true">
-          <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
-          <svg viewBox="0 0 13 13" fill="none"><path d="M1 12 12 1M12 1H3M12 1v9" stroke="currentColor" stroke-width="1.6"/></svg>
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ FAQ ═══ -->
 <section id="faq" data-label="FAQs">
@@ -872,6 +883,9 @@ Leave us a Google review
 </div><!-- /scrollport -->
 
 <!-- ═══ STICKY MOBILE CTA ═══ -->
+<button id="panBack" type="button" aria-label="Back to dashboard">
+  <span aria-hidden="true">↙</span> Back to Dashboard
+</button>
 <div id="stickyBar" data-label="Sticky Mobile Bar">
   <span class="sb-name">MERIDIAN<span>.</span></span>
   <a href="tel:5550137741" class="sb-call">Call</a>
@@ -976,6 +990,29 @@ addEventListener('scroll', () => {
 const tnBurger = document.getElementById('tnBurger');
 const mm = document.getElementById('mobileMenu');
 const heroBurger = document.getElementById('heroBurger');
+/* ── Panel navigation ───────────────────────────────────────────────
+   Only one section is on screen at a time. The hero is home; every other
+   panel gets the Back to Dashboard pill. Reveal animations are driven by
+   the panel opening rather than by scroll position, because nothing
+   scrolls any more. */
+const panStage = document.getElementById('scrollport');
+const panBack  = document.getElementById('panBack');
+const panels   = panStage ? Array.from(panStage.children).filter(
+                   el => el.id && /^(SECTION|FOOTER)$/.test(el.tagName)) : [];
+function showPanel(id){
+  const target = document.getElementById(id) || document.getElementById('hero');
+  if(!target) return;
+  panels.forEach(p => p.classList.toggle('pan-on', p === target));
+  target.scrollTop = 0;
+  // the .rv elements normally wait for a scroll that will never come
+  target.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+  const home = target.id === 'hero';
+  panBack.classList.toggle('on', !home);
+  document.getElementById('stickyBar').classList.toggle('sb-show', !home);
+  history.replaceState(null, '', home ? location.pathname : '#' + target.id);
+}
+if(panBack) panBack.addEventListener('click', () => setMenu(true));
+
 const exploreBtn = document.getElementById('exploreBtn');
 function setMenu(open){
   mm.classList.toggle('open', open);
@@ -1001,15 +1038,20 @@ mm.querySelectorAll('a').forEach(a => a.addEventListener('click', e => {
     mm.classList.add('leaving');
     setTimeout(() => {
       setMenu(false);
-      const el = document.querySelector(id);
-      if(el) el.scrollIntoView({behavior:'instant', block:'start'});
+      showPanel(id.slice(1));
       mm.classList.remove('leaving');
     }, 330);
   } else {
     setMenu(false);
   }
 }));
-document.addEventListener('keydown', e => { if(e.key === 'Escape' && menuOpen()) setMenu(false); });
+document.addEventListener('keydown', e => {
+  if(e.key !== 'Escape') return;
+  if(menuOpen()) { setMenu(false); return; }
+  const cur = panels.find(p => p.classList.contains('pan-on'));
+  if(cur && cur.id !== 'hero') showPanel('hero');
+});
+showPanel((location.hash || '#hero').slice(1));
 
 // booking modal + sticky bar
 const bkOv = document.getElementById('bkOverlay');
