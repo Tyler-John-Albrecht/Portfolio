@@ -977,6 +977,33 @@ if(mapFrame){
 
 
 
+
+<script id="scrollport-shim">
+/* The page's scripts listen for scroll on window and read pageYOffset. Neither
+   fires now that #scrollport is the scroller, so re-broadcast its scroll and
+   map the usual position reads onto it - keeps the sticky bar, the shrinking
+   header and anchor links working. */
+(function(){
+  var sp=document.getElementById('scrollport'); if(!sp) return;
+  sp.addEventListener('scroll',function(){window.dispatchEvent(new Event('scroll'));},{passive:true});
+  try{
+    Object.defineProperty(window,'pageYOffset',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(window,'scrollY',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(document.documentElement,'scrollTop',{
+      get:function(){return sp.scrollTop;},set:function(v){sp.scrollTop=v;},configurable:true});
+  }catch(e){}
+  window.scrollTo=function(x,y){
+    if(typeof x==='object'&&x){sp.scrollTo(x);return;}
+    sp.scrollTop=(y===undefined?x:y)||0;
+  };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    e.preventDefault(); sp.scrollTo({top:el.offsetTop,behavior:'smooth'});
+  },true);
+})();
+</script>
 <!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
 <script>
 window.BRECHTLAND_ADVISOR = {
@@ -1050,6 +1077,10 @@ window.BRECHTLAND_ADVISOR = {
     fontBody:     C.fontBody     || "'Barlow', system-ui, sans-serif",
     bottomOffset: C.bottomOffset || 24,
     bottomOffsetMobile: C.bottomOffsetMobile || 82,
+    // Gap left between the site's sticky CTA bar and the launcher on mobile.
+    // Raise it per-site when the bar is not the only thing living down there
+    // (Meridian keeps its hero buttons in that corner).
+    barGap:       C.barGap       || 14,
     endpoint:     C.endpoint     || '',
     siteId:       C.siteId       || '',
     teaseAfter:   C.teaseAfter   || 22000,     // ms before the nudge appears
@@ -1703,7 +1734,7 @@ window.BRECHTLAND_ADVISOR = {
               document.getElementById('sticky-bar') ||
               document.getElementById('mobbar');
     var h = bar ? bar.offsetHeight : 0;   // offsetHeight includes its safe-area padding
-    wrap.style.bottom = h ? (h + 14) + 'px' : '';
+    wrap.style.bottom = h ? (h + cfg.barGap) + 'px' : '';
   }
   parkAboveBar();
   setTimeout(parkAboveBar, 600);          // after fonts/layout settle
@@ -1737,32 +1768,6 @@ window.BRECHTLAND_ADVISOR = {
 
 </script>
 <!-- BRECHTLAND-ADVISOR:END -->
-<script id="scrollport-shim">
-/* The page's scripts listen for scroll on window and read pageYOffset. Neither
-   fires now that #scrollport is the scroller, so re-broadcast its scroll and
-   map the usual position reads onto it - keeps the sticky bar, the shrinking
-   header and anchor links working. */
-(function(){
-  var sp=document.getElementById('scrollport'); if(!sp) return;
-  sp.addEventListener('scroll',function(){window.dispatchEvent(new Event('scroll'));},{passive:true});
-  try{
-    Object.defineProperty(window,'pageYOffset',{get:function(){return sp.scrollTop;},configurable:true});
-    Object.defineProperty(window,'scrollY',{get:function(){return sp.scrollTop;},configurable:true});
-    Object.defineProperty(document.documentElement,'scrollTop',{
-      get:function(){return sp.scrollTop;},set:function(v){sp.scrollTop=v;},configurable:true});
-  }catch(e){}
-  window.scrollTo=function(x,y){
-    if(typeof x==='object'&&x){sp.scrollTo(x);return;}
-    sp.scrollTop=(y===undefined?x:y)||0;
-  };
-  document.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
-    var id=a.getAttribute('href').slice(1); if(!id) return;
-    var el=document.getElementById(id); if(!el) return;
-    e.preventDefault(); sp.scrollTo({top:el.offsetTop,behavior:'smooth'});
-  },true);
-})();
-</script>
 <!-- ===============================================================
      PORTFOLIO DEMO MODE - injected by advisor/build-portfolio.ps1.
      Public showcase copies, not live sites: every form is blocked and
