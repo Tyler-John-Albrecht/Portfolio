@@ -52,7 +52,6 @@ body{
   font-family:var(--font);
   font-weight:400;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 }
 
 ::selection{background:var(--cyan);color:var(--ink)}
@@ -1894,6 +1893,12 @@ document.querySelectorAll('.bento-cta').forEach(btn=>{
 
 
 
+
+
+
+
+
+
 <!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
 <script>
 window.BRECHTLAND_ADVISOR = {
@@ -2635,9 +2640,11 @@ window.BRECHTLAND_ADVISOR = {
      range from 100 to 9000), watch for the body scroll lock that every one of
      them sets when a modal opens, and hide until it's released. */
   function siteModalOpen() {
-    var b = document.body;
-    if (b.style.overflow === 'hidden') return true;
-    try { return getComputedStyle(b).overflow === 'hidden'; } catch (e) { return false; }
+    /* Only the INLINE style counts. Every template opens a modal with
+       `document.body.style.overflow = 'hidden'`. Reading the computed value
+       instead would also match a stylesheet rule - which a scroll-container
+       layout sets permanently, and the widget would hide itself forever. */
+    return document.body.style.overflow === 'hidden';
   }
   function syncModalState() {
     host.style.display = siteModalOpen() ? 'none' : '';
