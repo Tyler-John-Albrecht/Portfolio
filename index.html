@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070A0F">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brechtland — Website Portfolio for Detailers</title>
 <meta name="description" content="Live website demos built for auto detailing, ceramic coating, tint and wrap shops. Click any one and use it like a real customer would.">
 <meta property="og:title" content="Brechtland — Website Portfolio for Detailers">
@@ -16,6 +17,13 @@
 :root{--ink:#070A0F;--panel:#0D1118;--line:#1C2230;--line2:#2A3346;--text:#EEF2F8;--dim:#9AA4B4;--dim2:#5D6878;--cy:#00E5FF}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+/* --- no horizontal scroll --- */
+/* `clip` where supported: stops the pan WITHOUT creating a scroll container,
+   unlike `hidden` which silently breaks position:sticky on descendants.
+   overflow-x on <body> alone is not enough - iOS Safari still allows the
+   pan unless <html> carries it too. */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
 body{font-family:'Inter',sans-serif;background:var(--ink);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -34,7 +42,7 @@ header .row{display:flex;align-items:center;justify-content:space-between;gap:20
 .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em}
 .logo b{color:var(--cy);font-weight:700}
 .logo small{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.34em;color:var(--dim2);margin-top:3px;font-weight:400}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:13px 26px;border-radius:7px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.btn{touch-action:manipulation;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:13px 26px;border-radius:7px;transition:transform .18s,box-shadow .18s,border-color .18s}
 .btn:hover{transform:translateY(-2px)}
 .btn-cy{background:var(--cy);color:#04212A;box-shadow:0 10px 30px rgba(0,229,255,.24)}
 .btn-cy:hover{box-shadow:0 16px 40px rgba(0,229,255,.36)}
@@ -43,7 +51,7 @@ header .row{display:flex;align-items:center;justify-content:space-between;gap:20
 header .btn{padding:10px 20px;font-size:13px}
 
 /* ── Hero ── */
-.hero{padding:96px 0 64px;position:relative}
+.hero{padding:96px 0 64px;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:420px;background:radial-gradient(ellipse,rgba(0,229,255,.10),transparent 68%);pointer-events:none;z-index:-1}
 .kick{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim2);margin-bottom:18px}
 .hero h1{font-size:clamp(36px,6vw,68px);max-width:16ch}
@@ -57,7 +65,7 @@ header .btn{padding:10px 20px;font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px}
 /* No overflow:hidden on the card: as a grid item it forces the automatic minimum
    size to 0, which collapses the row and clips the body. The thumb clips itself. */
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s}
+.card{touch-action:manipulation;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s,box-shadow .2s}
 .card:hover{border-color:var(--cy);transform:translateY(-4px);box-shadow:0 26px 60px rgba(0,0,0,.5)}
 .thumb{height:212px;flex:0 0 212px;position:relative;overflow:hidden;border-radius:14px 14px 0 0;background:#000}
 .thumb img,.thumb video{width:100%;height:100%;object-fit:cover}
