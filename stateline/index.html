@@ -1899,6 +1899,7 @@ document.querySelectorAll('.bento-cta').forEach(btn=>{
 
 
 
+
 <!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
 <script>
 window.BRECHTLAND_ADVISOR = {
@@ -1972,6 +1973,10 @@ window.BRECHTLAND_ADVISOR = {
     fontBody:     C.fontBody     || "'Barlow', system-ui, sans-serif",
     bottomOffset: C.bottomOffset || 24,
     bottomOffsetMobile: C.bottomOffsetMobile || 82,
+    // Gap left between the site's sticky CTA bar and the launcher on mobile.
+    // Raise it per-site when the bar is not the only thing living down there
+    // (Meridian keeps its hero buttons in that corner).
+    barGap:       C.barGap       || 14,
     endpoint:     C.endpoint     || '',
     siteId:       C.siteId       || '',
     teaseAfter:   C.teaseAfter   || 22000,     // ms before the nudge appears
@@ -2625,7 +2630,7 @@ window.BRECHTLAND_ADVISOR = {
               document.getElementById('sticky-bar') ||
               document.getElementById('mobbar');
     var h = bar ? bar.offsetHeight : 0;   // offsetHeight includes its safe-area padding
-    wrap.style.bottom = h ? (h + 14) + 'px' : '';
+    wrap.style.bottom = h ? (h + cfg.barGap) + 'px' : '';
   }
   parkAboveBar();
   setTimeout(parkAboveBar, 600);          // after fonts/layout settle
