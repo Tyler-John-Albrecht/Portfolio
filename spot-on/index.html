@@ -208,6 +208,7 @@ ul{list-style:none}
 .svc.rev-o .media{margin-right:0;margin-left:-58px}
 @media(max-width:960px){
   /* stacked: photo overlaps the panel from above, exactly like the About card */
+  .svc.rev-o{grid-template-columns:1fr}   /* outranks the base .svc stack rule, so flipped rows must reset too */
   .svc .media,.svc.rev-o .media{margin:0 0 -58px 0;z-index:2}
   .svc .copy,.svc.rev-o .copy{padding:92px 28px 38px}
 }
