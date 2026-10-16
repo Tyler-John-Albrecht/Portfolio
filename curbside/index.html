@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curbside Mobile Detailing | Mobile Auto, Boat &amp; RV Detailing in Central Florida</title>
+<meta name="description" content="Central Florida's mobile detailing crew. Full details, paint correction, ceramic coating, window tint and interior deep-cleans — at your home or office. Cars, boats, RVs and motorcycles. We bring our own water and power.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curbside Mobile Detailing | Central Florida">
+<meta property="og:description" content="We bring the detail shop to your driveway. Cars, boats, RVs and bikes — corrected, protected and finished by hand while you get on with your day.">
+<meta property="og:image" content="photos/curbside-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B1F2A'/%3E%3Cpath d='M16 62c16-19 30-28 34-28s18 9 34 28' stroke='%230091C6' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='74' r='6.5' fill='%230091C6'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "Curbside Mobile Detailing",
+  "description": "Mobile auto detailing: full details, paint correction, ceramic coating, window tint, headlight restoration and odor removal — plus boats, RVs and motorcycles. We come to you.",
+  "telephone": "4075550142",
+  "email": "hello@curbsidemobiledetail.com",
+  "areaServed": "Central Florida",
+  "openingHours": "Mo-Sa 08:00-18:00",
+  "priceRange": "$$",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "112" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CURBSIDE MOBILE DETAILING — mobile-first detailing template
+   DNA: Oswald condensed display · angled blue ribbons ·
+   drag before/after slider · light/dark alternating bands
+   Positioning: the shop that comes to you — same standard, zero errand
+   Palette: blue #0091C6 · ink #23303A · dark band #0B1F2A
+   ═══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;background:#FFFFFF;color:#23303A;-webkit-font-smoothing:antialiased;line-height:1.65;
+overflow-x:hidden;}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:#0091C6;color:#fff}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:#0B1F2A}
+::-webkit-scrollbar-thumb{background:#0091C6;border-radius:99px;border:2px solid #0B1F2A}
+:focus-visible{outline:2px solid #0091C6;outline-offset:3px;border-radius:4px}
+
+.wrap{width:min(1180px,92%);margin:0 auto}
+.display{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;line-height:1.12;letter-spacing:.015em;text-wrap:balance}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.kick{font-family:'Oswald',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.3em;font-size:12px;color:#00769E}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── SKEWED CTA (angled like the blue ribbons) ── */
+.btn{
+  display:inline-flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-weight:500;
+  text-transform:uppercase;font-size:13.5px;letter-spacing:.1em;padding:15px 28px;
+  transform:skewX(-10deg);border:0;cursor:pointer;
+  transition:transform .22s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .25s,color .25s;
+}
+.btn>span{transform:skewX(10deg);display:inline-flex;align-items:center;gap:10px;position:relative;z-index:2}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;top:-12%;bottom:-12%;left:-85%;width:55%;background:linear-gradient(105deg,transparent 12%,rgba(255,255,255,.45) 50%,transparent 88%);transform:skewX(-22deg);transition:left .65s cubic-bezier(.22,1,.36,1);pointer-events:none;z-index:1}
+.btn:hover::after{left:135%}
+.btn:hover{transform:skewX(-10deg) translateY(-2px)}
+.btn:active{transform:skewX(-10deg) scale(.98)}
+.btn-blue{background:#0091C6;color:#fff;box-shadow:0 8px 24px rgba(0,145,198,.28)}
+.btn-blue:hover{box-shadow:0 12px 32px rgba(0,145,198,.42)}
+.btn-sky{background:#35C3F0;color:#0B1F2A}
+.btn-sky:hover{background:#fff;color:#0B1F2A}
+.btn-dark{background:#23303A;color:#fff}
+.btn-dark:hover{background:#0091C6}
+.btn-line{border:2px solid #fff;color:#fff;background:transparent}
+.btn-line:hover{background:#fff;color:#23303A}
+.btn-line.blu{border-color:#0091C6;color:#00769E}
+.btn-line.blu:hover{background:#0091C6;color:#fff}
+.arr{position:relative;width:.95em;height:.7em;overflow:hidden;flex-shrink:0}
+.arr svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.arr svg:nth-child(2){transform:translateX(-130%)}
+.btn:hover .arr svg:first-child{transform:translateX(130%)}
+.btn:hover .arr svg:nth-child(2){transform:translateX(0)}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:16px 0;transition:background .3s,box-shadow .3s,padding .3s}
+#nav.scrolled{background:rgba(11,31,42,.96);backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.35);padding:10px 0}
+#nav .row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;color:#fff;letter-spacing:.02em;flex:none}
+/* Studio rebuilds this wordmark per client as word1 + <b>word2</b>, with no
+   space of its own between them — "Curb" + "Side" would render as "CURBSIDE".
+   A word-space before the bold half keeps every two-word brand readable. */
+.logo b{color:#0091C6;margin-left:.26em}
+#stickyBar .sb-name b{margin-left:.26em}
+.logo small{display:block;font-size:8.5px;font-weight:500;letter-spacing:.4em;color:#8A99A5;margin-top:1px}
+#nav .logo img{height:46px;width:auto;max-width:none;display:block;transition:height .3s}
+#nav.scrolled .logo img{height:38px}
+@media(max-width:600px){#nav .logo img{height:36px}#nav.scrolled .logo img{height:32px}}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{font-family:'Oswald',sans-serif;font-weight:400;text-transform:uppercase;font-size:13px;letter-spacing:.1em;color:#E4E9ED;position:relative;padding-bottom:4px;transition:color .25s}
+.navlinks a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:#0091C6;transition:width .28s}
+.navlinks a:hover,.navlinks a.active{color:#fff}
+.navlinks a:hover::after,.navlinks a.active::after{width:100%}
+#burger{display:none;background:none;border:0;cursor:pointer;width:30px;height:22px;position:relative}
+#burger i{position:absolute;left:0;height:2px;background:#0091C6;transition:width .4s,transform .4s,opacity .3s;display:block}
+#burger i:nth-child(1){top:0;width:80%}
+#burger i:nth-child(2){top:10px;width:100%}
+#burger i:nth-child(3){top:20px;width:55%}
+#burger:hover i{width:100%}
+#burger.open i:nth-child(1){transform:translateY(10px) rotate(45deg);width:100%}
+#burger.open i:nth-child(2){opacity:0}
+#burger.open i:nth-child(3){transform:translateY(-10px) rotate(-45deg);width:100%}
+#mobileMenu{display:none;flex-direction:column;background:rgba(11,31,42,.97);backdrop-filter:blur(14px);border-top:1px solid rgba(0,145,198,.4);padding:14px 6% 24px}
+#mobileMenu a{padding:14px 0;font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:15px;color:#fff;border-bottom:1px solid rgba(255,255,255,.07)}
+#mobileMenu.open{display:flex}
+
+/* ── HERO ── */
+#hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:140px 0 120px;color:#fff}
+#hero .bg{position:absolute;inset:0;background:url('photos/curbside-hero.jpg') center center/cover no-repeat}
+/* Hero video sits inside .bg so the gradient below still darkens it for text
+   contrast. The still stays as the underlying fallback: if the video is blocked,
+   hidden, or still loading, the hero looks exactly as it always did. */
+#hero .bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;border:0;pointer-events:none}
+/* Phones fall back to the still — no video over cell data. */
+@media (max-width:820px){#hero .bgvid{display:none}
+  /* No video over cell data — on phones the still IS the hero. Same Cobra shot,
+     shifted onto the wire wheel and side pipe so the crop lands on the car. */
+  #hero .bg{background-position:38% center}}
+#hero .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(95deg,rgba(7,23,32,.9) 8%,rgba(7,23,32,.6) 50%,rgba(7,23,32,.25) 100%)}
+#hero .inner{position:relative;z-index:2;max-width:620px}
+#hero h1{font-size:clamp(38px,5.8vw,68px);margin:14px 0 6px}
+#hero h1 .blu{color:#35C3F0}
+#hero .tagline{font-family:'Oswald',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.26em;font-size:13px;color:#A9D9EE;margin:14px 0 20px}
+#hero p.lead{font-size:16.5px;color:#DCE4EA;max-width:48ch;margin-bottom:32px;font-weight:300}
+.heroCtas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.ecochips{display:flex;gap:24px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A99A5}
+.ecochips b{color:#fff;font-weight:500;display:block;font-size:17px}
+.ecochips .blu b{color:#35C3F0}
+
+/* ── BLUE RIBBON ── */
+#advantage{position:relative;z-index:5;margin-top:-52px}
+.ribbon{
+  background:#0091C6;color:#fff;padding:38px 46px;max-width:880px;
+  clip-path:polygon(0 0,100% 0,calc(100% - 40px) 100%,0 100%);
+  display:flex;gap:26px;align-items:flex-start;box-shadow:0 24px 54px rgba(0,145,198,.3);
+}
+.ribbon .ric{width:56px;height:56px;flex-shrink:0;border:2px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px}
+.ribbon h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin-bottom:8px}
+.ribbon p{font-size:14px;color:#DFF1FA;max-width:64ch;font-weight:300;margin-bottom:14px}
+.ribbon a{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:12.5px;letter-spacing:.14em;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px;transition:border-color .25s}
+.ribbon a:hover{border-color:#fff}
+
+/* ── FOCUS / ABOUT ── */
+#focus{padding:130px 0}
+#focus .head{text-align:center;max-width:740px;margin:0 auto 70px}
+#focus h2{font-size:clamp(26px,3.6vw,42px)}
+.focusgrid{display:grid;grid-template-columns:.92fr 1.08fr;gap:0;align-items:center;max-width:1020px;margin:0 auto}
+.focusgrid .ph{position:relative;z-index:2;margin-right:-70px;box-shadow:0 30px 60px rgba(0,0,0,.2);overflow:hidden}
+.focusgrid .ph img{height:420px;width:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.focusgrid .ph:hover img{transform:scale(1.05)}
+.focuscard{background:#fff;border:1px solid #EAEEF1;box-shadow:0 26px 60px rgba(35,48,58,.12);padding:56px 54px 56px 110px}
+.focuscard .kick{display:block;margin-bottom:12px}
+.focuscard h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:23px;margin-bottom:16px}
+.focuscard p{color:#5A6670;font-size:14.5px;margin-bottom:14px;max-width:52ch}
+
+/* ── SERVICES (alternating zig-zag, angled media) ── */
+#services{padding:110px 0;background:#0B1F2A;color:#fff;clip-path:polygon(0 60px,100% 0,100% 100%,0 100%)}
+#services .head{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end;margin:40px 0 74px}
+#services h2{font-size:clamp(26px,3.6vw,42px)}
+#services h2 .blu{color:#35C3F0}
+#services .sub{color:#8A99A5;font-size:14.5px;font-weight:300;max-width:54ch}
+.svc{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;margin-bottom:96px}
+.svc:last-of-type{margin-bottom:0}
+/* The cut corners are what stop these reading as plain rectangles; the two
+   clip paths mirror each other so the slant always leans into the copy. */
+.svc .media{position:relative;height:420px;overflow:hidden;clip-path:polygon(7% 0,100% 0,93% 100%,0 100%);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.svc.rev-o .media{clip-path:polygon(0 0,93% 0,100% 100%,7% 100%);order:2}
+.svc .media img,.svc .media video{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.svc:hover .media img,.svc:hover .media video{transform:scale(1.05)}
+.svc .media::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(120deg,transparent 62%,rgba(7,23,32,.5));pointer-events:none}
+.svc .num{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;margin-bottom:12px}
+.svc h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:27px;letter-spacing:.02em;margin-bottom:14px}
+.svc p{color:#8A99A5;font-size:14.5px;font-weight:300;max-width:50ch;margin-bottom:16px}
+.svc .pts{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.svc .pts li{font-size:13.5px;color:#C4CED6;display:flex;gap:10px;align-items:baseline}
+.svc .pts li::before{content:'4';flex-shrink:0}
+.svc .from{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11.5px;letter-spacing:0;text-transform:none;opacity:.72}
+/* ── SERVICES COPY PANEL ───────────────────────────────────────────────────
+   Same move as the About card: a raised panel behind the copy with the photo
+   overlapping its edge. Dark rather than white — this section is navy with
+   white type, so a white card would force every headline and bullet to flip.
+   To revert: delete this block and the `copy` class on the six service <div>s. */
+.svc{gap:0}
+.svc .copy{
+  position:relative;background:#12303F;border:1px solid rgba(255,255,255,.075);
+  box-shadow:0 26px 60px rgba(0,0,0,.42);padding:50px 46px 50px 104px;
+}
+.svc.rev-o .copy{padding:50px 104px 50px 46px}
+/* the wide column has to follow the photo, or flipped rows render it narrower */
+.svc.rev-o{grid-template-columns:.92fr 1.08fr}
+.svc .media{position:relative;z-index:2;margin-right:-58px}
+.svc.rev-o .media{margin-right:0;margin-left:-58px}
+@media(max-width:960px){
+  /* stacked: photo overlaps the panel from above, exactly like the About card */
+  .svc .media,.svc.rev-o .media{margin:0 0 -58px 0;z-index:2}
+  .svc .copy,.svc.rev-o .copy{padding:92px 28px 38px}
+}
+@media(max-width:560px){
+  .svc .media,.svc.rev-o .media{margin-bottom:-44px}
+  .svc .copy,.svc.rev-o .copy{padding:74px 22px 32px}
+}
+/* Accent alternates by explicit class, not :nth-of-type — the .head div is a
+   sibling, so nth-of-type parity is off by one (that's why Brechtland's
+   "RED SIDE" label renders blue). */
+.svc.acc-a .num{color:#0091C6}
+.svc.acc-b .num{color:#35C3F0}
+.svc.acc-a .pts li::before{color:#0091C6}
+.svc.acc-b .pts li::before{color:#35C3F0}
+/* Drag-curtain before/after inside a service panel. Same component as the big
+   slider below, just sized to the angled media box. */
+.svc .media .ba{position:absolute;inset:0;height:100%;box-shadow:none}
+.svc:hover .media .ba img{transform:none}   /* the hover zoom would slide the two frames out of register */
+.svc .media .ba .lab{font-size:clamp(13px,1.5vw,19px);top:14px;-webkit-text-stroke-width:1.2px}
+.svc .media .ba .lab.b{left:calc(7% + 16px)}
+.svc.rev-o .media .ba .lab.b{left:16px}
+.svc .media .ba .lab.a{right:16px}
+.svc.rev-o .media .ba .lab.a{right:calc(7% + 16px)}
+.svc .media .ba .knob{width:42px;height:42px;font-size:11px}
+
+/* ── WHY TRUST ── */
+#why{padding:130px 0}
+#why .head{text-align:center;max-width:720px;margin:0 auto 76px}
+#why h2{font-size:clamp(26px,3.6vw,42px)}
+.whygrid{display:grid;grid-template-columns:1fr 1fr;gap:56px 84px;max-width:940px;margin:0 auto}
+.why{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.why .wic{
+  width:74px;height:74px;border:2px solid #0091C6;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:30px;color:#00769E;transition:background .3s,color .3s,transform .3s;
+}
+.why:hover .wic{background:#0091C6;color:#fff;transform:translateY(-4px)}
+.why h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:16.5px;letter-spacing:.08em}
+.why p{color:#5A6670;font-size:14px;max-width:38ch;font-weight:300}
+
+/* ── BEFORE / AFTER ── */
+#beforeafter{padding:120px 0;background:#0B1F2A;color:#fff;clip-path:polygon(0 0,100% 60px,100% 100%,0 100%)}
+#beforeafter .head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:50px 0 44px;flex-wrap:wrap}
+#beforeafter h2{font-size:clamp(26px,3.6vw,42px)}
+#beforeafter h2 .blu{color:#35C3F0}
+#beforeafter .sub{color:#8A99A5;font-size:14.5px;font-weight:300;max-width:46ch}
+.ba{position:relative;height:520px;overflow:hidden;user-select:none;box-shadow:0 34px 70px rgba(0,0,0,.5)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ba .lab{transition:opacity .25s ease;position:absolute;top:20px;z-index:4;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(20px,3vw,34px);letter-spacing:.14em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85);pointer-events:none}
+.ba .lab.b{left:26px}
+.ba .lab.a{right:26px;color:#fff;-webkit-text-stroke:0}
+.ba .handle{position:absolute;top:0;bottom:0;z-index:3;width:3px;background:#0091C6;pointer-events:none;box-shadow:0 0 20px rgba(0,145,198,.8)}
+.ba .knob{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;
+  background:#0091C6;display:flex;align-items:center;justify-content:center;gap:3px;color:#fff;font-size:13px;
+  box-shadow:0 8px 26px rgba(0,0,0,.5);
+}
+.ba input[type=range]{
+  position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:5;margin:0;
+  -webkit-appearance:none;appearance:none;
+}
+.ba-note{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A99A5;text-align:center}
+.ba-note b{color:#35C3F0;font-weight:500}
+
+/* ── REVIEWS ── */
+#reviews{padding:130px 0}
+#reviews .head{text-align:center;max-width:700px;margin:0 auto 60px}
+#reviews h2{font-size:clamp(26px,3.6vw,42px)}
+.gbadge{display:inline-flex;align-items:center;gap:12px;margin-top:22px;background:#fff;border:1px solid #E4E9ED;padding:13px 26px;border-radius:99px;box-shadow:0 10px 30px rgba(35,48,58,.08)}
+.gbadge .stars{color:#F5B301;font-size:16px;letter-spacing:2px}
+.gbadge span{font-size:13.5px;color:#5A6670;font-weight:500}
+.gbadge b{font-family:'IBM Plex Mono',monospace;color:#23303A}
+.revticker{position:relative;overflow:hidden;padding:8px 0}
+.revticker::before,.revticker::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+.revticker::before{left:0;background:linear-gradient(90deg,#FFFFFF,transparent)}
+.revticker::after{right:0;background:linear-gradient(270deg,#FFFFFF,transparent)}
+.revtrack{display:flex;gap:20px;width:max-content;will-change:transform}
+.revtrack .rev{width:330px;flex-shrink:0}
+.rev{
+  background:#fff;border:1px solid #EAEEF1;padding:28px 26px;box-shadow:0 14px 36px rgba(35,48,58,.07);
+  display:flex;flex-direction:column;gap:13px;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;
+}
+.rev:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(35,48,58,.13)}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:#0091C6;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;flex-shrink:0}
+.rev .who b{font-size:14px;display:block}
+.rev .who span{font-size:11.5px;color:#8A99A5}
+.rev .stars{color:#F5B301;font-size:13px;letter-spacing:2px}
+.rev p{font-size:13.5px;color:#5A6670;font-weight:300;flex:1}
+
+/* ── SERVICE AREA / APPOINTMENT ── */
+#visit{position:relative;color:#fff}
+.visitgrid{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.mapside{position:relative;background:#E4EFF5}
+.mapside iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35)}
+.mapside .pin{
+  position:absolute;left:24px;bottom:24px;z-index:2;background:#fff;color:#23303A;padding:18px 22px;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);max-width:290px;
+}
+.mapside .pin b{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:14px;display:block;margin-bottom:4px}
+.mapside .pin p{font-size:13px;color:#5A6670}
+.apptside{background:linear-gradient(135deg,rgba(0,94,130,.80) 0%,rgba(0,74,102,.86) 100%),linear-gradient(0deg,rgba(11,31,42,.15),rgba(11,31,42,.15)),url('photos/curbside-appt-bg.jpg') center right/cover no-repeat #0091C6;padding:80px 8% 80px 70px;clip-path:polygon(46px 0,100% 0,100% 100%,0 100%);display:flex;flex-direction:column;justify-content:center}
+.apptside .aic{width:58px;height:58px;border:2px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:22px}
+.apptside h2{font-size:clamp(24px,3vw,36px);margin-bottom:16px}
+.apptside p{font-size:14.5px;color:#fff;max-width:48ch;font-weight:300;margin-bottom:12px}
+.apptside .fine{font-size:11.5px;color:rgba(255,255,255,.93);max-width:52ch;margin-bottom:28px}
+.apptside .hours{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#fff;margin-bottom:28px}
+.areachips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.areachips span{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#fff;border:1px solid rgba(255,255,255,.45);background:rgba(11,31,42,.18);padding:6px 11px}
+
+/* ── FOOTER ── */
+footer{background:#0B1F2A;color:#fff;padding:84px 0 0}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:44px}
+.fgrid h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:13.5px;letter-spacing:.14em;color:#35C3F0;margin-bottom:20px}
+.fgrid p,.fgrid li{color:#8A99A5;font-size:14px;margin-bottom:11px;font-weight:300;max-width:36ch}
+.fgrid li a{transition:color .25s}
+.fgrid li a:hover{color:#35C3F0}
+.fbar{margin-top:60px;border-top:1px solid rgba(255,255,255,.08);padding:22px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#6B7883}
+.fbar .legal{display:flex;gap:22px}
+.fbar a{transition:color .25s}
+.fbar a:hover{color:#35C3F0}
+
+@media(max-width:960px){
+  #services .head{grid-template-columns:1fr;gap:16px;margin-bottom:54px}
+  .svc{grid-template-columns:1fr;gap:0;margin-bottom:64px}   /* the photo's negative margin owns the overlap */
+  .svc.rev-o .media{order:0}
+  .svc .media{height:320px}
+  .navlinks{display:none}
+  #burger{display:block}
+  .focusgrid{grid-template-columns:1fr}
+  .focusgrid .ph{margin:0 0 -70px}
+  .focuscard{padding:120px 34px 44px}
+  .whygrid{grid-template-columns:1fr;gap:44px}
+  .visitgrid{grid-template-columns:1fr}
+  .mapside{min-height:340px}
+  .apptside{clip-path:none;padding:60px 8%}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .ribbon{clip-path:none}
+}
+@media(max-width:560px){
+  .fgrid{grid-template-columns:1fr}
+  .revtrack .rev{width:290px}
+  .ba{height:380px}
+  .svc .media{height:250px}
+  /* The ribbon stayed a side-by-side row on phones: the 56px icon column plus
+     46px of side padding left the copy only 163px wide - 23 characters a line,
+     a 10-line paragraph, and a tall empty blue slab under the icon. Stacking
+     it gives the copy the full card width. */
+  .ribbon{flex-direction:column;gap:16px;padding:30px 26px}
+  .ribbon .ric{width:44px;height:44px;font-size:19px}
+  .ribbon p{max-width:none}
+  /* Grow the link to a thumb-sized target without letting its underline drift
+     away from the text: the real border goes transparent and a pseudo-element
+     draws the rule tight under the words. */
+  .ribbon a{padding:11px 0;border-bottom-color:transparent;position:relative}
+  .ribbon a::after{content:'';position:absolute;left:0;right:0;bottom:11px;
+                   height:1px;background:rgba(255,255,255,.5)}
+  .ribbon a:active::after{background:#fff}
+}
+
+/* ═══ CONVERSION KIT ═══ */
+/* interior before/after hover card */
+.gbtn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1a1a1a;font-weight:600;font-size:13.5px;padding:12px 22px;border-radius:99px;border:1px solid #E4E9ED;box-shadow:0 8px 22px rgba(35,48,58,.1);transition:transform .2s,box-shadow .2s}
+.gbtn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(35,48,58,.16)}
+
+/* packages */
+#packages{padding:120px 0;background:#F1F5F8}
+#packages .head{text-align:center;max-width:740px;margin:0 auto 60px}
+#packages h2{font-size:clamp(26px,3.6vw,42px)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.tier{background:#fff;border:1px solid #E4E9ED;padding:38px 32px;display:flex;flex-direction:column;position:relative;box-shadow:0 14px 36px rgba(35,48,58,.06);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.tier:hover{transform:translateY(-6px);box-shadow:0 26px 54px rgba(35,48,58,.12)}
+.tier.pop{border-top:4px solid #0091C6;box-shadow:0 26px 54px rgba(0,145,198,.14)}
+.tier .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%) skewX(-10deg);background:#0091C6;color:#fff;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.12em;padding:7px 16px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,145,198,.35)}
+.tier h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:19px;margin-bottom:4px}
+.tier .tsub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#00769E;margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em}
+.tier .price{font-family:'Oswald',sans-serif;font-weight:600;font-size:36px;line-height:1;color:#23303A;display:flex;align-items:baseline;gap:7px;margin-bottom:4px}
+.tier .price em{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A99A5;font-weight:400}
+.tier .ptime{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A99A5;margin-bottom:20px}
+.tier ul{display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex:1;border-top:1px solid #EAEEF1;padding-top:20px}
+.tier li{display:flex;gap:10px;font-size:13.5px;color:#5A6670}
+.tier li::before{content:'✓';color:#0091C6;font-weight:900;flex-shrink:0}
+.tier .btn{width:100%;margin-top:auto;justify-content:center}
+.pricenote{text-align:center;max-width:70ch;margin:34px auto 0;font-size:13.5px;color:#5A6670}
+.pricenote b{color:#23303A}
+
+/* 3-step process */
+#process{padding:120px 0}
+#process .head{text-align:center;max-width:700px;margin:0 auto 60px}
+#process h2{font-size:clamp(26px,3.4vw,40px)}
+.psteps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pstep{position:relative;padding:64px 28px 34px;background:#fff;border:1px solid #EAEEF1;box-shadow:0 14px 36px rgba(35,48,58,.06);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.pstep:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(35,48,58,.11)}
+.pstep .ghost{position:absolute;top:-28px;right:4px;font-family:'Oswald',sans-serif;font-weight:700;font-size:140px;line-height:1;color:rgba(0,145,198,.08);pointer-events:none;user-select:none}
+.pstep h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:17px;margin-bottom:10px;position:relative}
+.pstep p{color:#5A6670;font-size:13.5px;position:relative}
+.pstep{cursor:pointer;padding-bottom:58px}
+.pstep h3,.pstep p{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.pstep:hover h3,.pstep:hover p{transform:translateY(-8px)}
+.pcta{position:absolute;left:28px;bottom:20px;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:12.5px;letter-spacing:.1em;color:#00769E;opacity:0;transform:translateY(12px);transition:opacity .35s,transform .35s cubic-bezier(.22,1,.36,1)}
+.pstep:hover .pcta{opacity:1;transform:none}
+.pcta i{font-style:normal;transition:transform .25s}
+.pcta:hover i{transform:translateX(4px)}
+
+/* guarantee */
+#guarantee{padding:0 0 120px}
+.gwrap{display:flex;gap:30px;align-items:center;color:#fff;background:linear-gradient(100deg,rgba(11,31,42,.975) 34%,rgba(11,31,42,.66) 100%),url('photos/curbside-guarantee-bg.jpg') center/cover no-repeat #0B1F2A;padding:46px 50px;clip-path:polygon(0 0,100% 0,calc(100% - 34px) 100%,0 100%);position:relative;overflow:hidden}
+.gwrap::before{content:'';position:absolute;top:-70px;right:-70px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(53,195,240,.16),transparent 70%)}
+.gseal{width:82px;height:82px;flex-shrink:0;border:3px solid #35C3F0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;color:#35C3F0}
+.gwrap h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:clamp(19px,2.4vw,26px);margin-bottom:8px}
+.gwrap h2 span{color:#35C3F0}
+.gwrap p{color:#C4CED6;font-size:14.5px;font-weight:300;max-width:70ch}
+
+/* FAQ */
+#faq{padding:0 0 130px}
+#faq .head{text-align:center;margin-bottom:50px}
+#faq h2{font-size:clamp(26px,3.4vw,40px)}
+.qa{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.qa details{border:1px solid #E4E9ED;background:#fff;box-shadow:0 8px 24px rgba(35,48,58,.05);overflow:hidden;transition:border-color .3s}
+.qa summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';font-family:'Oswald',sans-serif;font-weight:600;color:#0091C6;font-size:20px;transition:transform .25s;flex-shrink:0}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa details[open]{border-color:rgba(0,145,198,.45)}
+.qa .a{padding:0 24px 22px;color:#5A6670;font-size:14px;max-width:66ch}
+
+/* sticky mobile CTA */
+#stickyBar{display:none}
+@media(max-width:760px){
+  #scrollport{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px))}
+  #stickyBar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:stretch;height:60px;background:rgba(11,31,42,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(53,195,240,.5);color:#fff}
+  #stickyBar .sb-name{flex:1;display:flex;align-items:center;padding:0 16px;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:12.5px}
+  #stickyBar .sb-name b{color:#35C3F0}
+  #stickyBar a.sb-call{display:flex;align-items:center;padding:0 18px;color:#C4CED6;font-family:'IBM Plex Mono',monospace;font-size:13px;border-left:1px solid rgba(255,255,255,.1)}
+  #stickyBar a.sb-book{display:flex;align-items:center;padding:0 22px;background:#0091C6;color:#fff;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:13px}
+  /* clear the iPhone home indicator instead of sitting under it */
+  #stickyBar{height:auto;min-height:60px;
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    transform:translateY(115%);
+    transition:transform .38s cubic-bezier(.16,1,.3,1);
+    will-change:transform;box-shadow:0 -8px 28px rgba(0,0,0,.34)}
+  #stickyBar.sb-show{transform:translateY(0)}
+  #stickyBar .sb-name{flex:1 1 auto;min-width:0;overflow:hidden;
+    white-space:nowrap;text-overflow:ellipsis}
+  #stickyBar a.sb-call,#stickyBar a.sb-book{
+    flex:0 0 auto;min-height:60px;text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+    transition:filter .18s ease,opacity .18s ease}
+  #stickyBar a.sb-call{gap:7px;justify-content:center}
+  #stickyBar a.sb-call svg{width:15px;height:15px;flex-shrink:0}
+  #stickyBar a.sb-call:active{opacity:.55}
+  #stickyBar a.sb-book:active{filter:brightness(.86)}
+}
+/* very small screens: drop the wordmark, split the two actions evenly */
+@media(max-width:380px){
+  #stickyBar .sb-name{display:none}
+  #stickyBar a.sb-call,#stickyBar a.sb-book{flex:1 1 50%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  #stickyBar{transition:none}
+}
+
+/* booking modal */
+#bkOverlay{position:fixed;inset:0;z-index:100;background:rgba(7,23,32,.78);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:18px}
+#bkOverlay.open{display:flex}
+.bk-card{width:min(560px,100%);max-height:94vh;overflow-y:auto;background:#fff;color:#23303A;box-shadow:0 40px 100px rgba(0,0,0,.45);padding:38px 36px;position:relative;border-top:5px solid #0091C6}
+.bk-close{position:absolute;top:12px;right:14px;width:36px;height:36px;background:#F1F5F8;border:0;color:#23303A;font-size:22px;line-height:1;cursor:pointer;transition:background .25s,color .25s}
+.bk-close:hover{background:#0091C6;color:#fff}
+.bk-card h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:21px;margin-bottom:6px}
+.bk-card h3 span{color:#00769E}
+.bk-card .bk-sub{font-size:13.5px;color:#5A6670;margin-bottom:24px}
+#bkForm{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+#bkForm input,#bkForm select,#bkForm textarea{width:100%;font-family:'Inter',sans-serif;font-size:14px;color:#23303A;background:#F8FAFB;border:1px solid #DCE3E8;padding:13px 15px;outline:none;transition:border-color .25s,box-shadow .25s;appearance:none}
+#bkForm input:focus,#bkForm select:focus,#bkForm textarea:focus{border-color:#0091C6;box-shadow:0 0 0 3px rgba(0,145,198,.12)}
+#bkForm .full{grid-column:1/-1}
+#bkForm textarea{min-height:90px;resize:vertical}
+#bkForm select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230091C6' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+#bkForm .btn{width:100%;justify-content:center}
+#bkSuccess{display:none;text-align:center;padding:30px 0 10px}
+#bkSuccess .ok{width:70px;height:70px;margin:0 auto 20px;background:#0091C6;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff}
+#bkSuccess h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:18px;margin-bottom:8px}
+#bkSuccess p{color:#5A6670;font-size:14px}
+#bkErr{display:none;grid-column:1/-1;color:#c0392b;font-size:13px}
+@media(max-width:560px){#bkForm{grid-template-columns:1fr}}
+@media(max-width:960px){.tiers,.psteps{grid-template-columns:1fr}.gwrap{flex-direction:column;text-align:center;clip-path:none;padding:38px 26px}}
+</style>
+<!-- Paints the phone's status-bar strip in the site colour. Without it iOS
+     renders page content up there next to the clock, which reads as the page
+     spilling out above the header. -->
+<meta name="theme-color" content="#071720">
+<style>
+/* Nothing should ever pan sideways on a phone. `clip` is used where supported
+   because it stops the pan WITHOUT creating a scroll container - unlike
+   `hidden`, which silently breaks position:sticky on descendants. */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+</style>
+<style id="scroll-container-fix">
+/* iOS Safari paints the strip behind the phone's clock from the SCROLLING
+   CONTENT layer and leaves position:fixed layers out of it. With <body> as the
+   scroller, page photos render up there and no header styling can cover them.
+   Moving the scroll into a container removes that layer, so the strip falls
+   back to the page background. Everything position:fixed must stay OUTSIDE
+   #scrollport - a fixed element inside a scrolling container is trapped in
+   that layer. */
+html,body{height:100%;overflow:hidden;background:#071720;}
+#scrollport{height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:#FFFFFF;}
+/* The page behind a modal can no longer scroll to reveal a tall form, so the
+   modal needs its own internal scroll. */
+#bkOverlay{overscroll-behavior:contain;}
+#bkOverlay > div{max-height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header id="nav">
+  <nav data-label="Navigation">
+    <div class="wrap row">
+      <a href="#hero" class="logo">CURB<b>SIDE</b><small>MOBILE DETAILING</small></a>
+      <div class="navlinks">
+        <a href="#focus">About</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#beforeafter">Before &amp; After</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Service Area</a>
+        <a href="tel:4075550142" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#35C3F0;letter-spacing:0;text-transform:none">407-555-0142</a>
+        <a href="#" class="btn btn-blue" style="padding:11px 20px" data-book><span>Book Now</span></a>
+      </div>
+      <button id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+    <div id="mobileMenu">
+      <a href="#focus">About</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#beforeafter">Before &amp; After</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Service Area</a>
+      <a href="tel:4075550142" style="color:#35C3F0">Call 407-555-0142</a>
+      <a href="#" data-book>Book Now</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div id="scrollport">
+<section id="hero" data-label="Hero">
+  <div class="bg" role="img" aria-label="Gloss-black Shelby Cobra roadster detailed to a mirror finish on a paver driveway at golden hour">
+    <video class="bgvid" autoplay muted loop playsinline preload="auto" poster="photos/curbside-hero.jpg" aria-hidden="true">
+      <source src="photos/curbside-hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap inner">
+    <div class="kick rv" style="color:#35C3F0">Mobile auto detailing</div>
+    <h1 class="display rv" style="transition-delay:.07s">We bring the detail shop <span class="blu">to your driveway</span></h1>
+    <div class="tagline rv" style="transition-delay:.14s">Central Florida &middot; cars, boats, RVs &amp; bikes</div>
+    <p class="lead rv" style="transition-delay:.21s">Swirl marks in the paint. A stain in the back seat. That smell you stopped noticing months ago. We pull up with our own water, power and lighting, and hand it back looking better than the day you bought it — without you moving the car once.</p>
+    <div class="heroCtas rv" style="transition-delay:.28s">
+      <a href="#" class="btn btn-blue" data-book><span>Get My Free Quote
+        <span class="arr" aria-hidden="true">
+          <svg viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg>
+          <svg viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+      </span></a>
+      <a href="#services" class="btn btn-line"><span>View Services</span></a>
+    </div>
+    <div class="ecochips rv" style="transition-delay:.35s">
+      <div class="blu"><b><span data-count="100">0</span>%</b>finished by hand</div>
+      <div><b>4.9 &#9733; &middot; <span data-count="112">0</span></b>Google reviews</div>
+      <div><b>Licensed</b>&amp; insured &middot; we come to you</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STANDARD RIBBON ═══ -->
+<section id="advantage" data-label="The Curbside Standard">
+  <div class="wrap">
+    <div class="ribbon rv">
+      <div class="ric" aria-hidden="true">&#10022;</div>
+      <div>
+        <h2>The Curbside Standard</h2>
+        <p>Mobile shouldn't mean watered-down. We arrive fully self-contained — our own water, our own power, proper lighting — so the detail done in your driveway is the same detail you'd get in a shop, minus the drop-off, the shuttle and the wasted afternoon. Anything you're not happy with gets fixed before we pack up.</p>
+        <a href="#focus">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOCUS ═══ -->
+<section id="focus" data-label="About / Our Focus">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display rv">Built around the one thing a shop can't give you</h2>
+    </div>
+    <div class="focusgrid">
+      <div class="ph rv">
+        <img src="photos/curbside-cometoyou.jpg" loading="lazy" alt="Black Lamborghini being detailed in a customer driveway after a hand wash">
+      </div>
+      <div class="focuscard rv" style="transition-delay:.1s">
+        <span class="kick">Mobile detailing in Central Florida</span>
+        <h3>We come to you. Nothing else changes.</h3>
+        <p>Every vehicle gets the detail its owner would give it if they had the time, the tools and the training. We correct paint, revive interiors and protect finishes — by hand, under proper lighting, without the shortcuts a volume shop takes.</p>
+        <p>The only difference is where it happens. Your driveway, your office lot, your storage yard, the marina slip. You keep your keys, keep working, and walk out to a vehicle that looks new.</p>
+        <a href="#" class="btn btn-line blu" style="margin-top:12px" data-book><span>Get My Free Quote
+          <span class="arr" aria-hidden="true">
+            <svg viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+        </span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" data-label="Detailing Services">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kick rv" style="color:#35C3F0">What we do</span>
+        <h2 class="display rv">If it has a <span class="blu">title</span>, we detail it</h2>
+      </div>
+      <p class="sub rv">Every service below happens wherever the vehicle already sits &mdash; your driveway, your office lot, the storage yard, the marina. We turn up self-contained with our own water, power and lighting.</p>
+    </div>
+
+    <div class="svc acc-a rv">
+      <div class="media">
+        <div class="ba">
+          <img class="before-img" src="photos/curbside-ba-suv-before.jpg" loading="lazy" alt="Black SUV under snow foam mid-wash in a customer driveway">
+          <div class="after-wrap"><img src="photos/curbside-ba-suv-after.jpg" loading="lazy" alt="The same SUV polished to a mirror finish in the driveway"></div>
+          <span class="lab b" aria-hidden="true">Before</span>
+          <span class="lab a" aria-hidden="true">After</span>
+          <div class="handle"><div class="knob">&#9666;&#9656;</div></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+      </div>
+      <div class="copy">
+        <div class="num">/ 01 &mdash; CARS &amp; TRUCKS</div>
+        <h3>The Full Detail</h3>
+        <p>Snow foam pre-soak, two-bucket contact wash, clay bar decontamination, then a machine polish and sealant &mdash; with the interior stripped back at the same time. This is the one that makes a three-year-old daily look like it just came off the lot.</p>
+        <ul class="pts">
+          <li>Decontamination, machine polish and six-month sealant</li>
+          <li>Full interior extraction, leather cleaned and conditioned</li>
+          <li>Wheels, arches, door jambs and engine bay</li>
+        </ul>
+        <a href="#" class="btn btn-blue" data-book><span>Book Full Detail <em class="from">from $299</em></span></a>
+      </div>
+    </div>
+
+    <div class="svc rev-o acc-b rv">
+      <div class="media">
+        <div class="ba">
+          <img class="before-img" src="photos/curbside-ba-interior-before.jpg" loading="lazy" alt="Minivan third row buried under a school year of kids&#39; clutter">
+          <div class="after-wrap"><img src="photos/curbside-ba-interior-after.jpg" loading="lazy" alt="The same minivan interior stripped back to spotless"></div>
+          <span class="lab b" aria-hidden="true">Before</span>
+          <span class="lab a" aria-hidden="true">After</span>
+          <div class="handle"><div class="knob">&#9666;&#9656;</div></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+      </div>
+      <div class="copy">
+        <div class="num">/ 02 &mdash; INTERIORS</div>
+        <h3>Interior Deep Clean</h3>
+        <p>Hot-water extraction and steam, down to the seat rails, the vents and the seams. Car seats out, third row out, every crevice a kid has ever found. Odor gets treated at the source instead of covered with an air freshener.</p>
+        <ul class="pts">
+          <li>Hot-water extraction on carpet, cloth and mats</li>
+          <li>Pet hair, spills, smoke and mildew</li>
+          <li>Leather cleaned, conditioned and UV-protected</li>
+        </ul>
+        <a href="#" class="btn btn-sky" data-book><span>Book Interior <em class="from">from $199</em></span></a>
+      </div>
+    </div>
+
+    <div class="svc acc-a rv">
+      <div class="media">
+        <img src="photos/curbside-ceramic-cybertruck.jpg" loading="lazy" alt="Matte black truck after a ceramic coating">
+      </div>
+      <div class="copy">
+        <div class="num">/ 03 &mdash; PAINT PROTECTION</div>
+        <h3>Ceramic &amp; Correction</h3>
+        <p>Multi-stage correction cuts the swirls out rather than filling them in for a month, then a ceramic layer bonds over corrected paint. Water sheets straight off, bug guts and bird droppings stop etching, and washing takes half as long.</p>
+        <ul class="pts">
+          <li>Three-to-five year ceramic systems</li>
+          <li>Applied only over corrected paint &mdash; never over defects</li>
+          <li>Wheels, glass and trim coated as add-ons</li>
+          <li>Window tint cut and installed on site</li>
+        </ul>
+        <a href="#" class="btn btn-blue" data-book><span>Ask About Ceramic <em class="from">from $899</em></span></a>
+      </div>
+    </div>
+
+    <div class="svc rev-o acc-b rv">
+      <div class="media">
+        <img src="photos/curbside-boat-hull.jpg" loading="lazy" alt="Black boat hull polished to a mirror finish on its trailer">
+      </div>
+      <div class="copy">
+        <div class="num">/ 04 &mdash; ON THE WATER</div>
+        <h3>Boats &amp; Marine</h3>
+        <p>Hull compounding and wax, non-skid decks, vinyl, teak, metal polish and canvas. On the trailer in your driveway or sitting in the slip &mdash; we bring the water with us either way, so it never has to move.</p>
+        <ul class="pts">
+          <li>Oxidation, salt and waterline stain removal</li>
+          <li>Non-skid deck cleaning and vinyl deep-clean</li>
+          <li>Metal polish, teak and canvas care</li>
+        </ul>
+        <a href="#" class="btn btn-sky" data-book><span>Quote My Boat <em class="from">from $12 / ft</em></span></a>
+      </div>
+    </div>
+
+    <div class="svc acc-a rv">
+      <div class="media">
+        <div class="ba">
+          <img class="before-img" src="photos/curbside-ba-tractor-before.jpg" loading="lazy" alt="John Deere tractor covered in snow foam on a farm wash pad">
+          <div class="after-wrap"><img src="photos/curbside-ba-tractor-after.jpg" loading="lazy" alt="The same tractor back to delivery condition under the equipment shed"></div>
+          <span class="lab b" aria-hidden="true">Before</span>
+          <span class="lab a" aria-hidden="true">After</span>
+          <div class="handle"><div class="knob">&#9666;&#9656;</div></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+      </div>
+      <div class="copy">
+        <div class="num">/ 05 &mdash; FARM &amp; PROPERTY</div>
+        <h3>Tractors &amp; Equipment</h3>
+        <p>A season of dust baked onto green paint, cab glass you can't see out of, and wheels packed with clay. None of that belongs on a wash rack in town &mdash; we bring the foam, the water and the lighting to the barn and hand the machine back in delivery condition.</p>
+        <ul class="pts">
+          <li>Foam pre-soak and hand wash &mdash; nothing forced past a seal or a decal</li>
+          <li>Cab glass, steps, floor and interior</li>
+          <li>Tractors, mowers, skid steers and trailers</li>
+        </ul>
+        <a href="#" class="btn btn-blue" data-book><span>Get A Quote <em class="from">priced per machine</em></span></a>
+      </div>
+    </div>
+
+    <div class="svc rev-o acc-b rv">
+      <div class="media">
+        <img src="photos/curbside-moto-chopper.jpg" loading="lazy" alt="Custom chopper with hand-polished chrome on a driveway">
+      </div>
+      <div class="copy">
+        <div class="num">/ 06 &mdash; TWO WHEELS</div>
+        <h3>Motorcycles</h3>
+        <p>Chrome, spokes, engine cases and leather &mdash; entirely by hand, with no pressure washer anywhere near a bearing or a wiring loom. Show builds and daily riders both, and we come to the garage it lives in.</p>
+        <ul class="pts">
+          <li>Hand wash only, nothing forced past a seal</li>
+          <li>Chrome and alloy polished, spokes done individually</li>
+          <li>Leather and vinyl cleaned and conditioned</li>
+        </ul>
+        <a href="#" class="btn btn-sky" data-book><span>Book My Bike <em class="from">from $149</em></span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ PACKAGES ═══ -->
+<section id="packages" data-label="Detail Packages">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick rv">Pick your clean</span>
+      <h2 class="display rv">Three packages, one standard</h2>
+    </div>
+    <div class="tiers">
+      <div class="tier rv">
+        <h3>The Reset</h3>
+        <div class="tsub">The regular one</div>
+        <div class="price"><span>$149</span><em>starting</em></div>
+        <div class="ptime">About 2 hours &middot; SUV / truck +$40</div>
+        <ul>
+          <li>Hand wash &amp; spot-free dry</li>
+          <li>Wheels, wheel wells &amp; tires dressed</li>
+          <li>Full interior vacuum &mdash; seats, carpets, trunk</li>
+          <li>Dash, console and doors wiped down</li>
+          <li>Streak-free glass, inside and out</li>
+        </ul>
+        <a href="#" class="btn btn-line blu" data-book><span>Book This Package</span></a>
+      </div>
+      <div class="tier pop rv" style="transition-delay:.08s">
+        <span class="badge">Most Booked</span>
+        <h3>The Full Detail</h3>
+        <div class="tsub">Our signature detail</div>
+        <div class="price"><span>$299</span><em>starting</em></div>
+        <div class="ptime">4&ndash;5 hours &middot; SUV / truck +$60</div>
+        <ul>
+          <li>Everything in The Reset</li>
+          <li>Clay bar decontamination &amp; machine polish</li>
+          <li>Six-month paint sealant</li>
+          <li>Carpet &amp; upholstery hot-water extraction</li>
+          <li>Leather cleaned and conditioned</li>
+          <li>Engine bay cleaned and dressed</li>
+        </ul>
+        <a href="#" class="btn btn-blue" data-book><span>Book This Package</span></a>
+      </div>
+      <div class="tier rv" style="transition-delay:.16s">
+        <h3>Correction + Ceramic</h3>
+        <div class="tsub">Protection that stays</div>
+        <div class="price"><span>$899</span><em>starting</em></div>
+        <div class="ptime">1&ndash;2 days &middot; quoted after inspection</div>
+        <ul>
+          <li>Everything in The Full Detail</li>
+          <li>Multi-stage correction &mdash; swirls, scratches, oxidation</li>
+          <li>Three-to-five year ceramic coating</li>
+          <li>Wheels, glass and trim coated too</li>
+          <li>Written care plan and wash schedule</li>
+        </ul>
+        <a href="#" class="btn btn-line blu" data-book><span>Ask About Ceramic</span></a>
+      </div>
+    </div>
+    <p class="pricenote rv"><b>Every price above is a starting point.</b> A work van carrying three years of job-site dust and a garaged weekend car are not the same afternoon. Text us one photo and you'll have the exact number before anything is booked &mdash; boats are quoted by the foot, RVs and bikes by the job.</p>
+  </div>
+</section>
+
+<!-- ═══ WHY ═══ -->
+<section id="why" data-label="Why Trust Us">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick rv">The Curbside difference</span>
+      <h2 class="display rv">Why people stop shopping around</h2>
+    </div>
+    <div class="whygrid">
+      <div class="why rv">
+        <div class="wic" aria-hidden="true">&#128663;</div>
+        <h3>We Come To You</h3>
+        <p>No drop-off, no shuttle, no half-day gone. Home, office, storage lot or marina &mdash; if we can park beside it, we can detail it.</p>
+      </div>
+      <div class="why rv" style="transition-delay:.07s">
+        <div class="wic" aria-hidden="true">&#9211;</div>
+        <h3>Fully Self-Contained</h3>
+        <p>Our own water tank, our own power, proper lighting on board. We never need your spigot, your outlet or your garage.</p>
+      </div>
+      <div class="why rv" style="transition-delay:.14s">
+        <div class="wic" aria-hidden="true">&#128400;</div>
+        <h3>Finished By Hand</h3>
+        <p>No conveyor tunnels, no rushed volume work. Every vehicle is washed, corrected and finished by hand &mdash; the only route to a true swirl-free gloss.</p>
+      </div>
+      <div class="why rv" style="transition-delay:.21s">
+        <div class="wic" aria-hidden="true">&#10004;</div>
+        <h3>Nothing Hidden</h3>
+        <p>A locked price before we book the slot, and no surprise upsells in your driveway. If a panel isn't right, we redo it before you pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process" data-label="3-Step Process">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick rv">Zero effort on your part</span>
+      <h2 class="display rv">Three steps, and only one is yours</h2>
+    </div>
+    <div class="psteps">
+      <div class="pstep rv">
+        <span class="ghost" aria-hidden="true">01</span>
+        <h3>Send One Photo</h3>
+        <p>Text or call with a picture of the vehicle and where it's parked. You'll get an exact price and the next two openings &mdash; not a "we'll see when we get there."</p>
+      </div>
+      <div class="pstep rv" style="transition-delay:.08s">
+        <span class="ghost" aria-hidden="true">02</span>
+        <h3>Stay Exactly Where You Are</h3>
+        <p>We show up on time with everything on board. Take your calls, keep the kids inside, go to work. You don't need to be home, and you never move the car.</p>
+      </div>
+      <div class="pstep rv" style="transition-delay:.16s">
+        <span class="ghost" aria-hidden="true">03</span>
+        <h3>Walk Around It</h3>
+        <p>We finish with a walk-around, panel by panel. Point at anything and it gets fixed on the spot &mdash; before we load up, and before you pay a dime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BEFORE / AFTER ═══ -->
+<section id="beforeafter" data-label="Before &amp; After Slider">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kick rv" style="color:#35C3F0">Proof, not promises</span>
+        <h2 class="display rv">Drag to see the <span class="blu">difference</span></h2>
+      </div>
+      <p class="sub rv">Two seasons of Florida road film baked into a motorhome front cap. Same day, same driveway, one decontamination and polish.</p>
+    </div>
+    <div class="ba rv" id="baSlider">
+      <img class="before-img" src="photos/curbside-ba-rv-before.jpg" loading="lazy" alt="Motorhome front cap covered in road film and oxidation before detailing">
+      <div class="after-wrap" id="baAfter">
+        <img src="photos/curbside-ba-rv-after.jpg" loading="lazy" alt="The same motorhome front cap polished back to a gloss finish">
+      </div>
+      <span class="lab b" aria-hidden="true">Before</span>
+      <span class="lab a" aria-hidden="true">After</span>
+      <div class="handle" id="baHandle"><div class="knob">&#9666;&#9656;</div></div>
+      <input type="range" min="0" max="100" value="50" id="baRange" aria-label="Before and after comparison slider">
+    </div>
+    <p class="ba-note">One motorhome, one visit, zero trips for the owner. <b>Drag the handle</b> and judge for yourself.</p>
+  </div>
+</section>
+
+<!-- ═══ GUARANTEE ═══ -->
+<section id="guarantee" data-label="Guarantee">
+  <div class="wrap">
+    <div class="gwrap rv">
+      <div class="gseal" aria-hidden="true">&#10003;</div>
+      <div>
+        <h2>The <span>Walk-Around Guarantee</span></h2>
+        <p>Every job ends with a walk-around before you pay. Spot something we missed &mdash; a streak, a crumb, a smudge &mdash; and it gets fixed right then, free. That's the one real advantage of working in your driveway instead of a shop across town: we're already standing there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" data-label="FAQs">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick rv">Honest answers</span>
+      <h2 class="display rv">What people ask before booking</h2>
+    </div>
+    <div class="qa">
+      <details class="rv">
+        <summary>Do you need to use my water and electricity?</summary>
+        <div class="a">No. The truck carries its own water tank and power, so nothing runs off your house. That's exactly why we can work at offices, apartment complexes and storage lots where there's no spigot in sight.</div>
+      </details>
+      <details class="rv">
+        <summary>Do I have to be home while you work?</summary>
+        <div class="a">Not at all, and plenty of customers aren't. Leave it unlocked or leave a key and we'll text you photos when it's done. If you'd rather do the walk-around in person, we'll book a time you're around.</div>
+      </details>
+      <details class="rv">
+        <summary>What happens if it rains?</summary>
+        <div class="a">This is Florida, so it comes up. If there's covered parking — a garage, a carport, a covered space at your building — we usually work straight through. If not, we move you to the next opening at no charge and you keep your place in line.</div>
+      </details>
+      <details class="rv">
+        <summary>How long does it take?</summary>
+        <div class="a">The Reset runs about two hours. The Full Detail is four to five. Correction with a ceramic coating is a one-to-two day job, because the coating cures on its own clock. You get a real window when you book, not "sometime Tuesday."</div>
+      </details>
+      <details class="rv">
+        <summary>Can you come to my office or apartment complex?</summary>
+        <div class="a">Yes, as long as we can park next to the vehicle for the duration. Office lots are some of our busiest bookings — you go to work dirty and drive home clean. For apartments and HOAs, just check that on-site washing is allowed.</div>
+      </details>
+      <details class="rv">
+        <summary>Do you really do boats, RVs and motorcycles?</summary>
+        <div class="a">We do, and it's a real part of the business rather than a line on a menu. Boats on the trailer or in the slip, motorhomes wherever they're stored, bikes done entirely by hand with no pressure washer near the chrome. Send a photo and the length and we'll price it.</div>
+      </details>
+      <details class="rv">
+        <summary>What's the difference between this and a $30 car wash?</summary>
+        <div class="a">Everything. A wash rinses the surface. A detail is decontamination, machine correction, interior extraction and protection — done by hand, under lighting that shows every flaw. A wash lasts a week. A detail you feel for months.</div>
+      </details>
+      <details class="rv">
+        <summary>How do I pay?</summary>
+        <div class="a">Card, tap, cash or Zelle — after the walk-around, once you've seen the work. Nothing up front and no deposit on standard details.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews" data-label="Customer Reviews">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick rv">What our customers say</span>
+      <h2 class="display rv">Rated &#9733;&#9733;&#9733;&#9733;&#9733; by the people who own the driveway</h2>
+      <div class="gbadge rv" style="transition-delay:.1s">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span><b>4.9</b> rating &middot; <b><span data-count="112">0</span></b> Google reviews</span>
+      </div>
+      <div class="rv" style="margin-top:16px;transition-delay:.16s;display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+        <a href="#reviews" class="gbtn">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A11 11 0 0 0 12 1 11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>
+          Read all reviews on Google &#8599;
+        </a>
+        <a href="#reviews" class="gbtn">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#FBBC05" d="M12 2l2.9 5.88 6.5.94-4.7 4.58 1.11 6.47L12 16.9l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.94L12 2z"/></svg>
+          Leave us a Google review
+        </a>
+      </div>
+    </div>
+    <div class="revticker rv">
+    <div class="revtrack" id="revTrack">
+      <div class="rev">
+        <div class="who"><div class="av">JT</div><div><b>Jordan T.</b><span>Detailed at his office</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Booked it from my desk, walked out at five to a car that looked better than the day I bought it. Never moved it once. Easiest appointment I have all month."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">AM</div><div><b>Alicia M.</b><span>Minivan &middot; at home</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Three kids and a dog had their way with the third row. It came back spotless and it actually smells clean now, not covered up. Already booked the next one."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">RB</div><div><b>Ryan B.</b><span>Boat detail &middot; in the slip</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Showed up early, brought his own water, and the hull hasn&#39;t looked like this since we bought it. Worth every penny before the season."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">SK</div><div><b>Sandra K.</b><span>SUV &middot; full detail</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Pollen baked onto the roof that two car washes couldn&#39;t touch. Gone. Interior and exterior both spotless &mdash; it felt like a new car to sit in."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">DW</div><div><b>Derek W.</b><span>Ceramic coating</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Explained exactly what the correction would and wouldn&#39;t fix before he started. No upsell, no surprises, and the paint is unreal."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">TL</div><div><b>Tasha L.</b><span>Interior &middot; next day</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Called about a coffee disaster on a cloth seat and he was there the next morning. You can&#39;t even tell where it was."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">GP</div><div><b>Greg P.</b><span>Motorhome &middot; storage lot</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Detailed our motorhome right in the storage lot. Front cap went from chalky to glossy. Saved me a whole weekend of trying it myself."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">NC</div><div><b>Nina C.</b><span>Motorcycle &middot; at home</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Hand-washed my bike, did every spoke, and kept the pressure washer nowhere near it. Exactly how I&#39;d want it done."</p>
+      </div>
+      <div class="rev">
+        <div class="who"><div class="av">MH</div><div><b>Mike H.</b><span>Truck &middot; first detail</span></div></div>
+        <div class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Stayed until he was happy with every panel, then walked me around it before I paid. Proud of his work and it shows."</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE AREA / APPOINTMENT ═══ -->
+<section id="visit" data-label="Service Area &amp; Appointment">
+  <div class="visitgrid">
+    <div class="mapside">
+      <iframe title="Service area map" src="https://www.openstreetmap.org/export/embed.html?bbox=-81.45%2C28.50%2C-81.00%2C28.80&amp;layer=mapnik" loading="lazy"></iframe>
+      <div class="pin">
+        <b>Curbside Mobile Detailing</b>
+        <p>Serving all of Central Florida</p>
+      </div>
+    </div>
+    <div class="apptside">
+      <div class="aic" aria-hidden="true">&#128197;</div>
+      <h2 class="display">Book your slot</h2>
+      <p>Tell us what you drive and where it's parked. You'll get an exact price and the next two openings, usually the same day — and we come to whichever address suits you.</p>
+      <div class="areachips">
+        <span>Kissimmee</span><span>Winter Springs</span><span>Casselberry</span><span>Winter Park</span>
+        <span>Longwood</span><span>Lake Mary</span><span>Sanford</span><span>Altamonte Springs</span>
+        <span>Maitland</span><span>Orlando</span><span>Waterford Lakes</span><span>Chuluota</span>
+        <span>Geneva</span><span>Apopka</span>
+      </div>
+      <div class="hours">Mon-Sat 8am-6pm, Sunday by appointment</div>
+      <p class="fine">* Don't see your town? Ask anyway — we travel further for boats, motorhomes and multi-vehicle jobs.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" class="btn btn-dark" data-book><span>Book Online
+          <span class="arr" aria-hidden="true">
+            <svg viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg viewBox="0 0 14 10" fill="none"><path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+        </span></a>
+        <a href="tel:4075550142" class="btn btn-line"><span>Call 407-555-0142</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="contact" data-label="Footer">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#hero" class="logo">CURB<b>SIDE</b><small>MOBILE DETAILING</small></a>
+        <p style="margin-top:18px">Central Florida's mobile detailing crew. Paint correction, ceramic coating, interiors and tint — for cars, boats, RVs and bikes, wherever they're parked.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#focus">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#beforeafter">Before &amp; after</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>What We Detail</h4>
+        <ul>
+          <li><a href="#services">Cars &amp; trucks</a></li>
+          <li><a href="#services">Boats &amp; marine</a></li>
+          <li><a href="#services">RVs &amp; motorhomes</a></li>
+          <li><a href="#services">Motorcycles</a></li>
+          <li><a href="#services">Ceramic &amp; tint</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <p>Serving all of Central Florida</p>
+        <p>Mon-Sat 8am-6pm, Sunday by appointment</p>
+        <p>Phone: <a href="tel:4075550142" style="color:#35C3F0">407-555-0142</a></p>
+        <p><a href="mailto:hello@curbsidemobiledetail.com">hello@curbsidemobiledetail.com</a></p>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>&copy; <span id="yr">2026</span> Curbside Mobile Detailing. Licensed &amp; insured.</span>
+      <span class="legal">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="https://brechtland.com" target="_blank" rel="noopener">Website by Brechtland</a>
+      </span>
+    </div>
+  </div>
+</footer>
+</div><!-- /scrollport -->
+
+<!-- ═══ STICKY MOBILE CTA ═══ -->
+<div id="stickyBar" data-label="Sticky Mobile Bar">
+  <span class="sb-name">CURB<b>SIDE</b></span>
+  <a href="tel:4075550142" class="sb-call">Call</a>
+  <a href="#" class="sb-book" data-book>Book Now</a>
+</div>
+
+<!-- ═══ BOOKING MODAL ═══ -->
+<div id="bkOverlay" role="dialog" aria-modal="true" aria-label="Booking request" data-label="Booking Modal">
+  <div class="bk-card">
+    <button class="bk-close" id="bkClose" type="button" aria-label="Close">&times;</button>
+    <h3>Book with <span>Curbside Mobile Detailing</span></h3>
+    <p class="bk-sub">Tell us what you drive and where it sits — we'll confirm your slot and a locked price, usually the same day.</p>
+    <form id="bkForm">
+      <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+      <input type="tel" name="phone" placeholder="Mobile number" autocomplete="tel" required>
+      <input type="email" name="email" class="full" placeholder="Email address" autocomplete="email" required>
+      <select name="service" class="full" required>
+        <option value="" disabled selected hidden>What do you need?</option>
+        <option>The Reset &mdash; wash &amp; interior</option>
+        <option>The Full Detail &mdash; signature detail</option>
+        <option>Correction + Ceramic Coating</option>
+        <option>Boat / Marine detailing</option>
+        <option>RV / Motorhome detailing</option>
+        <option>Motorcycle detailing</option>
+        <option>Window tint</option>
+        <option>Not sure &mdash; need advice</option>
+      </select>
+      <textarea name="details" class="full" placeholder="Year, make &amp; model — and where it'll be parked (home, office, storage yard…)"></textarea>
+      <div id="bkErr">Something went wrong — please try again or call us directly.</div>
+      <button type="submit" class="btn btn-blue full" id="bkSubmit"><span>Send Booking Request</span></button>
+    </form>
+    <div id="bkSuccess">
+      <div class="ok">&#10003;</div>
+      <h4>Request received</h4>
+      <p>We'll text or call you within one business day with your price and the next openings. Talk soon.</p>
+    </div>
+  </div>
+</div>
+<script>
+/* --- sticky bar behaviour --- */
+(function(){
+  var bar = document.getElementById('stickyBar');
+  if (!bar) return;
+
+  // tap-to-call reads faster with a glyph than the word alone
+  var call = bar.querySelector('.sb-call');
+  if (call && !call.querySelector('svg')) {
+    call.insertAdjacentHTML('afterbegin',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>');
+  }
+
+  // stay out of the way over the hero, slide up once they start reading
+  function update(){
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var trigger = Math.max(320, window.innerHeight * 0.7);
+    if (y >= trigger) bar.classList.add('sb-show');
+    else bar.classList.remove('sb-show');
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+})();
+</script>
+
+<script>
+// sticky nav + scrollspy
+const nav = document.getElementById('nav');
+/* The nav also carries <a href="#" data-book> for the Book button. Leaving it in
+   the spy list makes querySelector('#') throw a SyntaxError on every scroll,
+   which aborts the handler and freezes the active-link underline. */
+const spyLinks = Array.from(document.querySelectorAll('.navlinks a[href^="#"]'))
+  .filter(a => (a.getAttribute('href') || '').length > 1);
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', (window.pageYOffset || 0) > 40);
+  let cur = null;
+  spyLinks.forEach(a => {
+    const sec = document.querySelector(a.getAttribute('href'));
+    if(sec && sec.getBoundingClientRect().top < innerHeight * .4) cur = a;
+  });
+  spyLinks.forEach(a => a.classList.toggle('active', a === cur));
+}, {passive:true});
+// make nav readable over white sections from the start
+nav.classList.toggle('scrolled', (window.pageYOffset || 0) > 40);
+
+// burger
+const burger = document.getElementById('burger');
+const mm = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  const open = mm.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+});
+mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); burger.classList.remove('open'); }));
+
+// reveals — observed inside #scrollport, which is the real scroller here
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {root: document.getElementById('scrollport'), threshold:.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+setTimeout(() => {
+  if(!document.querySelector('.rv.in')) document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+}, 1500);
+
+// counters
+function runCounter(el){
+  const target = +el.dataset.count, dur = 1200, t0 = performance.now();
+  const step = now => {
+    const p = Math.min((now - t0) / dur, 1);
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if(p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ runCounter(e.target); cio.unobserve(e.target); } });
+}, {root: document.getElementById('scrollport'), threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+setTimeout(() => {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    if(el.textContent === '0' && el.dataset.count !== '0') el.textContent = el.dataset.count;
+  });
+}, 2500);
+
+
+
+// before/after curtain sliders — one initialiser for every .ba on the page,
+// so the services rows and the big slider below all share the same component
+document.querySelectorAll('.ba').forEach(function(ba){
+  const range  = ba.querySelector('input[type=range]');
+  const after  = ba.querySelector('.after-wrap');
+  const handle = ba.querySelector('.handle');
+  if(!range || !after || !handle) return;
+  const labB = ba.querySelector('.lab.b');
+  const labA = ba.querySelector('.lab.a');
+  // A caption only earns its corner while that side is wide enough to hold it.
+  // Drag fully one way and the other side's label gets out of the picture
+  // instead of floating over a sliver that isn't there any more.
+  const fade = w => Math.max(0, Math.min(1, (w - 10) / 14));
+  const set = v => {
+    v = +v;
+    after.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+    handle.style.left = v + '%';
+    if(labB) labB.style.opacity = fade(v);        // before occupies the left v%
+    if(labA) labA.style.opacity = fade(100 - v);  // after occupies the rest
+  };
+  range.addEventListener('input', () => set(range.value));
+  set(range.value);
+});
+
+// booking modal + sticky bar
+const bkOv = document.getElementById('bkOverlay');
+const stickyBar = document.getElementById('stickyBar');
+const scrollport = document.getElementById('scrollport');
+function openBk(){
+  mm.classList.remove('open'); burger.classList.remove('open');
+  bkOv.classList.add('open');
+  // #scrollport is the scroller, not <body> — lock that instead
+  if(scrollport) scrollport.style.overflowY = 'hidden';
+  stickyBar.style.display = 'none';
+}
+function closeBk(){
+  bkOv.classList.remove('open');
+  if(scrollport) scrollport.style.overflowY = '';
+  stickyBar.style.display = '';
+}
+document.querySelectorAll('[data-book]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openBk(); }));
+document.getElementById('bkClose').addEventListener('click', closeBk);
+bkOv.addEventListener('click', e => { if(e.target === bkOv) closeBk(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && bkOv.classList.contains('open')) closeBk(); });
+
+const bkForm = document.getElementById('bkForm');
+bkForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = document.getElementById('bkSubmit');
+  btn.disabled = true; btn.querySelector('span').textContent = 'Sending…';
+  // read through .elements: form.name resolves to the form's own name attribute,
+  // not the input called "name", so form.name.value would be undefined
+  const f = bkForm.elements;
+  const done = () => {
+    bkForm.style.display = 'none';
+    document.getElementById('bkSuccess').style.display = 'block';
+  };
+  if(window.BrechtlandLead && window.BrechtlandLead.send){
+    window.BrechtlandLead.send({
+      name: f.name.value, phone: f.phone.value,
+      customerEmail: f.email.value,
+      service: f.service.value, note: f.details.value,
+      source: 'Booking form'
+    }, done);
+  } else { done(); }
+});
+
+// process steps: hover-reveal booking CTA (bento pattern)
+document.querySelectorAll('.pstep').forEach(s => {
+  if(s.querySelector('.pcta')) return;
+  const a = document.createElement('a');
+  a.href = '#'; a.className = 'pcta';
+  a.innerHTML = 'Book it now <i>&rarr;</i>';
+  a.addEventListener('click', e => { e.preventDefault(); openBk(); });
+  s.appendChild(a);
+});
+
+// review ticker — deltaTime marquee, pause on hover
+(function(){
+  const wrap = document.querySelector('.revticker');
+  const track = document.getElementById('revTrack');
+  if(!wrap || !track) return;
+  if(!track.querySelector('[data-clone]')){
+    const clone = document.createElement('div');
+    clone.setAttribute('data-clone', '');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.style.display = 'contents';
+    clone.innerHTML = track.innerHTML;
+    track.appendChild(clone);
+  }
+  let x = 0, last = performance.now(), paused = false;
+  wrap.addEventListener('mouseenter', () => paused = true);
+  wrap.addEventListener('mouseleave', () => paused = false);
+  function tick(now){
+    const dt = Math.min((now - last) / 1000, .1);
+    last = now;
+    if(!paused){
+      x -= 42 * dt;
+      const half = track.scrollWidth / 2;
+      if(half > 0 && -x >= half) x += half;
+      track.style.transform = 'translateX(' + x + 'px)';
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+// year
+(function(){ const y = document.getElementById('yr'); if(y) y.textContent = new Date().getFullYear(); })();
+</script>
+<script>
+/* FAQ accordion — one panel open at a time (works on all browsers). */
+(function(){
+  document.querySelectorAll('.qa details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(!d.open) return;
+      d.closest('.qa').querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
+})();
+</script>
+
+<script id="scrollport-shim">
+/* The page's scripts listen for scroll on window and read pageYOffset. Neither
+   fires now that #scrollport is the scroller, so re-broadcast its scroll and
+   map the usual position reads onto it - keeps the sticky bar, the shrinking
+   header and anchor links working. */
+(function(){
+  var sp=document.getElementById('scrollport'); if(!sp) return;
+  sp.addEventListener('scroll',function(){window.dispatchEvent(new Event('scroll'));},{passive:true});
+  try{
+    Object.defineProperty(window,'pageYOffset',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(window,'scrollY',{get:function(){return sp.scrollTop;},configurable:true});
+    Object.defineProperty(document.documentElement,'scrollTop',{
+      get:function(){return sp.scrollTop;},set:function(v){sp.scrollTop=v;},configurable:true});
+  }catch(e){}
+  window.scrollTo=function(x,y){
+    if(typeof x==='object'&&x){sp.scrollTo(x);return;}
+    sp.scrollTop=(y===undefined?x:y)||0;
+  };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    e.preventDefault(); sp.scrollTo({top:el.offsetTop,behavior:'smooth'});
+  },true);
+})();
+</script>
+
+
+
+
+<!-- BRECHTLAND-ADVISOR:START (generated - run advisor/install-advisor.ps1) -->
+<script>
+window.BRECHTLAND_ADVISOR = {
+  business      : "Curbside Mobile Detailing",
+  brand         : "Curbside Detailing",
+  owner         : "Marcus",
+  phoneDisplay  : "407-555-0142",
+  phoneTel      : "4075550142",
+  email         : "hello@curbsidemobiledetail.com",
+  city          : "Central Florida",
+  address       : "Serving all of Central Florida",
+  hours         : "Mon-Sat 8am-6pm, Sunday by appointment",
+
+  services      : ["The Reset (maintenance detail)", "The Full Detail", "Paint Correction + Ceramic Coating", "Boat / Marine Detailing", "RV / Motorhome Detailing", "Motorcycle Detailing", "Window Tint", "Headlight Restoration", "Pet Hair / Odor Removal"],
+  mobile        : true,
+  accent        : "#0091C6",
+  accentSoft    : "#35C3F0",
+  ink           : "#0B1F2A",
+  panel         : "#12303F",
+  text          : "#FFFFFF",
+  fontDisplay   : "'Oswald', sans-serif",
+  fontBody      : "'Inter', sans-serif",
+  callbackWindow: "the same day",
+  bookingUrl    : "",
+  siteId        : "curbside-demo",
+  endpoint      : "",
+  demo          : true,
+  bottomOffsetMobile: 84,
+  copy          : { "price": "Packages start at <b>$149</b> for a maintenance detail, <b>$299</b> for a full detail, and <b>$899</b> for correction and ceramic.<br><br>Those are starting points, not the final word — condition, size and how it's been looked after all move the number. Marcus prices yours off what it actually needs, so you're not paying for work your vehicle doesn't want." }
+};
+</script>
+<script>
+/* ============================================================================
+   BRECHTLAND SERVICE ADVISOR  —  master source
+   ----------------------------------------------------------------------------
+   Tap-only lead-capture widget for automotive service sites.
+   No dependencies. No API keys. No cost. Renders inside a Shadow DOM so it
+   can never collide with the host template's CSS.
+
+   THIS FILE IS THE MASTER COPY. Each template carries an inlined duplicate so
+   that (a) Studio's tokenizer can swap client info on export and (b) the
+   exported site has zero external dependencies. To change the flow everywhere:
+   edit this file, then re-inline it into each template.
+
+   Configure by defining window.BRECHTLAND_ADVISOR before this script runs.
+   Every string that differs per client is a Studio token — do not hardcode.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var C = window.BRECHTLAND_ADVISOR || {};
+  var cfg = {
+    business:     C.business     || 'our shop',
+    brand:        C.brand        || C.business || 'our shop',
+    owner:        C.owner        || 'the owner',
+    phoneDisplay: C.phoneDisplay || '',
+    phoneTel:     C.phoneTel     || '',
+    email:        C.email        || '',
+    city:         C.city         || '',
+    address:      C.address      || '',
+    hours:        C.hours        || '',
+    bookingUrl:   C.bookingUrl   || '',
+    mobile:       C.mobile !== false,          // does the shop come to you?
+    services:     C.services     || ['Full Detail', 'Ceramic Coating', 'Paint Correction'],
+    callbackWindow: C.callbackWindow || 'shortly',
+    accent:       C.accent       || '#FF7A1C',
+    accentSoft:   C.accentSoft   || '#FFA34D',
+    ink:          C.ink          || '#0B0B0D',
+    panel:        C.panel        || '#161619',
+    text:         C.text         || '#F2F0EC',
+    fontDisplay:  C.fontDisplay  || "'Barlow Condensed', 'Oswald', sans-serif",
+    fontBody:     C.fontBody     || "'Barlow', system-ui, sans-serif",
+    bottomOffset: C.bottomOffset || 24,
+    bottomOffsetMobile: C.bottomOffsetMobile || 82,
+    // Gap left between the site's sticky CTA bar and the launcher on mobile.
+    // Raise it per-site when the bar is not the only thing living down there
+    // (Meridian keeps its hero buttons in that corner).
+    barGap:       C.barGap       || 14,
+    endpoint:     C.endpoint     || '',
+    siteId:       C.siteId       || '',
+    teaseAfter:   C.teaseAfter   || 22000,     // ms before the nudge appears
+    copy:         C.copy         || {},        // per-site wording overrides
+    demo:         C.demo === true || isPreviewHost()
+  };
+
+  /* Only a real client site should create real leads. Demos, local Studio
+     previews and files opened straight off disk run the whole conversation and
+     show the confirmation, but never submit — so clicking through a template on
+     a sales call can't bury a client's actual leads. */
+  function isPreviewHost() {
+    try {
+      var h = (location.hostname || '').toLowerCase();
+      return location.protocol === 'file:' ||
+             h === 'localhost' || h === '127.0.0.1' || h === '::1' ||
+             h.indexOf('portfolio.') === 0 ||
+             h.indexOf('.github.io') > -1;
+    } catch (e) { return false; }
+  }
+
+  if (!cfg.phoneTel && !cfg.endpoint) return;  // nothing to do
+
+  /* ---------------------------------------------------------------- helpers */
+  var lead = { service: '', vehicle: '', note: '', name: '', phone: '' };
+  var opened = false, teased = false, sent = false;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  /* Every line below defaults to auto-shop wording. A site in another trade
+     (or an agency selling TO shops) overrides just the keys it needs via
+     config.copy — no second copy of the engine. */
+  function t(key, fallback) {
+    var v = cfg.copy[key];
+    return (v === undefined || v === null || v === '') ? fallback : v;
+  }
+
+  function seen(k) {
+    try { return sessionStorage.getItem('bla_' + k) === '1'; } catch (e) { return false; }
+  }
+  function mark(k) {
+    try { sessionStorage.setItem('bla_' + k, '1'); } catch (e) {}
+  }
+
+  /* ------------------------------------------------------------------- host */
+  var host = document.createElement('div');
+  host.setAttribute('data-brechtland-advisor', '');
+  host.style.cssText = 'position:fixed;z-index:2147483000;bottom:0;right:0;width:0;height:0;';
+  document.body.appendChild(host);
+  var root = host.attachShadow({ mode: 'open' });
+
+  var css = [
+    ':host,*{box-sizing:border-box;}',
+    '.wrap{position:fixed;right:20px;bottom:' + cfg.bottomOffset + 'px;',
+    '  display:flex;flex-direction:column;align-items:flex-end;gap:10px;',
+    '  font-family:' + cfg.fontBody + ';}',
+
+    /* launcher */
+    '.launch{position:relative;width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;',
+    '  background:' + cfg.accent + ';color:' + cfg.ink + ';display:flex;align-items:center;',
+    '  justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,.45);',
+    '  transition:transform .25s cubic-bezier(.16,1,.3,1),background .2s;}',
+    '.launch:hover{background:' + cfg.accentSoft + ';transform:translateY(-3px) scale(1.04);}',
+    '.launch svg{width:27px;height:27px;}',
+    '.launch .x{display:none;}',
+    '.open .launch .chat{display:none;}',
+    '.open .launch .x{display:block;}',
+
+    /* unread badge — reads as a waiting message, not decoration */
+    '.badge{position:absolute;top:-3px;right:-3px;min-width:22px;height:22px;padding:0 6px;',
+    '  border-radius:999px;background:#FF3B30;color:#fff;border:2px solid ' + cfg.ink + ';',
+    '  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;',
+    '  font-size:12px;font-weight:700;line-height:1;display:flex;align-items:center;',
+    '  justify-content:center;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.4);',
+    '  animation:bla-pop .42s cubic-bezier(.2,1.5,.4,1) both;}',
+    '@keyframes bla-pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}',
+    '.open .badge,.read .badge{display:none;}',
+
+    /* teaser — a message bubble, not a callout box */
+    '.tease{max-width:266px;background:' + cfg.panel + ';color:' + cfg.text + ';',
+    '  border:1px solid rgba(255,255,255,.13);border-radius:20px 20px 6px 20px;',
+    '  padding:14px 17px;font-size:.88rem;line-height:1.5;cursor:pointer;position:relative;',
+    '  box-shadow:0 18px 46px rgba(0,0,0,.55);animation:bla-in .45s cubic-bezier(.16,1,.3,1);}',
+    '.tease b{color:' + cfg.accent + ';font-weight:700;}',
+    '.tease .close{position:absolute;top:5px;right:9px;background:none;border:none;',
+    '  color:rgba(255,255,255,.34);font-size:16px;cursor:pointer;line-height:1;padding:3px;}',
+    '.tease .close:hover{color:' + cfg.text + ';}',
+    '.tease.out{opacity:0;transform:translateY(10px);pointer-events:none;',
+    '  transition:opacity .3s ease,transform .3s ease;}',
+    '@keyframes bla-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}',
+
+    /* panel — must read as a separate surface even on a near-black page */
+    '.panel{width:358px;max-width:calc(100vw - 28px);height:544px;max-height:calc(100vh - 120px);',
+    '  background:' + cfg.ink + ';border:1px solid rgba(255,255,255,.16);border-radius:20px;',
+    '  box-shadow:0 40px 90px rgba(0,0,0,.72), 0 0 0 1px rgba(0,0,0,.5),',
+    '    0 0 60px -18px ' + cfg.accent + '55;',
+    '  display:none;flex-direction:column;overflow:hidden;}',
+    '.open .panel{display:flex;animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+
+    '.head{background:' + cfg.panel + ';border-bottom:1px solid rgba(255,255,255,.09);',
+    '  padding:14px 16px;display:flex;align-items:center;gap:11px;flex-shrink:0;}',
+    '.dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;flex-shrink:0;',
+    '  box-shadow:0 0 0 3px rgba(61,220,132,.16);}',
+    '.htxt{flex:1;min-width:0;}',
+    '.htitle{font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.92rem;',
+    '  letter-spacing:.1em;text-transform:uppercase;color:' + cfg.text + ';line-height:1.15;}',
+    '.hsub{font-size:.68rem;color:rgba(255,255,255,.4);margin-top:2px;}',
+    '.hcall{color:' + cfg.accent + ';text-decoration:none;font-size:.72rem;font-weight:700;',
+    '  border:1px solid rgba(255,255,255,.14);padding:6px 10px;white-space:nowrap;transition:.2s;}',
+    '.hcall:hover{background:' + cfg.accent + ';color:' + cfg.ink + ';border-color:' + cfg.accent + ';}',
+
+    '.body{flex:1;overflow-y:auto;padding:18px 16px 4px;scrollbar-width:thin;}',
+    '.body::-webkit-scrollbar{width:5px;}',
+    '.body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.13);}',
+
+    /* message bubbles — incoming grey, outgoing accent, iMessage-style tails */
+    '.msg{background:rgba(255,255,255,.085);color:' + cfg.text + ';font-size:.88rem;line-height:1.55;',
+    '  padding:11px 15px;margin-bottom:9px;max-width:84%;width:fit-content;',
+    '  border-radius:20px 20px 20px 6px;',
+    '  animation:bla-in .3s cubic-bezier(.16,1,.3,1);}',
+    '.msg + .msg{margin-top:0;}',
+    '.msg b{color:' + cfg.text + ';font-weight:700;}',
+    '.msg .hi{color:' + cfg.accent + ';font-weight:700;}',
+    '.msg ul{margin:8px 0 0;padding-left:17px;}',
+    '.msg li{margin-bottom:3px;}',
+
+    '.you{background:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:600;',
+    '  border-radius:20px 20px 6px 20px;margin-left:auto;margin-bottom:14px;',
+    '  text-align:left;font-size:.85rem;padding:10px 15px;}',
+    '.you b{color:' + cfg.ink + ';}',
+
+    /* Replies sit on the visitor's side and carry the accent, so they read as
+       "things I can tap" rather than more of the shop's messages. */
+    '.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;',
+    '  justify-content:flex-end;',
+    '  animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+    '.chip{background:' + cfg.accent + '1F;color:' + cfg.accent + ';',
+    '  border:1.5px solid ' + cfg.accent + '99;border-radius:999px;',
+    '  font-family:' + cfg.fontBody + ';font-size:.82rem;font-weight:600;',
+    '  padding:10px 16px;cursor:pointer;',
+    '  transition:.18s;text-align:left;-webkit-tap-highlight-color:transparent;}',
+    '.chip:hover{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';}',
+    '.chip:active{transform:scale(.96);}',
+    '.chip.go{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:700;}',
+    '.chip.go:hover{background:' + cfg.accentSoft + ';border-color:' + cfg.accentSoft + ';color:' + cfg.ink + ';}',
+    '.chip.sel{background:' + cfg.accent + ';border-color:' + cfg.accent + ';color:' + cfg.ink + ';font-weight:700;}',
+    '.chip.sel:before{content:"\\2713\\00a0";}',
+    '.hint{font-size:.72rem;color:rgba(255,255,255,.32);margin:12px 0 -4px;text-align:right;}',
+
+    '.form{margin-bottom:16px;animation:bla-in .34s cubic-bezier(.16,1,.3,1);}',
+    '.lab{font-family:' + cfg.fontDisplay + ';font-weight:700;font-size:.6rem;letter-spacing:.17em;',
+    '  text-transform:uppercase;color:rgba(255,255,255,.36);display:block;margin-bottom:5px;}',
+    '.in{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);',
+    '  border-radius:12px;',
+    '  color:' + cfg.text + ';font-family:' + cfg.fontBody + ';font-size:.95rem;padding:12px 14px;',
+    '  outline:none;transition:border-color .2s,background .2s;margin-bottom:11px;resize:vertical;}',
+    '.in:focus{background:rgba(255,255,255,.09);}',
+    '.in:focus{border-color:' + cfg.accent + ';}',
+    '.in::placeholder{color:rgba(255,255,255,.24);}',
+    '.err{color:#ff6b5e;font-size:.74rem;margin:-6px 0 10px;display:none;}',
+
+    '.sub{width:100%;background:' + cfg.accent + ';color:' + cfg.ink + ';border:none;',
+    '  border-radius:999px;',
+    '  font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.85rem;letter-spacing:.11em;',
+    '  text-transform:uppercase;padding:14px;cursor:pointer;transition:.2s;',
+    '  -webkit-tap-highlight-color:transparent;}',
+    '.sub:hover{background:' + cfg.accentSoft + ';}',
+    '.sub:active{transform:scale(.985);}',
+    '.sub:disabled{opacity:.5;cursor:default;}',
+
+    '.done{text-align:center;padding:14px 4px;animation:bla-in .4s cubic-bezier(.16,1,.3,1);}',
+    '.done .tick{font-family:' + cfg.fontDisplay + ';font-weight:900;font-size:3rem;color:' + cfg.accent + ';}',
+    '.done h3{font-family:' + cfg.fontDisplay + ';font-weight:900;text-transform:uppercase;',
+    '  font-size:1.4rem;color:' + cfg.text + ';margin:6px 0 12px;letter-spacing:.04em;}',
+    '.done p{font-size:.86rem;line-height:1.7;color:rgba(242,240,236,.6);margin:0 0 18px;}',
+    '.done .num{color:' + cfg.accent + ';font-weight:700;}',
+    '.savebtn{display:inline-block;background:' + cfg.accent + ';color:' + cfg.ink + ';text-decoration:none;',
+    '  font-family:' + cfg.fontDisplay + ';font-weight:800;font-size:.82rem;letter-spacing:.11em;',
+    '  text-transform:uppercase;padding:13px 26px;}',
+
+    '.foot{flex-shrink:0;padding:9px 16px 11px;border-top:1px solid rgba(255,255,255,.06);',
+    '  font-size:.64rem;color:rgba(255,255,255,.2);text-align:center;letter-spacing:.05em;}',
+
+    /* templates show their sticky CTA bar at <=760px (Signature at <=767px) —
+       clear it, and clear the iPhone home indicator underneath it */
+    '@media (max-width:767px){',
+    '  .wrap{bottom:calc(' + cfg.bottomOffsetMobile + 'px + env(safe-area-inset-bottom,0px));',
+    '    transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .25s ease;}',
+    /* smaller on a phone — it shares the bottom of the screen with the CTA bar */
+    '  .launch{width:52px;height:52px;}',
+    '  .launch svg{width:23px;height:23px;}',
+    '  .badge{min-width:20px;height:20px;font-size:11px;}',
+    /* out of the way while they are reading, back the moment they stop */
+    '  .wrap.hidden{transform:translateY(140px);opacity:0;pointer-events:none;}',
+    '  .wrap.open.hidden{transform:none;opacity:1;pointer-events:auto;}',
+    '}',
+    '@media (max-width:520px){',
+    '  .wrap{right:14px;left:14px;align-items:flex-end;}',
+    '  .panel{width:100%;height:min(74vh,540px);}',
+    '  .tease{max-width:100%;}',
+    '}',
+    '@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}'
+  ].join('\n');
+
+  root.innerHTML =
+    '<style>' + css + '</style>' +
+    '<div class="wrap" part="wrap">' +
+      '<div class="tease" style="display:none" role="button" tabindex="0">' +
+        '<button class="close" aria-label="Dismiss">&times;</button>' +
+        '<span class="teasetxt"></span>' +
+      '</div>' +
+      '<div class="panel" role="dialog" aria-label="Service Advisor">' +
+        '<div class="head">' +
+          '<span class="dot"></span>' +
+          '<div class="htxt">' +
+            '<div class="htitle">Service Advisor</div>' +
+            '<div class="hsub"></div>' +
+          '</div>' +
+          (cfg.phoneTel ? '<a class="hcall" href="tel:' + esc(cfg.phoneTel) + '">Call</a>' : '') +
+        '</div>' +
+        '<div class="body"></div>' +
+        '<div class="foot">Powered by Brechtland</div>' +
+      '</div>' +
+      '<button class="launch" aria-label="Open Service Advisor">' +
+        '<span class="badge" aria-hidden="true">1</span>' +
+        '<svg class="chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-4-.9L3 21l1.9-4.8A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
+        '<svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+      '</button>' +
+    '</div>';
+
+  var wrap   = root.querySelector('.wrap');
+  var body   = root.querySelector('.body');
+  var tease  = root.querySelector('.tease');
+  var launch = root.querySelector('.launch');
+
+  // already read it in a previous session — don't re-badge them
+  if (seen('opened')) wrap.classList.add('read');
+
+  root.querySelector('.hsub').textContent =
+    cfg.city ? 'Typically replies in minutes · ' + cfg.city : 'Typically replies in minutes';
+  root.querySelector('.teasetxt').innerHTML =
+    t('tease',
+      'Question about your vehicle? <b>I\'m right here</b> — or I can have ' +
+      esc(cfg.owner) + ' reach out personally.');
+
+  /* ------------------------------------------------------------ conversation */
+  function say(html, cls) {
+    var d = document.createElement('div');
+    d.className = 'msg' + (cls ? ' ' + cls : '');
+    d.innerHTML = html;
+    body.appendChild(d);
+    scroll();
+  }
+  function you(txt) { say(esc(txt), 'you'); }
+
+  function ask(options) {
+    var box = document.createElement('div');
+    box.className = 'chips';
+    options.forEach(function (o) {
+      if (o.when === false) return;
+      var b = document.createElement('button');
+      b.className = 'chip' + (o.go ? ' go' : '');
+      b.textContent = o.label;
+      b.addEventListener('click', function () {
+        box.remove();
+        if (o.echo !== false) you(o.label);
+        if (o.href) { window.location.href = o.href; return; }
+        setTimeout(function () { o.next(); }, 180);
+      });
+      box.appendChild(b);
+    });
+    body.appendChild(box);
+    scroll();
+  }
+  /* Multi-select: tap as many as you like, then Continue. */
+  function askMulti(items, hint, onDone) {
+    var holder = document.createElement('div');
+    var picked = [];
+
+    if (hint) {
+      var h = document.createElement('div');
+      h.className = 'hint';
+      h.textContent = hint;
+      holder.appendChild(h);
+    }
+
+    var box = document.createElement('div');
+    box.className = 'chips';
+    items.forEach(function (label) {
+      var b = document.createElement('button');
+      b.className = 'chip';
+      b.textContent = label;
+      b.addEventListener('click', function () {
+        var i = picked.indexOf(label);
+        if (i > -1) { picked.splice(i, 1); b.classList.remove('sel'); }
+        else { picked.push(label); b.classList.add('sel'); }
+        go.disabled = picked.length === 0;
+        go.textContent = picked.length > 1
+          ? 'Continue with ' + picked.length
+          : 'Continue';
+      });
+      box.appendChild(b);
+    });
+    holder.appendChild(box);
+
+    var go = document.createElement('button');
+    go.className = 'sub';
+    go.disabled = true;
+    go.textContent = 'Continue';
+    go.addEventListener('click', function () {
+      if (!picked.length) return;
+      holder.remove();
+      you(picked.join(', '));
+      setTimeout(function () { onDone(picked.slice()); }, 180);
+    });
+    holder.appendChild(go);
+
+    body.appendChild(holder);
+    scroll();
+  }
+
+  function scroll() {
+    setTimeout(function () { body.scrollTop = body.scrollHeight; }, 30);
+  }
+
+  /* -- steps -------------------------------------------------------------- */
+
+  /* Chips offered after any informational answer. Always a way forward,
+     never a dead end, never a price pitch. */
+  function moreHelp(extra) {
+    var opts = (extra || []).slice();
+    opts.push({ label: 'Have ' + cfg.owner + ' reach out', next: stepService, go: true });
+    opts.push({ label: 'I have another question', next: stepTopics });
+    if (cfg.phoneTel) {
+      opts.push({ label: 'Call now', href: 'tel:' + cfg.phoneTel, next: stepService });
+    }
+    ask(opts);
+  }
+
+  function greet() {
+    say(t('greet',
+      'Hi — I\'m the service desk here at <b>' + esc(cfg.brand) + '</b>.<br><br>' +
+      'Happy to answer whatever you need, or put you straight through to <b class="hi">' +
+      esc(cfg.owner) + '</b>.'));
+    stepTopics();
+  }
+
+  function stepTopics() {
+    say('What can I help you with?');
+    ask([
+      { label: 'What services do you offer?', next: stepMenu },
+      { label: 'How does it work?',           next: stepHow },
+      { label: 'Do you come to me?',          next: stepMobile, when: cfg.mobile },
+      { label: 'Hours & location',            next: stepInfo, when: !!(cfg.hours || cfg.address) },
+      { label: 'Have ' + cfg.owner + ' reach out', next: stepService, go: true }
+    ]);
+  }
+
+  function stepMenu() {
+    say(t('menuIntro', 'Here\'s what we take care of at <b>' + esc(cfg.brand) + '</b>:') +
+        '<ul><li>' + cfg.services.map(esc).join('</li><li>') + '</li></ul>' +
+        '<br>' + t('menuOutro', 'Every vehicle\'s a bit different, so ' + esc(cfg.owner) +
+        ' likes to go over the details with you directly.'));
+    moreHelp([
+      { label: 'What does it cost?', next: stepPrice }
+    ]);
+  }
+
+  function stepHow() {
+    var steps = cfg.copy.howSteps || [
+      'Tell us what you\'re after',
+      esc(cfg.owner) + ' reaches out to go over the details',
+      'We lock in a time that works and take care of it'
+    ];
+    say(t('howIntro', 'Pretty simple:') +
+        '<ul><li>' + steps.join('</li><li>') + '</li></ul>' +
+        '<br>' + t('howOutro',
+          'No pressure and no hard sell — he\'ll just tell you straight what your vehicle needs.'));
+    moreHelp([
+      { label: 'What does it cost?', next: stepPrice }
+    ]);
+  }
+
+  function stepPrice() {
+    say(t('price',
+      'Every vehicle comes to us in different shape — condition, size, how it\'s been ' +
+      'looked after. Quoting you a number off a menu wouldn\'t be honest.<br><br>' +
+      esc(cfg.owner) + ' would rather look at what yours actually needs and give you a ' +
+      'straight answer, no surprises later.'));
+    moreHelp();
+  }
+
+  function stepMobile() {
+    say(t('mobile',
+      'Yes — we come to you.<br><br>Driveway, office lot, wherever the vehicle sits. ' +
+      esc(cfg.owner) + ' will confirm the area when he reaches out.'));
+    moreHelp();
+  }
+
+  function stepInfo() {
+    var h = '';
+    if (cfg.hours)   h += '<b>Hours</b><br>' + esc(cfg.hours) + '<br><br>';
+    if (cfg.address) h += '<b>Where we are</b><br>' + esc(cfg.address);
+    say(h);
+    moreHelp();
+  }
+
+  function stepService() {
+    say('Happy to get that moving. What are you interested in?');
+    var opts = cfg.services.slice();
+    opts.push('Something else');
+    askMulti(opts, 'Pick as many as you need.', function (picked) {
+      lead.service = picked.join(', ');
+      if (picked.indexOf('Something else') > -1) stepNote();
+      else stepVehicle();
+    });
+  }
+
+  function stepNote() {
+    say('No problem — tell me a little more and ' + esc(cfg.owner) +
+        ' will cover it when he reaches out.');
+    var f = document.createElement('div');
+    f.className = 'form';
+    f.innerHTML =
+      '<label class="lab">What did you have in mind?</label>' +
+      '<textarea class="in note" rows="3" placeholder="' + esc(t('notePlaceholder', 'e.g. matte black wrap on a lifted truck')) + '"></textarea>' +
+      '<button class="sub">Continue</button>';
+    body.appendChild(f);
+    var ta = f.querySelector('.note');
+    f.querySelector('.sub').addEventListener('click', function () {
+      lead.note = ta.value.trim();
+      f.remove();
+      if (lead.note) you(lead.note);
+      setTimeout(stepVehicle, 180);
+    });
+    scroll();
+    setTimeout(function () { ta.focus(); }, 120);
+  }
+
+  function stepVehicle() {
+    say(t('qualifierQ', 'And what are we working on?'));
+    askMulti(cfg.copy.qualifierOptions || ['Car', 'Truck / SUV', 'Van / Fleet', 'Something else'],
+      'Pick as many as you need.',
+      function (picked) { lead.vehicle = picked.join(', '); stepCapture(); });
+  }
+
+  function stepCapture() {
+    say('Last thing — how\'s the best way for ' + esc(cfg.owner) + ' to reach you?');
+    var f = document.createElement('div');
+    f.className = 'form';
+    f.innerHTML =
+      '<label class="lab">Your name</label>' +
+      '<input class="in nm" type="text" autocomplete="given-name" placeholder="First name">' +
+      '<label class="lab">Best number</label>' +
+      '<input class="in ph" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567">' +
+      '<div class="err"></div>' +
+      '<button class="sub">Get My Call Back</button>';
+    body.appendChild(f);
+
+    var nm  = f.querySelector('.nm');
+    var ph  = f.querySelector('.ph');
+    var err = f.querySelector('.err');
+    var btn = f.querySelector('.sub');
+
+    function fail(m) { err.textContent = m; err.style.display = 'block'; }
+
+    btn.addEventListener('click', function () {
+      var name  = nm.value.trim();
+      var phone = ph.value.trim();
+      if (name.length < 2) return fail('Mind adding your name?');
+      if (phone.replace(/\D/g, '').length < 10) return fail('That number looks short — need all 10 digits.');
+      err.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      lead.name = name;
+      lead.phone = phone;
+      submit(function () { f.remove(); stepDone(); });
+    });
+
+    [nm, ph].forEach(function (i) {
+      i.addEventListener('keydown', function (e) { if (e.key === 'Enter') btn.click(); });
+    });
+    scroll();
+    setTimeout(function () { nm.focus(); }, 120);
+  }
+
+  function stepDone() {
+    sent = true;
+    var d = document.createElement('div');
+    d.className = 'done';
+    /* On a demo the callback promise would be a lie — say so plainly. It also
+       makes the point on a sales call: this is what their customer would see. */
+    d.innerHTML = cfg.demo
+      ? '<div class="tick">&#10003;</div>' +
+        '<h3>That\'s the flow</h3>' +
+        '<p>On a live site, ' + esc(cfg.owner) + ' would now have your name, your number ' +
+        'and what you need — and would reach out ' + esc(cfg.callbackWindow) + '.' +
+        '<br><br><b>This is a demo, so nothing was sent.</b></p>'
+      : '<div class="tick">&#10003;</div>' +
+        '<h3>All set</h3>' +
+        '<p>' + esc(cfg.owner) + ' has your details and will reach out ' + esc(cfg.callbackWindow) + '.<br><br>' +
+        (cfg.phoneDisplay
+          ? 'It\'ll come from <span class="num">' + esc(cfg.phoneDisplay) + '</span> — save it so you know it\'s him.'
+          : '') +
+        '</p>' +
+        (cfg.phoneTel
+          ? '<a class="savebtn" href="tel:' + esc(cfg.phoneTel) + '">Call ' + esc(cfg.brand) + ' Now</a>'
+          : '');
+    body.appendChild(d);
+    scroll();
+  }
+
+  /* ---------------------------------------------------------------- delivery */
+  /* One code path for every lead this site produces — the chat below and the
+     template's own contact/booking forms. Same endpoint, same recipient from
+     Studio, same demo protection. */
+  function post(payload, done) {
+    if (cfg.demo || !cfg.endpoint) { setTimeout(done, 420); return; }
+
+    var finished = false;
+    var finish = function () { if (!finished) { finished = true; done(); } };
+
+    try {
+      fetch(cfg.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).then(finish)['catch'](finish);
+    } catch (e) { finish(); }
+
+    setTimeout(finish, 3500);   // never leave the visitor hanging
+  }
+
+  function submit(done) {
+    post({
+      site:     cfg.siteId,
+      business: cfg.business,
+      to:       cfg.email,
+      name:     lead.name,
+      phone:    lead.phone,
+      service:  lead.service,
+      vehicle:  lead.vehicle,
+      note:     lead.note,
+      page:     location.href,
+      source:   'Service Advisor',
+      ts:       new Date().toISOString()
+    }, done);
+  }
+
+  /* Public hook for the template's own forms:
+       window.BrechtlandLead.send({ name, phone, customerEmail, service, note }, onDone)
+     Always calls onDone — the visitor never gets stuck on a spinner. */
+  window.BrechtlandLead = {
+    send: function (data, done) {
+      var payload = {
+        site: cfg.siteId, business: cfg.business, to: cfg.email,
+        name: '', phone: '', customerEmail: '', service: '', vehicle: '', note: '',
+        page: location.href, source: 'Website form',
+        ts: new Date().toISOString()
+      };
+      if (data) {
+        for (var k in data) {
+          if (Object.prototype.hasOwnProperty.call(data, k)) payload[k] = data[k];
+        }
+      }
+      post(payload, done || function () {});
+    },
+    isDemo: function () { return cfg.demo; }
+  };
+
+  /* ------------------------------------------------------------------ wiring */
+  function open() {
+    if (opened) return;
+    opened = true;
+    wrap.classList.add('open');
+    wrap.classList.add('read');   // badge is an unread count — once opened it stays gone
+    hideTease();
+    mark('opened');
+    if (!body.childNodes.length) setTimeout(greet, 200);
+  }
+  function close() { opened = false; wrap.classList.remove('open'); }
+  function toggle() { opened ? close() : open(); }
+
+  var teaseTimer;
+
+  function showTease() {
+    if (teased || opened || seen('teased') || seen('opened')) return;
+    teased = true;
+    wrap.classList.add('hasteased');
+    tease.classList.remove('out');
+    tease.style.display = 'block';
+    mark('teased');
+    // Say it once and get out of the way. Left up it becomes the biggest thing
+    // on a phone screen, and it is the least important thing on it.
+    clearTimeout(teaseTimer);
+    teaseTimer = setTimeout(retractTease, 12000);
+  }
+  function retractTease() {
+    if (tease.style.display === 'none') return;
+    tease.classList.add('out');
+    setTimeout(hideTease, 320);
+  }
+  function hideTease() { clearTimeout(teaseTimer); tease.style.display = 'none'; }
+
+  launch.addEventListener('click', toggle);
+  tease.addEventListener('click', function (e) {
+    if (e.target.classList.contains('close')) { hideTease(); return; }
+    open();
+  });
+  tease.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && opened) close();
+  });
+
+  setTimeout(showTease, cfg.teaseAfter);
+  document.addEventListener('mouseleave', function (e) {
+    if (e.clientY <= 0) showTease();
+  });
+
+  /* Duck out of the way while they're scrolling down — nobody taps a chat
+     bubble mid-scroll, and on a phone it shares the bottom of the screen with
+     the site's CTA bar. Comes straight back when they scroll up or stop, which
+     is the moment they're actually deciding. Mobile only; the CSS above scopes
+     the effect to <=767px. */
+  var lastY = window.pageYOffset || 0, restTimer;
+  window.addEventListener('scroll', function () {
+    if (opened) return;
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (y > lastY + 5 && y > 240) wrap.classList.add('hidden');
+    else if (y < lastY - 5) wrap.classList.remove('hidden');
+    lastY = y;
+    clearTimeout(restTimer);
+    restTimer = setTimeout(function () { wrap.classList.remove('hidden'); }, 850);
+  }, { passive: true });
+
+  /* Sit a fixed distance above the site's own sticky CTA bar.
+
+     Hardcoding the offset double-counted the safe area on real iPhones: the
+     bar already pads itself by env(safe-area-inset-bottom), and the widget was
+     adding it again — invisible in a desktop emulator where env() is 0, but a
+     visible dead gap on a phone. Measuring the bar's rendered height instead
+     is self-correcting on every device, and drops the per-site tuning. */
+  function parkAboveBar() {
+    if (window.innerWidth > 767) { wrap.style.bottom = ''; return; }
+    var bar = document.getElementById('stickyBar') ||
+              document.getElementById('sticky-bar') ||
+              document.getElementById('mobbar');
+    var h = bar ? bar.offsetHeight : 0;   // offsetHeight includes its safe-area padding
+    wrap.style.bottom = h ? (h + cfg.barGap) + 'px' : '';
+  }
+  parkAboveBar();
+  setTimeout(parkAboveBar, 600);          // after fonts/layout settle
+  window.addEventListener('resize', parkAboveBar);
+  window.addEventListener('orientationchange', function () { setTimeout(parkAboveBar, 250); });
+
+  /* Get out of the way of the site's own modals.
+
+     The launcher sits at the top of the stacking order so it clears sticky
+     bars and hero video — which also put it on top of the booking form, right
+     over the submit button. Rather than guess at each template's z-index (they
+     range from 100 to 9000), watch for the body scroll lock that every one of
+     them sets when a modal opens, and hide until it's released. */
+  function siteModalOpen() {
+    /* Only the INLINE style counts. Every template opens a modal with
+       `document.body.style.overflow = 'hidden'`. Reading the computed value
+       instead would also match a stylesheet rule - which a scroll-container
+       layout sets permanently, and the widget would hide itself forever. */
+    return document.body.style.overflow === 'hidden';
+  }
+  function syncModalState() {
+    host.style.display = siteModalOpen() ? 'none' : '';
+  }
+  if (window.MutationObserver) {
+    new MutationObserver(syncModalState).observe(document.body, {
+      attributes: true, attributeFilter: ['style', 'class']
+    });
+  }
+  syncModalState();
+})();
+
+</script>
+<!-- BRECHTLAND-ADVISOR:END -->
+<!-- ===============================================================
+     PORTFOLIO DEMO MODE - injected by advisor/build-portfolio.ps1.
+     Public showcase copies, not live sites: every form is blocked and
+     answered with a demo notice. Also adds a persistent toolbar so a
+     visitor can always get back to the portfolio without the browser
+     back button (the demo navs use anchor links, so "back" can take a
+     dozen presses to escape).
+     =============================================================== -->
+<style>
+#bl-bar{position:fixed;left:14px;bottom:14px;z-index:2147482000;display:flex;gap:8px;align-items:center;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+#bl-bar a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 16px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:transform .15s,border-color .15s,box-shadow .15s;backdrop-filter:blur(12px);touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,229,255,.25)}
+#bl-back{background:rgba(8,10,14,.9);border:1px solid rgba(255,255,255,.28);color:#EEF2F8}
+/* Hover effects ONLY on real pointers. On iOS a :hover rule makes the first tap
+   apply hover instead of activating the link - you have to tap twice, unless a
+   scroll happens to clear the hover state first. hover:hover keeps the desktop
+   polish and gives touch a single reliable tap. */
+@media (hover:hover) and (pointer:fine){
+  #bl-bar a:hover{transform:translateY(-2px)}
+  #bl-back:hover{border-color:#00E5FF;color:#00E5FF}
+}
+/* Sit above the template's sticky mobile CTA bar, and stop short of the
+   Service Advisor launcher in the bottom-right corner. */
+@media (max-width:767px){
+  #bl-bar{left:10px;right:86px;bottom:calc(84px + env(safe-area-inset-bottom,0px));justify-content:flex-start}
+  #bl-bar a{font-size:12.5px;padding:9px 13px}
+}
+@media (max-width:400px){
+  #bl-bar a{font-size:11.5px;padding:8px 11px;gap:5px}
+}
+#bl-demo-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(4,6,10,.84);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+#bl-demo-ov.show{display:flex}
+#bl-demo-box{background:#0C0E14;border:1px solid rgba(255,255,255,.14);border-top:3px solid #00E5FF;border-radius:10px;max-width:430px;width:100%;padding:32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#bl-demo-box h3{font-size:21px;font-weight:800;color:#fff;margin:0 0 10px;letter-spacing:-.01em}
+#bl-demo-box p{font-size:14px;line-height:1.65;color:#A8B0BE;margin:0 0 22px}
+#bl-demo-box .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#bl-demo-box a,#bl-demo-box button{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;padding:12px 22px;border-radius:7px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+#bl-demo-box .primary{background:#00E5FF;color:#04212A}
+#bl-demo-box .ghost{background:transparent;color:#C9D1DD;border:1px solid rgba(255,255,255,.22)}
+#bl-demo-box .tag{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#00E5FF;margin-bottom:12px;display:block;font-weight:700}
+</style>
+<div id="bl-bar">
+  <a id="bl-back" href="/">&larr; All templates</a>
+</div>
+<div id="bl-demo-ov" role="dialog" aria-modal="true" aria-label="Demo site notice">
+  <div id="bl-demo-box">
+    <span class="tag">Demo site</span>
+    <h3>Nothing was sent</h3>
+    <p>This is a live design demo, so the booking form is switched off. Like this look? We'll rebuild it around your business, your photos and your services.</p>
+    <div class="row">
+      <a class="primary" href="https://calendar.app.google/nvRoWGZRCp37TzjR7" target="_blank" rel="noopener">Book a call</a>
+      <button class="ghost" type="button" onclick="document.getElementById('bl-demo-ov').classList.remove('show')">Keep looking</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  // Capture phase + stopImmediatePropagation: runs BEFORE the template's own submit
+  // handler and stops the event reaching it, so nothing is ever posted anywhere.
+  document.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    ev.stopImmediatePropagation();
+    var ov = document.getElementById('bl-demo-ov');
+    if(ov) ov.classList.add('show');
+    return false;
+  }, true);
+  document.addEventListener('keydown', function(ev){
+    if(ev.key === 'Escape'){
+      var ov = document.getElementById('bl-demo-ov');
+      if(ov) ov.classList.remove('show');
+    }
+  });
+  var ov = document.getElementById('bl-demo-ov');
+  if(ov) ov.addEventListener('click', function(ev){ if(ev.target === ov) ov.classList.remove('show'); });
+})();
+</script>
+</body>
+</html>
